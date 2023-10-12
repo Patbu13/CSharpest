@@ -1,4 +1,4 @@
-namespace CSharpest
+namespace CSharpest.ClassEXAMPLE
 {
     public class WeatherForecast
     {
