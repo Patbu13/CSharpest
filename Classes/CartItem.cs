@@ -1,4 +1,4 @@
-using System;
+namespace CSharpest.Classes;
 
 //	Last modified by: David Eta
 //	Windows Prog 547

@@ -1,9 +1,8 @@
-﻿using System;
+﻿namespace CSharpest.Classes;
 
 //	Last modified by: David Eta
 //	Windows Prog 547
 //	Last Updated : 10/10/23
-
 public class Item
 {
 
