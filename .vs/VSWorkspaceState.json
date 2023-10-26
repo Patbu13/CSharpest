@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Classes"
   ],
-  "SelectedNode": "\\CSharpest.sln",
+  "SelectedNode": "\\Classes\\Checkout.cs",
   "PreviewInSolutionExplorer": false
 }
