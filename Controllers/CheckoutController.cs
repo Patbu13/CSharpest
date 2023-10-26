@@ -8,33 +8,33 @@ namespace CSharpest
 {
     namespace CSharpest.Controllers
     {
-        [Route("api/[controller]")]
+        [Route("[controller]")]
         [ApiController]
         public class CheckoutController : ControllerBase
         {
    
-            // POST: api/<CheckoutController>/card
+            // POST: <CheckoutController>/card
             [HttpPost("{card}")]
             public bool ValidateCardDetails(Card card)
             {
                 return true;
             }
 
-            // POST: api/<CheckoutController>/address
+            // POST: <CheckoutController>/address
             [HttpPost("{address}")]
             public bool ValidateShippingAddress(User user)
             {
                 return true;
             }
 
-            // POST: api/<CheckoutController>/purchase
+            // POST: <CheckoutController>/purchase
             [HttpPost("{cart}")]
             public void purchase (Cart cart)
             {
             }
 
 
-            // GET: api/<CheckoutController>/confirm
+            // GET: <CheckoutController>/confirm
             [HttpGet("confirm")]
             public string sendConfirmation()
             {

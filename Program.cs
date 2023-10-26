@@ -1,10 +1,15 @@
 
+using CSharpest.Classes;
+
 namespace CSharpest
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            Storefront.DisplayItems();
+            System.Diagnostics.Debug.WriteLine("writing:");
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -32,6 +37,8 @@ namespace CSharpest
             app.MapControllers();
 
             app.Run();
+
+
         }
     }
 }
