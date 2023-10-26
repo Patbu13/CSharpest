@@ -3,6 +3,8 @@
  Windows Prog 547
  Last Updated : 10/24/23
 --> 
+@model CSharpest.Classes.Item
+
 @{
     ViewBag.Title = "CSharpest Store";
 }
@@ -18,3 +20,9 @@
 <a href="/api/Storefront/checkout">
     <h3>[Go to Checkout]</h3>
 </a>
+
+<h2>Shop the Store:</h2>
+<item>
+    @Model.Name<br>
+    @Model.Description, @Model.Price @Model.Stock<br>
+</item>

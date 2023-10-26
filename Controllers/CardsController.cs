@@ -4,37 +4,37 @@
 
 namespace CSharpest.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CardsController : ControllerBase
     {
-        // GET: api/<CardsController>
+        // GET: <CardsController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<CardsController>/5
+        // GET <CardsController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<CardsController>
+        // POST <CardsController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<CardsController>/5
+        // PUT <CardsController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<CardsController>/5
+        // DELETE <CardsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
