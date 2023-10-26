@@ -1,8 +1,8 @@
 ﻿namespace CSharpest.Classes;
 
-//	Last modified by: Patrick Burroughs
+//	Last modified by: Vivian D'Souza
 //	Windows Prog 547
-//	Last Updated : 10/10/23
+//	Last Updated : 10/25/23
 
 //  Manages the checkout procedure from cart -> transaction (not sure if needed)
 public class Checkout
