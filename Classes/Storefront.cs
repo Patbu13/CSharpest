@@ -15,16 +15,25 @@ using static System.Net.WebRequestMethods;
 public static class Storefront
 {
     public static Dictionary<Item, int> Stock {  get; set; }
-    public static string url = "https://localhost:7055/Item/GetAllItems/";
+    //public static string url = "https://localhost:7055/Item/GetAllItems/";
+
+
     public static async void DisplayItems()
     {
-        HttpClient client = new HttpClient();
-        //HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, url);
-        ////client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //message.Content = JsonContent.Create<Item>(item);
-        //HttpResponseMessage response = await client.SendAsync(message);
+        string serverPortStr = Environment.GetEnvironmentVariable("API_PORT");
+        if (int.TryParse(serverPortStr, out int serverPort))
+        {
+            string url = $"http://localhost:{serverPort}/Item/GetAllItems/";
 
-        string text = await client.GetStringAsync(url);
+            HttpClient client = new HttpClient();
+            //HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, url);
+            ////client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //message.Content = JsonContent.Create<Item>(item);
+            //HttpResponseMessage response = await client.SendAsync(message);
+
+            string text = await client.GetStringAsync(url);
+        }
+        
     }
 
 
