@@ -2,6 +2,7 @@
 using CSharpest.Classes;
 using System.Web;
 using System.Net;
+using NuGet.Packaging;
 //	Last modified by: Vivian D'Souza
 //	Windows Prog 547
 //	Last Updated : 10/24/23
@@ -14,19 +15,17 @@ namespace CSharpest
         // If using ActionResult and other methods from Web API, need to have controller inherit from Controller, not ControllerBase
         public class StorefrontController : Controller
         {
+            InventoryLoader inventoryLoader = new InventoryLoader(@"C:\Users\vivia\source\repos\CSharpest\data\inventory.json");
             // GET: <StorefrontController>/welcome
             [HttpGet("welcome")]
             public ActionResult Welcome()
             {
-                var viewModel = new Item()
-                {
-                    Name = "Milk",
-                    Description = "Refreshing milk fresh from the Milky Way",
-                    ItemId = Guid.NewGuid(),
-                    Price = 2.89m,
-                    Stock = 100
-                };
-                return View(viewModel);
+                SortedSet<Item> viewModels = inventoryLoader.loadInventory();
+                //SortedSet<Item> viewModels = inventoryLoader.loadInventory();
+                //viewModels.Add(new Item("Milk", "Refreshing milk fresh from the Milky Way", Guid.NewGuid(), 2.89m, 100));
+                //viewModels.Add(new Item("Cadbury", "Iconic dairy milk bar, 1 oz", Guid.NewGuid(), 1.07m, 100));
+             
+                return View(viewModels);
             }
 
             // GET: <StorefrontController>/cart
