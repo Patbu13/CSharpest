@@ -21,10 +21,7 @@ namespace CSharpest
             public ActionResult Welcome()
             {
                 SortedSet<Item> viewModels = inventoryLoader.loadInventory();
-                //SortedSet<Item> viewModels = inventoryLoader.loadInventory();
-                //viewModels.Add(new Item("Milk", "Refreshing milk fresh from the Milky Way", Guid.NewGuid(), 2.89m, 100));
-                //viewModels.Add(new Item("Cadbury", "Iconic dairy milk bar, 1 oz", Guid.NewGuid(), 1.07m, 100));
-             
+         
                 return View(viewModels);
             }
 
