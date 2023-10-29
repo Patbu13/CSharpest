@@ -3,25 +3,23 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 
+//	Last modified by: Patrick Burroughs
+//	Windows Prog 547
+//	Last Updated : 10/29/23
+
 namespace CSharpest.Controllers
 {
     [Route("[controller]")]
     [ApiController]
     public class ItemController : Controller
     {
+        InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         // GET: <ItemController>/GetAllItems
         [HttpGet("GetAllItems")]
-        public Item[] GetAllItems()
+        public SortedSet<Item> GetAllItems()
         {
-            Item[] items = new Item[10];
+            SortedSet<Item> items = inventoryLoader.loadInventory();
             return items;
-        }
-
-        // POST: <ItemController>/GetAllItems
-        [HttpPost("AddItemToCart")]
-        public bool AddItemToCart(Guid cartId, Guid itemId, int quantity)
-        {
-            return true;
         }
 
     }
