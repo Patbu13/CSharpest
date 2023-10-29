@@ -15,7 +15,7 @@ namespace CSharpest
         // If using ActionResult and other methods from Web API, need to have controller inherit from Controller, not ControllerBase
         public class StorefrontController : Controller
         {
-            InventoryLoader inventoryLoader = new InventoryLoader(@"C:\Users\vivia\source\repos\CSharpest\data\inventory.json");
+            InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
             // GET: <StorefrontController>/welcome
             [HttpGet("welcome")]
             public ActionResult Welcome()
