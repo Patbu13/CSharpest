@@ -13,7 +13,7 @@
 
 <h1>Welcome to the CSharpest Store!</h1>
 
-<a href="/Storefront/cart" id="CartLink">
+<a href="/Storefront/cart">
     <h3>[Go to Cart]</h3>
 </a>
 
@@ -39,7 +39,7 @@
             <!-- <td>item.ItemId</td> -->
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            <td><input type="text" name="InputField" value="Quantity Needed (oz)" /></td>
+            <td><input type="text" name="InputField@item.ItemId" value="Quantity Needed (oz)" /></td>
             <td>
                 <!-- Add in link to Add Item to Cart-->
                 <a href="#">
