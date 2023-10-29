@@ -9,15 +9,14 @@ namespace CSharpest.Classes;
 //  Shopping cart for a user that holds items
 public class Cart
 {
-    public int CartID { get; set; }
+    public Guid CartID { get; set; }
     //public Dictionary<Item, int>? Items { get; set; }
     public Dictionary<Item, Tuple<int, decimal>>? Items { get; set; }
     
 
     // public TotalCartPrice;
-    public Cart(int cartID)
+    public Cart()
     {
-        CartID = cartID;
         Items = new Dictionary<Item, Tuple<int, decimal>>(); // new Dictionary<Item, int>();
     }
 

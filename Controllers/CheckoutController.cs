@@ -1,9 +1,9 @@
-﻿    using CSharpest.Classes;
+﻿using CSharpest.Classes;
 using Microsoft.AspNetCore.Mvc;
 
-//	Last modified by: Vivian D'Souza
+//	Last modified by: Patrick Burroughs
 //	Windows Prog 547
-//	Last Updated : 10/24/23
+//	Last Updated : 10/29/23
 namespace CSharpest
 {
     namespace CSharpest.Controllers
@@ -12,12 +12,13 @@ namespace CSharpest
         [ApiController]
         public class CheckoutController : ControllerBase
         {
-            
+
             /*// takes in a new card and then saves it to user object
             // POST: <CheckoutController>/address
             [HttpPost("{card}")]
-            public bool takeCardInput(Card card, User user)
+            public bool takeCardInput(Card card, Guid userID)
             {
+                //FIND USER using USERID once json written
                 if (ValidateCardDetails(card))
                 {
                     // if card validation successful, save to user's list of cards
@@ -32,7 +33,7 @@ namespace CSharpest
                 // if not valid, returns false
                 return false;
             }
-            
+
 
             // POST: <CheckoutController>/card
             [HttpPost("{cardCheck}")]
@@ -66,22 +67,41 @@ namespace CSharpest
             }*/
 
 
-            // POST: <CheckoutController>/address
+            /*// POST: <CheckoutController>/address
             [HttpPost("{address}")]
             public bool ValidateShippingAddress(User user)
             {
                 return true;
-            }
+            }*/
 
             // POST: <CheckoutController>/purchase
-            [HttpPost("{cart}")]
-            public bool purchase (Cart cart)
+            [HttpPost("{purchase}")]
+            public (bool, string) purchase (User user, Cart cart)
             {
-                // reduce stock by quantity purchased
+                // check in-stock by quantity purchased
+                foreach (var item in cart.Items)
+                {
+                    if (item.Key.Stock - item.Value.Item1 < 0)
+                    {
+                        return (false, $"Not enough \"{item.Key.Name}\" (ID:{item.Key.ItemId}) in stock");
+                    }
+                }
 
                 // save this transaction to user's history
+                Transaction newTransaction = new Transaction(Guid.NewGuid(), (from k in cart.Items select k.Key), DateTime.Now);
+                user.TransHistory.Add(newTransaction);
 
-                return true;
+                if (user.TransHistory.Contains(newTransaction))
+                {
+                    foreach (var item in cart.Items)
+                    {
+                        item.Key.Stock -= item.Value.Item1;
+                    }
+                    return (true, "Successful transaction");
+                } else
+                { 
+                    return (false, "Transaction could not be added to user's transaction history");
+                }
             }
 
             [HttpPost("{total}")]
@@ -104,14 +124,6 @@ namespace CSharpest
                 total += 5.99m;
 
                 return total;
-            }
-
-
-            // GET: <CheckoutController>/confirm
-            [HttpGet("confirm")]
-            public string sendConfirmation()
-            {
-                return "Successful!";
             }
 
             // to be looked at later
