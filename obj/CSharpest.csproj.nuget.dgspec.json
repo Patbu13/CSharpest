@@ -1,24 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj": {}
+<<<<<<< HEAD
+    "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj": {}
+=======
+    "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj": {}
+>>>>>>> ae0bb650f929ff90a2f0e59ebeb3274c88e98e86
   },
   "projects": {
-    "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj": {
+    "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj",
+        "projectUniqueName": "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
         "projectName": "CSharpest",
-        "projectPath": "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj",
-        "packagesPath": "C:\\Users\\vivia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vivia\\source\\repos\\CSharpest\\obj\\",
+        "projectPath": "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
+        "packagesPath": "C:\\Users\\Patri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vivia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> ae0bb650f929ff90a2f0e59ebeb3274c88e98e86
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,6 +70,10 @@
               "target": "Package",
               "version": "[7.0.9, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -86,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
