@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using CSharpest.Classes;
+using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +10,13 @@ namespace CSharpest.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
+        Cart cart = new Cart(0);
         // GET: api/<CartController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("GetCartItems")]
+        public Dictionary<Item, Tuple<int, decimal>> GetCartItems()
         {
-            return new string[] { "value1", "value2" };
+            Dictionary < Item, Tuple<int, decimal> > cartItems = cart.Items;
+            return cartItems;
         }
 
         // GET api/<CartController>/5

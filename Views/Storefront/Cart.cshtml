@@ -4,7 +4,7 @@
  Last Updated : 10/24/23
 -->
 <!--Loading dictionary list from Cart-->
-@model Dictionary<CSharpest.Classes.Item, int>
+@model Dictionary<CSharpest.Classes.Item, Tuple<int, decimal>>
 
 @{
     ViewBag.Title = "Your Cart";
@@ -22,11 +22,14 @@
         <th>Price by Ounce</th>
     </tr>
 
-    @foreach (var item in @Model)
+    @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
     {
         <tr>
              <td>@item.Key.Name</td>
-             <td>@item.Value</td>
+             <td>@item.Value.Item1</td>
+            <td>@item.Value.Item2</td>
+            <td>@item.Key.Price</td>
+
          </tr>
     }
 </table>

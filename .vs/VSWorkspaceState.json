@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
+    "",
+    "\\Classes",
+    "\\Controllers"
+  ],
+  "SelectedNode": "\\CSharpest.sln",
+=======
     ""
   ],
+>>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
   "PreviewInSolutionExplorer": false
 }
