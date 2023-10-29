@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pH9Jr5Sky4ryMAH+mBBFHX30w/b2YC/HK1eTEqKhLd3k3dDBJnrlkaw2fuCUCUrS6jc9oitxXnCPCm0IPPVyTw==",
+  "dgSpecHash": "sGJ0aIh9nIvqGSd/93kdjmAModJ3Y4bDkBn/s4a+Jqg6kePTRPIflyjj9ZEPHTgjULVfhhxUfZvnnkyeggpsIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
+  "projectFilePath": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Patri\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Patri\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
