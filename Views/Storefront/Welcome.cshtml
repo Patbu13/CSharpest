@@ -3,7 +3,7 @@
  Windows Prog 547
  Last Updated : 10/24/23
 --> 
-@model CSharpest.Classes.Item
+@model SortedSet<CSharpest.Classes.Item>
 
 @{
     ViewBag.Title = "CSharpest Store";
@@ -13,16 +13,33 @@
 
 <p>Hello from our View Template!</p>
 
-<a href="/api/Storefront/cart">
+<a href="/Storefront/cart">
     <h3>[Go to Cart]</h3>
 </a>
 
-<a href="/api/Storefront/checkout">
+<a href="/Storefront/checkout">
     <h3>[Go to Checkout]</h3>
 </a>
 
 <h2>Shop the Store:</h2>
-<item>
-    @Model.Name<br>
-    @Model.Description, @Model.Price @Model.Stock<br>
-</item>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>ID</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+
+    @foreach (var item in @Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.ItemId</td>
+            <td>@item.Price</td>
+            <td>@item.Stock</td>
+        </tr>
+    }
+</table>
