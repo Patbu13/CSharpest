@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Classes",
+    "\\Content",
     "\\Controllers",
     "\\data",
     "\\Views",
     "\\Views\\Storefront"
   ],
-  "SelectedNode": "\\Views\\Storefront\\Cart.cshtml",
+  "SelectedNode": "\\Classes\\InventoryLoader.cs",
   "PreviewInSolutionExplorer": false
 }
