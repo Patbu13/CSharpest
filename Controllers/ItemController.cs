@@ -22,5 +22,38 @@ namespace CSharpest.Controllers
             return items;
         }
 
+        [HttpPost("AddItemToCart")]
+        public string AddItemToCart(Guid cartID, Guid itemID, int quantity)
+        {
+            Item item = new Item(itemID); // get item from database using id
+            Cart cart = new Cart(cartID); // get cart from database using id
+
+            if (item != null && cart != null && quantity > 0 && item.Stock >= quantity)
+            {
+
+                if (Items.ContainsKey(item))
+                {
+                    int currQuant = cart.Items[item].Item1 + quantity;
+                    cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                }
+                else
+                {
+                    cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                }
+            }
+            else
+            {
+                if (item == null) { return "Failure: Cannot add 'null' to cart."; }
+                    
+                if (cart == null) { return "Failure: Cart does not exist."; }
+
+                if (quantity < 0) { return "Failure: Quantity must be positive."; }
+
+                if (item.Stock < quantity) { return "Failure: Not enough in stock."; }
+            }
+            return "Success!";
+        }
+
+
     }
 }
