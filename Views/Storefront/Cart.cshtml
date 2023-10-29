@@ -3,13 +3,32 @@
  Windows Prog 547
  Last Updated : 10/24/23
 -->
+<!--Loading dictionary list from Cart-->
+@model Dictionary<CSharpest.Classes.Item, int>
+
 @{
     ViewBag.Title = "Your Cart";
 }
 
 <h1>CSharpest Store: Your Cart</h1>
 
-<p>View items in your cart here.</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Price by Ounce</th>
+    </tr>
+
+    @foreach (var item in @Model)
+    {
+        <!-- <tr>
+             <td>@item.Name</td>
+             <td>@item.Price</td>
+         </tr>-->
+    }
+</table>
+
 
 <a href="/Storefront/welcome">
     <h3>[Go to back to Store]</h3>
