@@ -2,12 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Classes",
-    "\\Content",
-    "\\Controllers",
-    "\\data",
-    "\\Views",
-    "\\Views\\Storefront"
+    "\\Controllers"
   ],
-  "SelectedNode": "\\Classes\\InventoryLoader.cs",
+  "SelectedNode": "\\CSharpest.sln",
   "PreviewInSolutionExplorer": false
 }

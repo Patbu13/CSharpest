@@ -770,3 +770,15 @@ C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\data\inventory.json
 C:\Users\Savannah\Source\Repos\CSharpest\bin\Debug\net7.0\data\inventory.json
 C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cache
 C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cs
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.csproj.AssemblyReference.cache
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.AssemblyInfoInputs.cache
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.AssemblyInfo.cs
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.csproj.CoreCompileInputs.cache
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cache
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cs
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.dll
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\refint\CSharpest.dll
+C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\obj\Debug\net7.0\CSharpest.pdb
