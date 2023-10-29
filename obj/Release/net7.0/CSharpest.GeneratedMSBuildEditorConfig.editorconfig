@@ -9,25 +9,33 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSharpest
 build_property.RootNamespace = CSharpest
-build_property.ProjectDir = C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\
+build_property.ProjectDir = C:\Users\vivia\source\repos\CSharpest\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest
+build_property.MSBuildProjectDirectory = C:\Users\vivia\source\repos\CSharpest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/Cart.cshtml]
+[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/Checkout.cshtml]
+[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxPcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/Welcome.cshtml]
+=======
+[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxPcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Welcome.cshtml]
+>>>>>>> ae0bb650f929ff90a2f0e59ebeb3274c88e98e86
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -7,6 +7,6 @@
     "\\Views",
     "\\Views\\Storefront"
   ],
-  "SelectedNode": "\\Controllers\\StorefrontController.cs",
+  "SelectedNode": "\\Views\\Storefront\\Cart.cshtml",
   "PreviewInSolutionExplorer": false
 }

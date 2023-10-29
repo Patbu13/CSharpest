@@ -768,3 +768,5 @@ C:\Users\Savannah\Source\Repos\CSharpest\obj\Debug\net7.0\CSharpest.genruntimeco
 C:\Users\Savannah\Source\Repos\CSharpest\obj\Debug\net7.0\ref\CSharpest.dll
 C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\data\inventory.json
 C:\Users\Savannah\Source\Repos\CSharpest\bin\Debug\net7.0\data\inventory.json
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cache
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cs

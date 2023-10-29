@@ -10,20 +10,15 @@ public class Checkout
     private const decimal tax = 1.08m; // flat rate of 8% (for now)
     private const decimal shipping = 5.99m; // flat rate of $5.99
 
-    public Checkout()
-	{
-		
-	}
-
 	public decimal calculateTotal(Cart cart)
 	{
         decimal total = 0;
 		for (int i = 0; i < cart.Items.Count; i++)
 		{
-			KeyValuePair<CartItem, int> Item = cart.Items.ElementAt(i);
+			KeyValuePair<Item, int> Item = cart.Items.ElementAt(i);
 
 			// adds to total the cost of each item, times the quantity of that item
-			total += ((Item.Key.Item.Price) * (Item.Key.Quantity));
+			total += ((Item.Key.Price) * (Item.Value));
 		}
 
 		// adds tax to total; flat rate of 8% (for now)
