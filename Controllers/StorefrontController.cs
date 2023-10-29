@@ -38,6 +38,13 @@ namespace CSharpest
             {
                 return View();
             }
+
+            // GET: <StorefrontController>/orderConfirmation
+            [HttpGet("orderConfirmation")]
+            public ActionResult OrderConfirmation()
+            {
+                return View();
+            }
         }
     }
 }
