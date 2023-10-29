@@ -19,7 +19,7 @@ namespace CSharpest
             CartController cartController = new CartController();
             ItemController itemController = new ItemController();
             InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
-            Cart cart = new Cart(0);
+            Cart cart = new Cart();
 
             // GET: <StorefrontController>/welcome
             [HttpGet("welcome")]

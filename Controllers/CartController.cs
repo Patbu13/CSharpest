@@ -10,7 +10,7 @@ namespace CSharpest.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
-        Cart cart = new Cart(0);
+        Cart cart = new Cart();
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
         public Dictionary<Item, Tuple<int, decimal>> GetCartItems()

@@ -1028,3 +1028,15 @@ C:\Users\Patri\Source\Repos\Patbu13\CSharpest\obj\Debug\net7.0\refint\CSharpest.
 C:\Users\Patri\Source\Repos\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.pdb
 C:\Users\Patri\Source\Repos\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.genruntimeconfig.cache
 C:\Users\Patri\Source\Repos\Patbu13\CSharpest\obj\Debug\net7.0\ref\CSharpest.dll
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.csproj.AssemblyReference.cache
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.AssemblyInfoInputs.cache
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.AssemblyInfo.cs
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.csproj.CoreCompileInputs.cache
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cache
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.RazorAssemblyInfo.cs
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.dll
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\refint\CSharpest.dll
+C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\obj\Debug\net7.0\CSharpest.pdb
