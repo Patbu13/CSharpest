@@ -2,15 +2,15 @@
 using CSharpest.Classes;
 using System.Collections.Generic;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
+//	Last modified by: Patrick Burroughs
+//	Windows Prog 547
+//	Last Updated : 10/29/23
 namespace CSharpest.Controllers
 {
     [Route("[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
-        Cart cart = new Cart();
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
         public Dictionary<Item, Tuple<int, decimal>> GetCartItems()
@@ -19,68 +19,76 @@ namespace CSharpest.Controllers
             return cartItems;
         }
 
-        // GET api/<CartController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
-        // POST api/<CartController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("AddItemToCart")]
+        public string AddItemToCart(Guid cartID, Guid itemID, int quantity)
         {
-        }
+            Item item = new Item(itemID); // get item from database using id
+            Cart cart = new Cart(cartID); // get cart from database using id
 
-        // PUT api/<CartController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<CartController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-
-        // Add an item to the cart
-        public void AddItem(Item item, int quantity)
-        {
-
-            if (item != null && quantity > 0 && item.Stock >= quantity)
+            if (item != null && cart != null && quantity > 0 && item.Stock >= quantity)
             {
 
-                if (Items.ContainsKey(item))
+                if (cart.Items.ContainsKey(item))
                 {
-                    int currQuant = Items[item].Item1 + quantity;
-                    Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    int currQuant = cart.Items[item].Item1 + quantity;
+                    cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                 }
                 else
                 {
-                    Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                    cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                }
+            }
+            else
+            {
+                if (item == null) { return "Failure: Cannot add 'null' to cart."; }
+
+                if (cart == null) { return "Failure: Cart does not exist."; }
+
+                if (quantity < 0) { return "Failure: Quantity must be positive."; }
+
+                if (item.Stock < quantity) { return "Failure: Not enough in stock."; }
+            }
+            return "Success!";
+        }
+
+        // Add an item to the cart
+        public void AddItem(Guid cartID, Item item, int quantity)
+        {
+            //get cart from ID
+            if (item != null && quantity > 0 && item.Stock >= quantity)
+            {
+
+                if (cart.Items.ContainsKey(item))
+                {
+                    int currQuant = cart.Items[item].Item1 + quantity;
+                    cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                }
+                else
+                {
+                    cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
                 }
             }
         }
 
         // Remove an item from the cart
-        public void RemoveItem(Item item, int quantity)
+        public void RemoveItem(Guid cartID, Item item, int quantity)
         {
-
+            //get cart from ID
             if (item != null && quantity > 0)
             {
 
-                if (Items.ContainsKey(item))
+                if (cart.Items.ContainsKey(item))
                 {
-                    int currQuant = Items[item].Item1;
+                    int currQuant = cart.Items[item].Item1;
                     if (currQuant > quantity)
                     {
                         currQuant -= quantity;
-                        Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                        cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                     }
                     else
                     {
-                        Items.Remove(item);
+                        cart.Items.Remove(item);
                     }
                 }
             }
