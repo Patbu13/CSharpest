@@ -9,9 +9,11 @@
     ViewBag.Title = "CSharpest Store";
 }
 
+<link href="~/Content/Welcome.css" rel="stylesheet" type="text/css" />
+
 <h1>Welcome to the CSharpest Store!</h1>
 
-<a href="/Storefront/cart">
+<a href="/Storefront/cart" id="CartLink">
     <h3>[Go to Cart]</h3>
 </a>
 
@@ -22,9 +24,10 @@
         <th>Name</th>
         <th>Description</th>
         <!-- <th>ID</th> -->
-        <th>Price (per oz)</th>
+        <th>Price </br>
+            (per oz)</th>
         <th>Stock</th>
-        <th>Quantity</th>
+        <th>Quantity (oz)</th>
         <th>Add to Cart</th>
     </tr>
 
@@ -36,6 +39,13 @@
             <!-- <td>item.ItemId</td> -->
             <td>@item.Price</td>
             <td>@item.Stock</td>
+            <td><input type="text" name="InputField" value="Quantity Needed (oz)" /></td>
+            <td>
+                <!-- Add in link to Add Item to Cart-->
+                <a href="#">
+                    <h4>[Add to Cart]</h4>
+                </a> 
+             </td>
         </tr>
     }
 </table>
