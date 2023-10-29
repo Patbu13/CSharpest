@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zmQNK/nV3I0pqng8AFsPCeHtPvvF+qLhzhv0USAsf6V4gOccbSMR0PagXRISqH42lYNrTiaARHLL7nmG1U6smA==",
+  "dgSpecHash": "IjwPcn8+ixXH6t+i9iOmis0hwRfu7bFgHbgRniqV4+zVzyLR7Bp9kHLtqmFzId6KKj/X7vDWMZKi6Bn3PF7ANg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
   "expectedPackageFiles": [
@@ -234,12 +234,5 @@
     "C:\\Users\\Savannah\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Savannah\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
