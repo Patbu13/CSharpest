@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "y7c+hjDdf5CBOVgHv7FlV/JcC/6WToGBlOzj8tSulLLUl9GkW8Qaxji54h7AbCArOTMrjqgGExIEkik4d/YuzQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
+=======
+  "dgSpecHash": "sGJ0aIh9nIvqGSd/93kdjmAModJ3Y4bDkBn/s4a+Jqg6kePTRPIflyjj9ZEPHTgjULVfhhxUfZvnnkyeggpsIw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj",
+>>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
   "expectedPackageFiles": [
     "C:\\Users\\David Eta\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\David Eta\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

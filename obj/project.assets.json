@@ -11671,19 +11671,37 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\David Eta\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Patri\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
       "projectName": "CSharpest",
       "projectPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
       "packagesPath": "C:\\Users\\David Eta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj",
+      "projectName": "CSharpest",
+      "projectPath": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj",
+      "packagesPath": "C:\\Users\\Patri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\obj\\",
+>>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
