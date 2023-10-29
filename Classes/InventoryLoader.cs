@@ -28,10 +28,6 @@ namespace CSharpest.Classes
                 Item item = i.ToObject<Item>();
                 storeInventory.Add(item);
             }
-            //using StreamReader reader = new StreamReader(_filepath);
-            //var json = reader.ReadToEnd();
-            //List<Item> storeInventory = JsonSerializer.Deserialize<List<Item>>(json);
-            //SortedSet<Item> storeInventory = JsonSerializer.Deserialize<SortedSet<Item>>(json);
 
             return storeInventory;
         }
