@@ -7,7 +7,10 @@
 //  Manages the checkout procedure from cart -> transaction (not sure if needed)
 public class Checkout
 {
-	public Checkout()
+    private const decimal tax = 1.08m; // flat rate of 8% (for now)
+    private const decimal shipping = 5.99m; // flat rate of $5.99
+
+    public Checkout()
 	{
 		
 	}

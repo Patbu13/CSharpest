@@ -11667,24 +11667,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vivia\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\David Eta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj",
+      "projectUniqueName": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
       "projectName": "CSharpest",
-      "projectPath": "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj",
-      "packagesPath": "C:\\Users\\vivia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vivia\\source\\repos\\CSharpest\\obj\\",
+      "projectPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
+      "packagesPath": "C:\\Users\\David Eta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vivia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
