@@ -1,39 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj": {}
+    "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj": {
+    "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
+        "projectUniqueName": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
         "projectName": "CSharpest",
-        "projectPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
-        "packagesPath": "C:\\Users\\David Eta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\obj\\",
-=======
-    "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj",
-        "projectName": "CSharpest",
-        "projectPath": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\CSharpest.csproj",
-        "packagesPath": "C:\\Users\\Patri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Patri\\Source\\Repos\\Patbu13\\CSharpest\\obj\\",
->>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
+        "projectPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
+        "packagesPath": "C:\\Users\\Savannah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\Patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 9af01cbdbf8861c9f6feda939e0dbbd4ff288bf7
+          "C:\\Users\\Savannah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
