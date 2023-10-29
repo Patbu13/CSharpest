@@ -9,6 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSharpest
 build_property.RootNamespace = CSharpest
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Savannah\Source\Repos\CSharpest\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
@@ -25,5 +26,23 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDaGVja291dC5j
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Savannah/Source/Repos/CSharpest/Views/Storefront/Welcome.cshtml]
+=======
+build_property.ProjectDir = C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\David Eta\Desktop\Academics\23Fall\CS547\CSharpest
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/David Eta/Desktop/Academics/23Fall/CS547/CSharpest/Views/Storefront/Welcome.cshtml]
+>>>>>>> 1ed4bf440fe78d7cb0861c743c7cac7e5e6e05e9
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
