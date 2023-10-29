@@ -8,27 +8,27 @@
 public class Cart
 {
     public int CartID { get; set; }
-    public Dictionary<CartItem, int>? Items { get; set; }
+    public Dictionary<Item, int>? Items { get; set; }
     public Cart(int cartID)
     {
         CartID = cartID;
-        Items = new Dictionary<CartItem, int>();
+        Items = new Dictionary<Item, int>();
     }
 
     // Add an item to the cart
     public void AddItem(Item item, int quantity)
-    {
-        if (item != null && quantity > 0)
-        {
-            CartItem cartItem = new CartItem { Item = item, Quantity = quantity };
+    { 
 
-            if (Items.ContainsKey(cartItem))
+        if (item != null && quantity > 0 && item.Stock >= quantity)
+        {
+
+            if (Items.ContainsKey(item))
             {
-                Items[cartItem] += quantity;
+                Items[item] += quantity;
             }
             else
             {
-                Items.Add(cartItem, quantity);
+                Items.Add(item, quantity);
             }
         }
     }
@@ -38,18 +38,17 @@ public class Cart
     {
         if (item != null && quantity > 0)
         {
-            CartItem cartItem = new CartItem { Item = item, Quantity = 0 };
 
-            if (Items.ContainsKey(cartItem))
+            if (Items.ContainsKey(item))
             {
-                int currentQuantity = Items[cartItem];
+                int currentQuantity = Items[item];
                 if (currentQuantity > quantity)
                 {
-                    Items[cartItem] -= quantity;
+                    Items[item] -= quantity;
                 }
                 else
                 {
-                    Items.Remove(cartItem);
+                    Items.Remove(item);
                 }
             }
         }
