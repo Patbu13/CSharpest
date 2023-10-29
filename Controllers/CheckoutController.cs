@@ -13,7 +13,7 @@ namespace CSharpest
         public class CheckoutController : ControllerBase
         {
             
-            // takes in a new card and then saves it to user object
+            /*// takes in a new card and then saves it to user object
             // POST: <CheckoutController>/address
             [HttpPost("{card}")]
             public bool takeCardInput(Card card, User user)
@@ -63,7 +63,7 @@ namespace CSharpest
                     return false;
                 }
                 return true;
-            }
+            }*/
 
 
             // POST: <CheckoutController>/address
