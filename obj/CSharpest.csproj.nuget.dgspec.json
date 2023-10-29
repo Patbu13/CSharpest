@@ -1,7 +1,11 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj": {}
+=======
     "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj": {}
+>>>>>>> ae0bb650f929ff90a2f0e59ebeb3274c88e98e86
   },
   "projects": {
     "C:\\Users\\Patri\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj": {
@@ -17,8 +21,12 @@
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> ae0bb650f929ff90a2f0e59ebeb3274c88e98e86
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +72,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
