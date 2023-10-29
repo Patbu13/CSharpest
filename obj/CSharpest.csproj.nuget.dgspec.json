@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj": {}
   },
   "projects": {
@@ -16,22 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
-        "projectName": "CSharpest",
-        "projectPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
-        "packagesPath": "C:\\Users\\Savannah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Savannah\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 07c8ea9cc71a8035c7867ce0a1345e45a4c06ed4
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,6 +57,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

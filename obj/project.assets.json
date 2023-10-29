@@ -2022,15 +2022,15 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/13.0.1": {
+      "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
             "related": ".xml"
           }
         }
@@ -7225,14 +7225,15 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/13.0.1": {
-      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
-      "path": "newtonsoft.json/13.0.1",
+      "path": "newtonsoft.json/13.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "README.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -7241,13 +7242,15 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
         "lib/netstandard1.3/Newtonsoft.Json.dll",
         "lib/netstandard1.3/Newtonsoft.Json.xml",
         "lib/netstandard2.0/Newtonsoft.Json.dll",
         "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
@@ -11663,20 +11666,16 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.12",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.9",
+      "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\David Eta\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Savannah\\.nuget\\packages\\": {}
->>>>>>> 07c8ea9cc71a8035c7867ce0a1345e45a4c06ed4
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
       "projectName": "CSharpest",
       "projectPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\CSharpest\\CSharpest.csproj",
@@ -11685,16 +11684,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
-      "projectName": "CSharpest",
-      "projectPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
-      "packagesPath": "C:\\Users\\Savannah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Savannah\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 07c8ea9cc71a8035c7867ce0a1345e45a4c06ed4
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11737,6 +11726,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[7.0.9, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
