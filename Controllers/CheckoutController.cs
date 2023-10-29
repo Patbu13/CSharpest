@@ -13,7 +13,7 @@ namespace CSharpest
         public class CheckoutController : ControllerBase
         {
             
-            // takes in a new card and then saves it to user object
+            /*// takes in a new card and then saves it to user object
             // POST: <CheckoutController>/address
             [HttpPost("{card}")]
             public bool takeCardInput(Card card, User user)
@@ -63,7 +63,7 @@ namespace CSharpest
                     return false;
                 }
                 return true;
-            }
+            }*/
 
 
             // POST: <CheckoutController>/address
@@ -88,12 +88,13 @@ namespace CSharpest
             public decimal calculateTotal(Cart cart)
             {
                 decimal total = 0;
+
                 for (int i = 0; i < cart.Items.Count; i++)
                 {
-                    KeyValuePair<Item, int> Item = cart.Items.ElementAt(i);
+                    KeyValuePair<Item, Tuple<int, decimal>> currItem = cart.Items.ElementAt(i);
 
                     // adds to total the cost of each item, times the quantity of that item
-                    total += ((Item.Key.Price) * (Item.Value));
+                    total += ((currItem.Key.Price) * (currItem.Value.Item1));
                 }
 
                 // adds tax to total; flat rate of 8% (for now)
