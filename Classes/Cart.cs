@@ -1,4 +1,6 @@
-﻿namespace CSharpest.Classes;
+﻿using Microsoft.AspNetCore.Http.Features;
+
+namespace CSharpest.Classes;
 
 //	Last modified by: Patrick Burroughs
 //	Windows Prog 547
@@ -8,11 +10,15 @@
 public class Cart
 {
     public int CartID { get; set; }
-    public Dictionary<Item, int>? Items { get; set; }
+    //public Dictionary<Item, int>? Items { get; set; }
+    public Dictionary<Item, Tuple<int, decimal>>? Items { get; set; }
+    
+
+    // public TotalCartPrice;
     public Cart(int cartID)
     {
         CartID = cartID;
-        Items = new Dictionary<Item, int>();
+        Items = new Dictionary<Item, Tuple<int, decimal>>(); // new Dictionary<Item, int>();
     }
 
     // Add an item to the cart
@@ -24,11 +30,12 @@ public class Cart
 
             if (Items.ContainsKey(item))
             {
-                Items[item] += quantity;
+                int currQuant = Items[item].Item1 + quantity;
+                Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
             }
             else
             {
-                Items.Add(item, quantity);
+                Items.Add(item, Tuple.Create(quantity, quantity*item.Price));
             }
         }
     }
@@ -36,15 +43,17 @@ public class Cart
     // Remove an item from the cart
     public void RemoveItem(Item item, int quantity)
     {
+        
         if (item != null && quantity > 0)
         {
 
             if (Items.ContainsKey(item))
             {
-                int currentQuantity = Items[item];
-                if (currentQuantity > quantity)
+                int currQuant = Items[item].Item1;
+                if (currQuant > quantity)
                 {
-                    Items[item] -= quantity;
+                    currQuant -= quantity;
+                    Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                 }
                 else
                 {
