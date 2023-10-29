@@ -115,6 +115,7 @@ namespace CSharpest
 
                     // adds to total the cost of each item, times the quantity of that item
                     total += ((currItem.Key.Price) * (currItem.Value.Item1));
+                    // total += currItem.Value.Item2;
                 }
 
                 // adds tax to total; flat rate of 8% (for now)
