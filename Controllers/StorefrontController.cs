@@ -23,7 +23,8 @@ namespace CSharpest
             // GET: <StorefrontController>/welcome
             [HttpGet("welcome")]
             public ActionResult Welcome()
-            {         
+            {
+                ViewBag.Cart = cartController.GetCartItems(currUserID);
                 return View(itemController.GetAllItems());
             }
 
@@ -32,14 +33,14 @@ namespace CSharpest
             public ActionResult Cart()
             {
 
-                return View(cartController.GetCartItems(new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1")));
+                return View(cartController.GetCartItems(currUserID));
             }
 
             // GET: <StorefrontController>/checkout
             [HttpGet("checkout")]
             public ActionResult Checkout()
             {
-                return View(cartController.GetCartItems(new Guid ("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1")));
+                return View(cartController.GetCartItems(currUserID));
             }
 
             // GET: <StorefrontController>/orderConfirmation
@@ -49,7 +50,16 @@ namespace CSharpest
                 return View();
             }
 
-   
+            // POST: <StorefrontController>/addToCart
+            [HttpPost("welcome")]
+            public ActionResult Welcome(AddItemReqParams itemParams)
+            {
+                cartController.AddItemToCart(itemParams);
+                return PartialView("Welcome");
+            }
+
+
+
         }
     }
 }
