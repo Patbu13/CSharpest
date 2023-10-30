@@ -1,5 +1,5 @@
 ﻿<!--
- Last modified by: Savannah Noblitt
+ Last modified by: Patrick Burroughs
  Windows Prog 547
  Last Updated : 10/30/23
 --> 
@@ -46,7 +46,7 @@
             <!-- <td>item.ItemId</td> -->
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            <td><input type="text" name="InputField" value="Quantity Needed (oz)" /></td>
+            <td><input type="text" name="InputField" placeholder="# (oz)" /></td>
             <td>
                 <!-- Add in link to Add Item to Cart-->
                 <button onclick="myFunction()">Add to Cart</button>
@@ -57,8 +57,73 @@
 </table>
 
 <style>
-    h1 {text-align:center;}
-    h3 {text-align:right;}
-    td {text-align:center; padding:10px;}
-    table {border: 2px solid black;}
+    body {
+        background-color: #ececec;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-variant: small-caps;
+        color: #142d4c;
+    }
+
+    h2 {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-style: italic;
+        font-variant: small-caps;
+        margin-left: 100px;
+        color: #385170;
+    }
+
+    h3 {
+        text-align: right;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #142d4c;
+    }
+
+    p {
+        margin-left: 100px;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-weight: bold;
+        color: #385170;
+    }
+
+    th {
+        color: #142d4c;
+    }
+
+    td:first-child, td:nth-child(3) {
+        font-weight: bold
+    }
+
+    td {
+        text-align: center;
+        padding: 10px;
+        font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia,serif;
+        border-bottom: 1px solid #ddd;
+    }
+
+    button {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+        font-weight: bold;
+    }
+
+    input::placeholder {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+    }
+
+    tr:not(:first-child):hover {
+        background-color: #9fd3c7;
+    }
+
+    table {
+        border: 2px solid black;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        margin-left: auto;
+        margin-right: auto;
+        color: #385170;
+    }
 </style>
