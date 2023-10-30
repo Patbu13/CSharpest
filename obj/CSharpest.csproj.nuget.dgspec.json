@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj": {}
+    "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\cs547_proj\\CSharpest\\CSharpest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj": {
+    "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\cs547_proj\\CSharpest\\CSharpest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
+        "projectUniqueName": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\cs547_proj\\CSharpest\\CSharpest.csproj",
         "projectName": "CSharpest",
-        "projectPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\CSharpest.csproj",
-        "packagesPath": "C:\\Users\\Savannah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Savannah\\Source\\Repos\\CSharpest\\obj\\",
+        "projectPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\cs547_proj\\CSharpest\\CSharpest.csproj",
+        "packagesPath": "C:\\Users\\David Eta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\David Eta\\Desktop\\Academics\\23Fall\\CS547\\cs547_proj\\CSharpest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Savannah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David Eta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

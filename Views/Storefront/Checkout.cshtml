@@ -3,17 +3,44 @@
  Windows Prog 547
  Last Updated : 10/24/23
 -->
+@model Dictionary<CSharpest.Classes.Item, Tuple<int, decimal>>
+
 @{
     ViewBag.Title = "Checkout";
 }
 
 <h1>CSharpest Store: Your Total</h1>
 
-<p>Proceed to Checkout here.</p>
-
 <a href="/Storefront/welcome">
     <h3>[Go to back to Store]</h3>
 </a>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Price by Ounce</th>
+    </tr>
+
+    @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
+    {
+        <tr>
+            <td>@item.Key.Name</td>
+            <td>@item.Value.Item1</td>
+            <td>@item.Value.Item2</td>
+            <td>@item.Key.Price</td>
+
+        </tr>
+    }
+</table>
+
+<hr />
+<h3>Shipping Costs</h3>
+<h3>Taxes</h3>
+<hr />
+<h3>Total Cost</h3>
+
 
 <a href="/Storefront/cart">
     <h3>[Go to back to Cart]</h3>
