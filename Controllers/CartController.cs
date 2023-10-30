@@ -2,6 +2,7 @@
 using CSharpest.Classes;
 using System.Collections.Generic;
 using System.Collections;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 //	Last modified by: Patrick Burroughs
 //	Windows Prog 547
@@ -14,13 +15,18 @@ namespace CSharpest.Controllers
     {
         InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         UserLoader userLoader = new UserLoader(@".\data\users.json");
+
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
         public Dictionary<Item, Tuple<int, decimal>> GetCartItems(Guid UserID)
         {
             List<User> users = userLoader.loadUsers();
             User user = users.Find(x => x.AccountID == UserID);
-            Cart newUser = user.Cart;
+            if (user == null)
+            {
+                user = new User("Example", "User", "exampleuser@email.com", "ExamplePW","phone", "address", new Cart());
+            }
+
             Dictionary < Item, Tuple<int, decimal> > cartItems = user.Cart.Items;
             return cartItems;
         }
