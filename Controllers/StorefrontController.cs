@@ -28,6 +28,14 @@ namespace CSharpest
                 return View(itemController.GetAllItems());
             }
 
+            // POST: <StorefrontController>/addToCart
+            [HttpPost]
+            public ActionResult Welcome(AddItemReqParams itemParams)
+            {
+                cartController.AddItemToCart(itemParams);
+                return PartialView("Welcome");
+            }
+
             // GET: <StorefrontController>/cart
             [HttpGet("cart")]
             public ActionResult Cart()
@@ -49,16 +57,6 @@ namespace CSharpest
             {
                 return View();
             }
-
-            // POST: <StorefrontController>/addToCart
-            [HttpPost("welcome")]
-            public ActionResult Welcome(AddItemReqParams itemParams)
-            {
-                cartController.AddItemToCart(itemParams);
-                return PartialView("Welcome");
-            }
-
-
 
         }
     }
