@@ -1,7 +1,7 @@
 ﻿<!--
  Last modified by: Savannah Noblitt
  Windows Prog 547
- Last Updated : 10/29/23
+ Last Updated : 10/30/23
 --> 
 @model List<CSharpest.Classes.Item>
 
@@ -9,7 +9,7 @@
     ViewBag.Title = "CSharpest Store";
 }
 
-<link href="/Content/Welcome.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Welcome.css" rel="stylesheet" type="text/css" />
 
 <script>
     function addItemToCart() {
@@ -24,7 +24,7 @@
 </a>
 
 <h2>Shop Our Store's Current Inventory:</h2>
-<p>All products sold by the ounce (minimum purchase: 1 oz)</p>
+<p>Disclaimer: All products sold by the ounce (minimum purchase: 1 oz)</p>
 
 <table class="table">
     <tr>
@@ -49,12 +49,16 @@
             <td><input type="text" name="InputField" value="Quantity Needed (oz)" /></td>
             <td>
                 <!-- Add in link to Add Item to Cart-->
-
                 <button onclick="myFunction()">Add to Cart</button>
-                <a href="#">
-                    <h4>[Add to Cart]</h4>
-                </a> 
+                
              </td>
         </tr>
     }
 </table>
+
+<style>
+    h1 {text-align:center;}
+    h3 {text-align:right;}
+    td {text-align:center; padding:10px;}
+    table {border: 2px solid black;}
+</style>
