@@ -1,45 +1,37 @@
 ﻿<!--
-Last modified by: Savannah Noblitt
+ Last modified by: Patrick Burroughs
  Windows Prog 547
- Last Updated : 10/29/23
+ Last Updated : 10/30/23
 --> 
-@model List<CSharpest.Classes.Item>;
-
+@model List<CSharpest.Classes.Item>
 
 @{
     ViewBag.Title = "CSharpest Store";
 }
 
-<link href="/Content/Welcome.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Welcome.css" rel="stylesheet" type="text/css" />
 
-<!--Not using this anymore-->
 <script>
-    function addItemToCart(id) {
-
-        let itemId = "#" + id;
-        let quantity = document.getElementById(itemId).value;
-
-
+    function addItemToCart() {
+        alert("Hello");
     }
 </script>
 
-
-
-
-<h1>Welcome to the CSharpest Store!</h1>
+<h1>Welcome to CSharpest's Candies!</h1>
 
 <a href="/Storefront/cart" id="CartLink">
     <h3>[Go to Cart]</h3>
 </a>
 
 <h2>Shop Our Store's Current Inventory:</h2>
-<p>All products sold by the ounce (minimum purchase: 1 oz)</p>
+<p>Disclaimer: All products sold by the ounce (minimum purchase: 1 oz)</p>
 
 <table class="table">
     <tr>
         <th>Name</th>
         <th>Description</th>
-        <th>Price </br>
+        <!-- <th>ID</th> -->
+        <th>Price <br/>
             (per oz)</th>
         <th>Stock</th>
         <th>Quantity (oz)</th>
@@ -51,20 +43,87 @@ Last modified by: Savannah Noblitt
         <tr>
             <td>@item.Name</td>
             <td>@item.Description</td>
+            <!-- <td>item.ItemId</td> -->
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            @using (@Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
-                 {
-                    <td><input type="text" id="#@item.Name" name="Quantity" value="Quantity Needed" />
-                    <input type="hidden" id="#@item.Name" name="CartID" value="@item.ItemId" />
-
-                    <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />
-                </td>
-                    <td>
-                        <input id="@item.Name" type="submit" value="Add to Cart" />
-                    </td>
-                 }            
+            <td><input type="text" name="InputField" placeholder="# (oz)" /></td>
+            <td>
+                <!-- Add in link to Add Item to Cart-->
+                <button onclick="myFunction()">Add to Cart</button>
+                
+             </td>
         </tr>
-
     }
 </table>
+
+<style>
+    body {
+        background-color: #ececec;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-variant: small-caps;
+        color: #142d4c;
+    }
+
+    h2 {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-style: italic;
+        font-variant: small-caps;
+        margin-left: 100px;
+        color: #385170;
+    }
+
+    h3 {
+        text-align: right;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #142d4c;
+    }
+
+    p {
+        margin-left: 100px;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-weight: bold;
+        color: #385170;
+    }
+
+    th {
+        color: #142d4c;
+    }
+
+    td:first-child, td:nth-child(3) {
+        font-weight: bold
+    }
+
+    td {
+        text-align: center;
+        padding: 10px;
+        font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia,serif;
+        border-bottom: 1px solid #ddd;
+    }
+
+    button {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+        font-weight: bold;
+    }
+
+    input::placeholder {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+    }
+
+    tr:not(:first-child):hover {
+        background-color: #9fd3c7;
+    }
+
+    table {
+        border: 2px solid black;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        margin-left: auto;
+        margin-right: auto;
+        color: #385170;
+    }
+</style>
