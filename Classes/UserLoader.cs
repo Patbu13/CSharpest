@@ -5,18 +5,18 @@ using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace CSharpest.Classes
 {
-    public class InventoryLoader
+    public class UserLoader
     {
         private readonly string _filepath;
 
-        public InventoryLoader(string filepath) {
+        public UserLoader(string filepath) {
             _filepath = filepath;
         }
 
 
-        public List<Item> loadInventory()
+        public List<User> loadUsers()
         {
-            List<Item> storeInventory = new List<Item>();
+            List<User> users = new List<User>();
 
 
             using StreamReader reader = new StreamReader(_filepath);
@@ -25,11 +25,11 @@ namespace CSharpest.Classes
 
             foreach (var i in jarray)
             {
-                Item item = i.ToObject<Item>();
-                storeInventory.Add(item);
+                User user = i.ToObject<User>();
+                users.Add(user);
             }
 
-            return storeInventory;
+            return users;
         }
 
 

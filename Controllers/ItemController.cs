@@ -16,9 +16,9 @@ namespace CSharpest.Controllers
         InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         // GET: <ItemController>/GetAllItems
         [HttpGet("GetAllItems")]
-        public SortedSet<Item> GetAllItems()
+        public List<Item> GetAllItems()
         {
-            SortedSet<Item> items = inventoryLoader.loadInventory();
+            List<Item> items = inventoryLoader.loadInventory();
             return items;
         }
 

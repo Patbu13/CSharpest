@@ -9,25 +9,25 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSharpest
 build_property.RootNamespace = CSharpest
-build_property.ProjectDir = C:\Users\vivia\source\repos\CSharpest\
+build_property.ProjectDir = C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\vivia\source\repos\CSharpest
+build_property.MSBuildProjectDirectory = C:\Users\Patri\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\Patbu13\CSharpest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Cart.cshtml]
+[C:/Users/Patri/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/Patbu13/CSharpest/Views/Storefront/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Checkout.cshtml]
+[C:/Users/Patri/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/Patbu13/CSharpest/Views/Storefront/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
+[C:/Users/Patri/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/Patbu13/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxPcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Welcome.cshtml]
+[C:/Users/Patri/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/Patbu13/CSharpest/Views/Storefront/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

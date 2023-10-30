@@ -8,10 +8,10 @@
 public class Transaction
 {
 	public Guid TransID { get; set; }
-	public List<Item> Items { get; set; }
+	public IEnumerable<Item> Items { get; set; }
 	public DateTime DateTime { get; set; }
 
-	public Transaction(Guid _ID, List<Item> _items, DateTime _DT)
+	public Transaction(Guid _ID, IEnumerable<Item> _items, DateTime _DT)
 	{
 		TransID = _ID;
 		Items = _items;

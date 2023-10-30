@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Classes",
-    "\\Views",
-    "\\Views\\Storefront"
+    ""
   ],
-  "SelectedNode": "\\Views\\Storefront\\Checkout.cshtml",
   "PreviewInSolutionExplorer": false
 }
