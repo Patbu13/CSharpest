@@ -61,28 +61,6 @@ namespace CSharpest.Controllers
             return "Success!";
         }
 
-        // Add an item to the cart
-        //public void AddItem(Guid cartID, Item item, int quantity)
-        //{
-        //    //get cart from ID
-        //    List<User> users = userLoader.loadUsers();
-        //    User user = users.Find(x => x.AccountID == cartID); // get user from database using id
-
-        //    if (item != null && quantity > 0 && item.Stock >= quantity)
-        //    {
-
-        //        if (user.UserCart.Items.ContainsKey(item))
-        //        {
-        //            int currQuant = user.UserCart.Items[item].Item1 + quantity;
-        //            user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
-        //        }
-        //        else
-        //        {
-        //            user.UserCart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
-        //        }
-        //    }
-        //}
-
         [HttpPost("RemoveItemFromCart")]
 
         // Remove an item from the cart

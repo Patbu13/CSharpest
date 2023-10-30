@@ -18,8 +18,7 @@ namespace CSharpest
         {
             CartController cartController = new CartController();
             ItemController itemController = new ItemController();
-            InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
-            Cart cart = new Cart();
+            Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
             // GET: <StorefrontController>/welcome
             [HttpGet("welcome")]
@@ -33,14 +32,14 @@ namespace CSharpest
             public ActionResult Cart()
             {
 
-                return View(cartController.GetCartItems(Guid.NewGuid()));
+                return View(cartController.GetCartItems(new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1")));
             }
 
             // GET: <StorefrontController>/checkout
             [HttpGet("checkout")]
             public ActionResult Checkout()
             {
-                return View(cartController.GetCartItems(Guid.NewGuid()));
+                return View(cartController.GetCartItems(new Guid ("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1")));
             }
 
             // GET: <StorefrontController>/orderConfirmation
