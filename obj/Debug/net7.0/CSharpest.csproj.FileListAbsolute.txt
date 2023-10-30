@@ -1299,3 +1299,10 @@ C:\Users\David Eta\Desktop\Academics\23Fall\CS547\cs547_proj\CSharpest\obj\Debug
 C:\Users\David Eta\Desktop\Academics\23Fall\CS547\cs547_proj\CSharpest\obj\Debug\net7.0\CSharpest.genruntimeconfig.cache
 C:\Users\David Eta\Desktop\Academics\23Fall\CS547\cs547_proj\CSharpest\obj\Debug\net7.0\ref\CSharpest.dll
 C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\data\users.json
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\System.Web.Mvc.dll
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\System.Web.Razor.dll
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\System.Web.Helpers.dll
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\System.Web.WebPages.Deployment.dll
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\System.Web.WebPages.Razor.dll
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\System.Web.WebPages.dll
+C:\Users\vivia\source\repos\CSharpest\bin\Debug\net7.0\Microsoft.Web.Infrastructure.dll

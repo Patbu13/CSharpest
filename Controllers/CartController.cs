@@ -58,6 +58,9 @@ namespace CSharpest.Controllers
 
                 if (item.Stock < itemParams.Quantity) { return "Failure: Not enough in stock."; }
             }
+
+            RedirectToAction("Cart");
+         
             return "Success!";
         }
 

@@ -1,4 +1,4 @@
-[
+  [
   {
     "name": "Cadbury Bar",
     "description": "Iconic dairy milk bar ",
@@ -13,12 +13,13 @@
     "price": "0.31",
     "stock": 100
   },
-  {
-    "name": "100 Grand",
-    "description": "Fun-sized choclate bar with caramel and crispy rice",
-    "itemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
-    "stock": 100
-  },
+    {
+      "name": "100 Grand",
+      "description": "Fun-sized choclate bar with caramel and crispy rice",
+      "itemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
+      "price": "0.98",
+      "stock": 100
+    },
   {
     "name": "War Heads",
     "description": "Extremely sour hard candy",
