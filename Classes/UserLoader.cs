@@ -22,7 +22,6 @@ namespace CSharpest.Classes
         {
             List<User> users = new List<User>();
 
-
             using StreamReader reader = new StreamReader(_filepath);
             var json = reader.ReadToEnd();
             var jarray = JArray.Parse(json);
