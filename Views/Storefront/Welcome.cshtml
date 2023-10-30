@@ -11,6 +11,12 @@
 
 <link href="/Content/Welcome.css" rel="stylesheet" type="text/css" />
 
+<script>
+    function addItemToCart() {
+        alert("Hello");
+    }
+</script>
+
 <h1>Welcome to the CSharpest Store!</h1>
 
 <a href="/Storefront/cart" id="CartLink">
@@ -18,6 +24,7 @@
 </a>
 
 <h2>Shop Our Store's Current Inventory:</h2>
+<p>All products sold by the ounce (minimum purchase: 1 oz)</p>
 
 <table class="table">
     <tr>
@@ -42,6 +49,8 @@
             <td><input type="text" name="InputField" value="Quantity Needed (oz)" /></td>
             <td>
                 <!-- Add in link to Add Item to Cart-->
+
+                <button onclick="myFunction()">Add to Cart</button>
                 <a href="#">
                     <h4>[Add to Cart]</h4>
                 </a> 
