@@ -14,9 +14,9 @@ namespace CSharpest.Classes
         }
 
 
-        public SortedSet<User> loadInventory()
+        public List<User> loadUsers()
         {
-            SortedSet<User> users = new SortedSet<User>();
+            List<User> users = new List<User>();
 
 
             using StreamReader reader = new StreamReader(_filepath);

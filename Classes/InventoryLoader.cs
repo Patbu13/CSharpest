@@ -14,9 +14,9 @@ namespace CSharpest.Classes
         }
 
 
-        public SortedSet<Item> loadInventory()
+        public List<Item> loadInventory()
         {
-            SortedSet<Item> storeInventory = new SortedSet<Item>();
+            List<Item> storeInventory = new List<Item>();
 
 
             using StreamReader reader = new StreamReader(_filepath);

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CSharpest.Classes;
 using System.Collections.Generic;
+using System.Collections;
 
 //	Last modified by: Patrick Burroughs
 //	Windows Prog 547
@@ -11,11 +12,15 @@ namespace CSharpest.Controllers
     [ApiController]
     public class CartController : ControllerBase
     {
+        InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
+        UserLoader userLoader = new UserLoader(@".\data\users.json");
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
-        public Dictionary<Item, Tuple<int, decimal>> GetCartItems()
+        public Dictionary<Item, Tuple<int, decimal>> GetCartItems(Guid UserID)
         {
-            Dictionary < Item, Tuple<int, decimal> > cartItems = cart.Items;
+            List<User> users = userLoader.loadUsers();
+            User user = users.Find(x => x.AccountID == UserID);
+            Dictionary < Item, Tuple<int, decimal> > cartItems = user.UserCart.Items;
             return cartItems;
         }
 
@@ -23,27 +28,30 @@ namespace CSharpest.Controllers
         [HttpPost("AddItemToCart")]
         public string AddItemToCart(Guid cartID, Guid itemID, int quantity)
         {
-            Item item = new Item(itemID); // get item from database using id
-            Cart cart = new Cart(cartID); // get cart from database using id
+            List<Item> items = inventoryLoader.loadInventory();
+            Item item = items.Find(x => x.ItemId == itemID); // get item from database using id
 
-            if (item != null && cart != null && quantity > 0 && item.Stock >= quantity)
+            List<User> users = userLoader.loadUsers();
+            User user = users.Find(x => x.AccountID == cartID); // get user from database using id
+
+            if (item != null && user.UserCart != null && quantity > 0 && item.Stock >= quantity)
             {
 
-                if (cart.Items.ContainsKey(item))
+                if (user.UserCart.Items.ContainsKey(item))
                 {
-                    int currQuant = cart.Items[item].Item1 + quantity;
-                    cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    int currQuant = user.UserCart.Items[item].Item1 + quantity;
+                    user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                 }
                 else
                 {
-                    cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                    user.UserCart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
                 }
             }
             else
             {
                 if (item == null) { return "Failure: Cannot add 'null' to cart."; }
 
-                if (cart == null) { return "Failure: Cart does not exist."; }
+                if (user.UserCart == null) { return "Failure: Cart does not exist."; }
 
                 if (quantity < 0) { return "Failure: Quantity must be positive."; }
 
@@ -56,17 +64,20 @@ namespace CSharpest.Controllers
         public void AddItem(Guid cartID, Item item, int quantity)
         {
             //get cart from ID
+            List<User> users = userLoader.loadUsers();
+            User user = users.Find(x => x.AccountID == cartID); // get user from database using id
+
             if (item != null && quantity > 0 && item.Stock >= quantity)
             {
 
-                if (cart.Items.ContainsKey(item))
+                if (user.UserCart.Items.ContainsKey(item))
                 {
-                    int currQuant = cart.Items[item].Item1 + quantity;
-                    cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    int currQuant = user.UserCart.Items[item].Item1 + quantity;
+                    user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                 }
                 else
                 {
-                    cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                    user.UserCart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
                 }
             }
         }
@@ -75,20 +86,23 @@ namespace CSharpest.Controllers
         public void RemoveItem(Guid cartID, Item item, int quantity)
         {
             //get cart from ID
+            List<User> users = userLoader.loadUsers();
+            User user = users.Find(x => x.AccountID == cartID); // get user from database using id
+
             if (item != null && quantity > 0)
             {
 
-                if (cart.Items.ContainsKey(item))
+                if (user.UserCart.Items.ContainsKey(item))
                 {
-                    int currQuant = cart.Items[item].Item1;
+                    int currQuant = user.UserCart.Items[item].Item1;
                     if (currQuant > quantity)
                     {
                         currQuant -= quantity;
-                        cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                        user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                     }
                     else
                     {
-                        cart.Items.Remove(item);
+                        user.UserCart.Items.Remove(item);
                     }
                 }
             }
