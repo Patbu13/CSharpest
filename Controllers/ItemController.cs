@@ -24,9 +24,9 @@ namespace CSharpest.Controllers
 
         // POST: <ItemController>/addItemToCart
         [HttpPost("AddItemToCart")]
-        public ActionResult addItemToCart(Guid cartId, Guid itemId, int quantity)
+        public bool addItemToCart(AddItemReqParams itemParams)
         {
-            return View();
+            return true;
         }
 
     }

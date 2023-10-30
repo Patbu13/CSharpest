@@ -27,25 +27,25 @@ namespace CSharpest.Controllers
 
 
         [HttpPost("AddItemToCart")]
-        public string AddItemToCart(Guid cartID, Guid itemID, int quantity)
+        public string AddItemToCart(AddItemReqParams itemParams)
         {
             List<Item> items = inventoryLoader.loadInventory();
-            Item item = items.Find(x => x.ItemId == itemID); // get item from database using id
+            Item item = items.Find(x => x.ItemId == itemParams.ItemID); // get item from database using id
 
             List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == cartID); // get user from database using id
+            User user = users.Find(x => x.AccountID == itemParams.CartID); // get user from database using id
 
-            if (item != null && user.Cart != null && quantity > 0 && item.Stock >= quantity)
+            if (item != null && user.Cart != null && itemParams.Quantity > 0 && item.Stock >= itemParams.Quantity)
             {
 
                 if (user.Cart.Items.ContainsKey(item))
                 {
-                    int currQuant = user.Cart.Items[item].Item1 + quantity;
+                    int currQuant = user.Cart.Items[item].Item1 + itemParams.Quantity;
                     user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                 }
                 else
                 {
-                    user.Cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                    user.Cart.Items.Add(item, Tuple.Create(itemParams.Quantity, itemParams.Quantity * item.Price));
                 }
             }
             else
@@ -54,9 +54,9 @@ namespace CSharpest.Controllers
 
                 if (user.Cart == null) { return "Failure: Cart does not exist."; }
 
-                if (quantity < 0) { return "Failure: Quantity must be positive."; }
+                if (itemParams.Quantity < 0) { return "Failure: Quantity must be positive."; }
 
-                if (item.Stock < quantity) { return "Failure: Not enough in stock."; }
+                if (item.Stock < itemParams.Quantity) { return "Failure: Not enough in stock."; }
             }
             return "Success!";
         }
@@ -83,29 +83,29 @@ namespace CSharpest.Controllers
         //    }
         //}
 
-        [HttpPost("RemoveItemToCart")]
+        [HttpPost("RemoveItemFromCart")]
 
         // Remove an item from the cart
-        public void RemoveItem(Guid cartID, Item item, int quantity)
+        public void RemoveItem(RemoveItemReqParams itemParams)
         {
             //get cart from ID
             List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == cartID); // get user from database using id
+            User user = users.Find(x => x.AccountID == itemParams.CartID); // get user from database using id
 
-            if (item != null && quantity > 0)
+            if (itemParams.Item != null && itemParams.Quantity > 0)
             {
 
-                if (user.Cart.Items.ContainsKey(item))
+                if (user.Cart.Items.ContainsKey(itemParams.Item))
                 {
-                    int currQuant = user.Cart.Items[item].Item1;
-                    if (currQuant > quantity)
+                    int currQuant = user.Cart.Items[itemParams.Item].Item1;
+                    if (currQuant > itemParams.Quantity)
                     {
-                        currQuant -= quantity;
-                        user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                        currQuant -= itemParams.Quantity;
+                        user.Cart.Items[itemParams.Item] = Tuple.Create(currQuant, currQuant * itemParams.Item.Price);
                     }
                     else
                     {
-                        user.Cart.Items.Remove(item);
+                        user.Cart.Items.Remove(itemParams.Item);
                     }
                 }
             }
