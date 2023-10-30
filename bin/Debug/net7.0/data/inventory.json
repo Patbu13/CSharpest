@@ -1,98 +1,113 @@
 [
   {
     "name": "Cadbury Bar",
-    "description": "Iconic dairy milk bar, 1 oz",
+    "description": "Iconic dairy milk bar ",
     "itemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
-    "price": "1.07"
+    "price": "1.07",
+    "stock": 100
   },
   {
     "name": "Hershey's Kisses",
-    "description": "Classic bite-sized milk chocolate bites, 1 oz",
+    "description": "Classic bite-sized milk chocolate bites",
     "itemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
-    "price": "0.31"
+    "price": "0.31",
+    "stock": 100
   },
   {
     "name": "100 Grand",
-    "description": "Fun-sized choclate bar with caramel and crispy rice, 1 oz",
+    "description": "Fun-sized choclate bar with caramel and crispy rice",
     "itemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
-    "price": "1.25"
+    "stock": 100
   },
   {
     "name": "War Heads",
-    "description": "Extremely sour hard candy, 1 oz",
+    "description": "Extremely sour hard candy",
     "itemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
-    "price": "0.54"
+    "price": "0.54",
+    "stock": 100
   },
   {
     "name": "Reese's Peanut Butter Cups",
-    "description": "Soft peanut butter covered in chocolate, 1 oz",
+    "description": "Soft peanut butter covered in chocolate",
     "itemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
-    "price": "0.50"
+    "price": "0.50",
+    "stock": 100
   },
   {
     "name": "Starburst",
-    "description": "Soft, chewable, fruit-flavored taffy, 1 oz",
+    "description": "Soft, chewable, fruit-flavored taffy",
     "itemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
-    "price": "0.59"
+    "price": "0.59",
+    "stock": 100
   },
   {
     "name": "Hot Tamales",
-    "description": "Chewy cinnamon-flavored candy with a kick, 1 oz",
+    "description": "Chewy cinnamon-flavored candy with a kick",
     "itemId": "069dfa8a-abf1-4803-b88c-6bcd27dbb553",
-    "price": "0.69"
+    "price": "0.69",
+    "stock": 100
   },
   {
     "name": "Air Heads",
-    "description": "Thin chewy, fruit-flavored taffy with sweet and sour taste, 1 oz",
+    "description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
     "itemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-    "price": "0.70"
+    "price": "0.70",
+    "stock": 100
   },
   {
     "name": "Milky Way",
-    "description": "Nougat topped with caramel, all covered in chocolate, 1 oz",
+    "description": "Nougat topped with caramel, all covered in chocolate",
     "itemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
-    "price": "0.37"
+    "price": "0.37",
+    "stock": 100
   },
   {
     "name": "Smarties",
-    "description": "Sweet Powdered tablets that melt in your mouth, 1 oz",
+    "description": "Sweet Powdered tablets that melt in your mouth",
     "itemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
-    "price": "0.53"
+    "price": "0.53",
+    "stock": 100
   },
   {
     "name": "Snickers",
-    "description": "Nougat, caramel, and peanuts, all covered in milk chocolate, 1 oz",
+    "description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
     "itemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
-    "price": "0.47"
+    "price": "0.47",
+    "stock": 100
   },
   {
     "name": "Crunch",
-    "description": "Milk chocolate with crispy rice, 1 oz",
+    "description": "Milk chocolate with crispy rice",
     "itemId": "d81e6f6a-93a3-499a-91e0-88dada033b32",
-    "price": "0.62"
+    "price": "0.62",
+    "stock": 100
   },
   {
     "name": "Almond Joy",
-    "description": "Almond and cocount flakes encased in milk chocolate, 1 oz",
+    "description": "Almond and cocount flakes encased in milk chocolate",
     "itemId": "ab1c40e1-9c79-43ea-b415-a116fe9c58c9",
-    "price": "0.65"
+    "price": "0.65",
+    "stock": 100
   },
   {
     "name": "Nerds",
-    "description": "Sweet, tangy, crunchy fruit-flavored pebbles, 1 oz",
+    "description": "Sweet, tangy, crunchy fruit-flavored pebbles",
     "itemId": "19085e1d-dfce-4616-8aaf-503cd3e0e44d",
-    "price": "0.87"
+    "price": "0.87",
+    "stock": 100
   },
   {
     "name": "Kit Kat",
-    "description": "Chocolate covered wafers, 1 oz",
+    "description": "Chocolate covered wafers",
     "itemId": "0692703f-794d-4181-bb50-b549468f019c",
-    "price": "0.47"
+    "price": "0.47",
+    "stock": 100
   },
   {
     "name": "M&Ms",
-    "description": "Button shaped chocolates covered in a hard shell, 1 oz",
+    "description": "Button shaped chocolates covered in a hard shell",
     "itemId": "5396bc7c-0917-41c0-be43-b1734dc22a05",
-    "price": "0.63"
+    "price": "0.63",
+    "stock": 100
   }
 ]

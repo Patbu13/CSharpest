@@ -22,5 +22,12 @@ namespace CSharpest.Controllers
             return items;
         }
 
+        // POST: <ItemController>/addItemToCart
+        [HttpPost("AddItemToCart")]
+        public ActionResult addItemToCart(Guid cartId, Guid itemId, int quantity)
+        {
+            return View();
+        }
+
     }
 }
