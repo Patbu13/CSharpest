@@ -15,6 +15,7 @@ namespace CSharpest.Controllers
     {
         InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         UserLoader userLoader = new UserLoader(@".\data\users.json");
+        UserWriter userWriter = new UserWriter(@".\data\users.json");
 
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
@@ -48,10 +49,12 @@ namespace CSharpest.Controllers
                 {
                     int currQuant = user.Cart.Items[item].Item1 + itemParams.Quantity;
                     user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    userWriter.writeUser(user);
                 }
                 else
                 {
                     user.Cart.Items.Add(item, Tuple.Create(itemParams.Quantity, itemParams.Quantity * item.Price));
+                    userWriter.writeUser(user);
                 }
             }
             else
@@ -86,10 +89,12 @@ namespace CSharpest.Controllers
                     {
                         currQuant -= itemParams.Quantity;
                         user.Cart.Items[itemParams.Item] = Tuple.Create(currQuant, currQuant * itemParams.Item.Price);
+                        userWriter.writeUser(user);
                     }
                     else
                     {
                         user.Cart.Items.Remove(itemParams.Item);
+                        userWriter.writeUser(user);
                     }
                 }
             }
