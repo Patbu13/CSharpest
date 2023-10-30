@@ -33,14 +33,14 @@ namespace CSharpest
             public ActionResult Cart()
             {
 
-                return View(cartController.GetCartItems());
+                return View(cartController.GetCartItems(Guid.NewGuid()));
             }
 
             // GET: <StorefrontController>/checkout
             [HttpGet("checkout")]
             public ActionResult Checkout()
             {
-                return View(cartController.GetCartItems());
+                return View(cartController.GetCartItems(Guid.NewGuid()));
             }
 
             // GET: <StorefrontController>/orderConfirmation

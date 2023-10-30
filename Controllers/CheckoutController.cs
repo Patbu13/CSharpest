@@ -76,32 +76,36 @@ namespace CSharpest
 
             // POST: <CheckoutController>/purchase
             [HttpPost("{purchase}")]
-            public (bool, string) purchase (User user, Cart cart)
+            public bool purchase (PurchaseRequestParams purchaseParams)
             {
                 // check in-stock by quantity purchased
-                foreach (var item in cart.Items)
+                foreach (var item in purchaseParams.Cart.Items)
                 {
                     if (item.Key.Stock - item.Value.Item1 < 0)
                     {
-                        return (false, $"Not enough \"{item.Key.Name}\" (ID:{item.Key.ItemId}) in stock");
+                        return false;
+                        //return (false, $"Not enough \"{item.Key.Name}\" (ID:{item.Key.ItemId}) in stock");
                     }
                 }
 
                 // save this transaction to user's history
-                Transaction newTransaction = new Transaction(Guid.NewGuid(), (from k in cart.Items select k.Key), DateTime.Now);
-                user.TransHistory.Add(newTransaction);
+                Transaction newTransaction = new Transaction(Guid.NewGuid(), (from k in purchaseParams.Cart.Items select k.Key), DateTime.Now);
+                purchaseParams.User.TransHistory.Add(newTransaction);
 
-                if (user.TransHistory.Contains(newTransaction))
+                if (purchaseParams.User.TransHistory.Contains(newTransaction))
                 {
-                    foreach (var item in cart.Items)
+                    foreach (var item in purchaseParams.Cart.Items)
                     {
                         item.Key.Stock -= item.Value.Item1;
                     }
-                    return (true, "Successful transaction");
+                    return false;
+                    //return (true, "Successful transaction");
                 } else
-                { 
-                    return (false, "Transaction could not be added to user's transaction history");
+                {
+                    return false;
+                    //return (false, "Transaction could not be added to user's transaction history");
                 }
+
             }
 
             [HttpPost("{total}")]
