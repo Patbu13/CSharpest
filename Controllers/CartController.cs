@@ -20,7 +20,8 @@ namespace CSharpest.Controllers
         {
             List<User> users = userLoader.loadUsers();
             User user = users.Find(x => x.AccountID == UserID);
-            Dictionary < Item, Tuple<int, decimal> > cartItems = user.UserCart.Items;
+            Cart newUser = user.Cart;
+            Dictionary < Item, Tuple<int, decimal> > cartItems = user.Cart.Items;
             return cartItems;
         }
 
@@ -34,24 +35,24 @@ namespace CSharpest.Controllers
             List<User> users = userLoader.loadUsers();
             User user = users.Find(x => x.AccountID == cartID); // get user from database using id
 
-            if (item != null && user.UserCart != null && quantity > 0 && item.Stock >= quantity)
+            if (item != null && user.Cart != null && quantity > 0 && item.Stock >= quantity)
             {
 
-                if (user.UserCart.Items.ContainsKey(item))
+                if (user.Cart.Items.ContainsKey(item))
                 {
-                    int currQuant = user.UserCart.Items[item].Item1 + quantity;
-                    user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    int currQuant = user.Cart.Items[item].Item1 + quantity;
+                    user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                 }
                 else
                 {
-                    user.UserCart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+                    user.Cart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
                 }
             }
             else
             {
                 if (item == null) { return "Failure: Cannot add 'null' to cart."; }
 
-                if (user.UserCart == null) { return "Failure: Cart does not exist."; }
+                if (user.Cart == null) { return "Failure: Cart does not exist."; }
 
                 if (quantity < 0) { return "Failure: Quantity must be positive."; }
 
@@ -61,26 +62,28 @@ namespace CSharpest.Controllers
         }
 
         // Add an item to the cart
-        public void AddItem(Guid cartID, Item item, int quantity)
-        {
-            //get cart from ID
-            List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == cartID); // get user from database using id
+        //public void AddItem(Guid cartID, Item item, int quantity)
+        //{
+        //    //get cart from ID
+        //    List<User> users = userLoader.loadUsers();
+        //    User user = users.Find(x => x.AccountID == cartID); // get user from database using id
 
-            if (item != null && quantity > 0 && item.Stock >= quantity)
-            {
+        //    if (item != null && quantity > 0 && item.Stock >= quantity)
+        //    {
 
-                if (user.UserCart.Items.ContainsKey(item))
-                {
-                    int currQuant = user.UserCart.Items[item].Item1 + quantity;
-                    user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
-                }
-                else
-                {
-                    user.UserCart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
-                }
-            }
-        }
+        //        if (user.UserCart.Items.ContainsKey(item))
+        //        {
+        //            int currQuant = user.UserCart.Items[item].Item1 + quantity;
+        //            user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+        //        }
+        //        else
+        //        {
+        //            user.UserCart.Items.Add(item, Tuple.Create(quantity, quantity * item.Price));
+        //        }
+        //    }
+        //}
+
+        [HttpPost("RemoveItemToCart")]
 
         // Remove an item from the cart
         public void RemoveItem(Guid cartID, Item item, int quantity)
@@ -92,17 +95,17 @@ namespace CSharpest.Controllers
             if (item != null && quantity > 0)
             {
 
-                if (user.UserCart.Items.ContainsKey(item))
+                if (user.Cart.Items.ContainsKey(item))
                 {
-                    int currQuant = user.UserCart.Items[item].Item1;
+                    int currQuant = user.Cart.Items[item].Item1;
                     if (currQuant > quantity)
                     {
                         currQuant -= quantity;
-                        user.UserCart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                        user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
                     }
                     else
                     {
-                        user.UserCart.Items.Remove(item);
+                        user.Cart.Items.Remove(item);
                     }
                 }
             }

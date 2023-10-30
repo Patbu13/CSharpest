@@ -10,7 +10,6 @@ namespace CSharpest.Classes;
 public class Cart
 {
     public Guid CartID { get; set; }
-    //public Dictionary<Item, int>? Items { get; set; }
     public Dictionary<Item, Tuple<int, decimal>>? Items { get; set; }
     
 
