@@ -10,45 +10,8 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [
-        {
-          "Item": {
-            "Name": "Cadbury Bar",
-            "Description": "Iconic dairy milk bar ",
-            "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
-            "Price": 1.07,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 36,
-          "TotalPrice": 38.52
-        },
-        {
-          "Item": {
-            "Name": "Hershey\u0027s Kisses",
-            "Description": "Classic bite-sized milk chocolate bites",
-            "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
-            "Price": 0.31,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 13,
-          "TotalPrice": 4.03
-        },
-        {
-          "Item": {
-            "Name": "Air Heads",
-            "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
-            "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-            "Price": 0.70,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 13,
-          "TotalPrice": 9.10
-        }
-      ],
-      "Subtotal": 51.65
+      "Items": [],
+      "Subtotal": 0
     },
     "UserCards": []
   },
