@@ -16,10 +16,12 @@ public class Cart
     //Changed b/c JSON Serializer would not accept Item as Dictionary key
     public List<CartItem>? Items { get; set; }
 
+    public decimal Subtotal { get; set; }
     
     public Cart()
     {
         Items = new List<CartItem>();
+        Subtotal = 0;
     }
 
     
