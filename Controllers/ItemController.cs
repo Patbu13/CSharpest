@@ -21,13 +21,5 @@ namespace CSharpest.Controllers
             List<Item> items = inventoryLoader.loadInventory();
             return items;
         }
-
-        // POST: <ItemController>/addItemToCart
-        [HttpPost("AddItemToCart")]
-        public bool addItemToCart(AddItemReqParams itemParams)
-        {
-            return true;
-        }
-
     }
 }
