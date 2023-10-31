@@ -12,15 +12,9 @@
 
 <h1>Welcome to the CSharpest Store!</h1>
 
-<a>
-    @using (Html.BeginForm("cart", "Storefront", FormMethod.Post))
-    {
-        <input type="submit" id="SubCart" value="Go to Cart">
-        <input type="hidden" id=@Model.CartId name="cartID" value=@Model.CartId />
-    }
+<a href="/Storefront/cart">
+    <h3 id="GoToCart">[Go to Cart]</h3>
 </a>
-
-
 
 
 <h2>Shop Our Store's Current Inventory:</h2>
