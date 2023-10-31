@@ -25,16 +25,16 @@ namespace CSharpest
             public ActionResult Welcome()
             {
                 //ViewBag.Cart = cartController.GetCartItems(currUserID);
-                WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0);
+                WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0, currUserID);
                 return View(model);
             }
 
             // POST: <StorefrontController>/addToCart
             [HttpPost("welcome")]
-            public ActionResult Welcome(int Quantity)
+            public ActionResult Welcome(Guid CartID, Guid ItemID, int Quantity)
             {
-                cartController.AddItemToCart(Quantity);
-                WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0);
+                cartController.AddItemToCart(CartID, ItemID, Quantity);
+                WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0, currUserID);
                 return View(model);
             }
 

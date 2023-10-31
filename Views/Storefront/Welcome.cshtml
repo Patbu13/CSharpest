@@ -56,8 +56,8 @@
                 {
                 <td>
                     <input type="number" id="#@item.Name" name="Quantity" placeholder="# (oz)" />
-                     <!--<input type="hidden" id="#@item.Name" name="CartID" value="@item.ItemId" />
-                    <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />-->
+                    <input type="hidden" id="#@item.Name" name="CartID" value="@Model.CartId" />
+                    <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />
                 </td>
                 <td>
                     <input id="@item.Name" type="submit" value="Add to Cart" />
