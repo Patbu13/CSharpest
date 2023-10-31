@@ -20,9 +20,8 @@
             "Stock": 100,
             "Bogo": true
           },
-<<<<<<< HEAD
-          "Quantity": 37,
-          "TotalPrice": 39.59
+          "Quantity": 36,
+          "TotalPrice": 38.52
         },
         {
           "Item": {
@@ -41,34 +40,15 @@
             "Name": "Air Heads",
             "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
             "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-            "Price": 0.7,
+            "Price": 0.70,
             "Stock": 100,
             "Bogo": true
           },
           "Quantity": 13,
-          "TotalPrice": 9.1
+          "TotalPrice": 9.10
         }
       ],
-      "Subtotal": 52.72
-=======
-          "Quantity": 5,
-          "TotalPrice": 5.35
-        },
-        {
-          "Item": {
-            "Name": "War Heads",
-            "Description": "Extremely sour hard candy",
-            "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
-            "Price": 0.54,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 12,
-          "TotalPrice": 6.48
-        }
-      ],
-      "Subtotal": 11.83
->>>>>>> 571a6f862980b7eac6953425fe98ed378be5d025
+      "Subtotal": 51.65
     },
     "UserCards": []
   },

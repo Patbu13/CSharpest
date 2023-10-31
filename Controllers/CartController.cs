@@ -34,13 +34,6 @@ namespace CSharpest.Controllers
             return cartItems;
         }
 
-
-        //[HttpPost("AddItemToCart")]
-        //public int AddItemToCart(int Quantity)
-        //{
-        //    return Quantity; 
-        //}
-
         [HttpPost("AddItemToCart")]
         public void AddItemToCart(Guid ItemID, int quantity)
         {
@@ -75,14 +68,15 @@ namespace CSharpest.Controllers
                     
                 }
                 else
-                {
-                    //Customer is adding more of this item to cart
-                    //LINQ?? maybe :)
-                    //Now realizing a List was probably not the best for this.. too late -patrick
-                    user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += quantity;
-                    user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice += totalPrice;
-                    user.Cart.Subtotal += quantity * item.Price;
-                    userWriter.writeUser(user);
+                {   // make sure user cannot add more than (stock minus what's already in cart)
+                    if ((user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity + quantity) <= item.Stock)
+                    {
+                        //Customer is adding more of this item to cart
+                        user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += quantity;
+                        user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice += totalPrice;
+                        user.Cart.Subtotal += quantity * item.Price;
+                        userWriter.writeUser(user);
+                    }
                 }
             }
             else
@@ -97,35 +91,52 @@ namespace CSharpest.Controllers
 
         }
 
-/*        //NEEDS DONE
-        [HttpPost("RemoveItemFromCart")]
-
         // Remove an item from the cart
-        public void RemoveItem(RemoveItemReqParams itemParams)
+        [HttpPost("RemoveItemFromCart")]
+        public void RemoveItem(Guid ItemID, int quantity)
         {
-            //get cart from ID
-            List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == itemParams.CartID); // get user from database using id
+            List<Item> items = inventoryLoader.loadInventory();
+            Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
 
-            if (itemParams.Item != null && itemParams.Quantity > 0)
+            if (item == null) { Environment.Exit(0); } //ensure item was found
+
+            List<User> users = userLoader.loadUsers(); // curUserID has been hardcoded for phase 1
+            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+
+            //ensure user was found
+            if (user == null) { Environment.Exit(0); } // ensure user was found
+
+            //Create totalPrice of product
+            decimal totalPrice = item.Price * (decimal)quantity;
+
+            if (user.Cart != null && quantity > 0)
             {
-
-                if (user.Cart.Items.Contains(itemParams.Item))
+                CartItem cartItem = user.Cart.Items.Find(x => x.Item.ItemId == ItemID); //Create CartItem
+                // if the item is in the user's cart
+                if (cartItem != null)
                 {
-                    int currQuant = user.Cart.Items[itemParams.Item].Item1;
-                    if (currQuant > itemParams.Quantity)
+                    // checks if the cart has more of said item than user is trying to remove
+                    if (cartItem.Quantity >= quantity)
                     {
-                        currQuant -= itemParams.Quantity;
-                        user.Cart.Items[itemParams.Item] = Tuple.Create(currQuant, currQuant * itemParams.Item.Price);
-                        userWriter.writeUser(user);
+                        //Customer is adding more of this item to cart
+                        user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity -= quantity;
+                        user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice -= totalPrice;
+                        user.Cart.Subtotal -= quantity * item.Price;
+                        userWriter.writeUser(user); // update user
                     }
-                    else
-                    {
-                        user.Cart.Items.Remove(itemParams.Item);
+                    else // if user wants to remove more than what is already in cart 
+                    {    // the whole item gets removed
+                        user.Cart.Items.Remove(user.Cart.Items.Single(x => x.Item.ItemId == ItemID));
+                        user.Cart.Subtotal -= item.Price * cartItem.Quantity;
                         userWriter.writeUser(user);
                     }
                 }
+                else
+                {
+                    if (user.Cart == null) { Environment.Exit(0); } // User added nothing to cart
+                    if (cartItem.Quantity < 0) { Environment.Exit(0); } // Should never happen but can't hurt
+                }
             }
-        }*/
+        }
     }
 }
