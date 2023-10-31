@@ -9,8 +9,11 @@
 
 # User-specific files
 *.suo
+*.wsuo
 *.user
 *.sln.docstates
+*.futdcache.v2
+*.sqlite
 
 # Build results
 
@@ -19,6 +22,7 @@
 x64/
 [Bb]in/
 [Oo]bj/
+.vs/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
