@@ -95,7 +95,7 @@
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         font-style: italic;
         font-variant: small-caps;
-        margin-left: 150px;
+        margin-left: 100px;
         color: #385170;
     }
 
@@ -143,6 +143,12 @@
     /*Highlight item row when hovering*/
     tr:not(:first-child):hover {
         background-color: #9fd3c7;
+    }
+
+    /*Embolden complete subtotal*/
+    tr:last-child {
+        font-weight: bold;
+        border-top: 2px double black;
     }
 
     /*Table formatting*/
