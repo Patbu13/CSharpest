@@ -1,57 +1,30 @@
 ﻿<!--
- Last modified by: Patrick Burroughs
+ Last modified by: Savannah Noblitt
  Windows Prog 547
  Last Updated : 10/30/23
--->
-<!--Loading dictionary list from Cart-->
-@using CSharpest.Classes
-@model CSharpest.Classes.CartPageModel
+--> 
+@model CSharpest.Classes.NewModel;
 
 @{
-    ViewBag.Title = "Your Cart";
+    ViewBag.Title = "CSharpest Store";
 }
 
-<a href="/Storefront/welcome">
-    <h3 id="GoBackToStore">[Go Back to Store]</h3>
-</a>
+<h1>@Model.Quantity</h1>
 
-<h1>CSharpest Store: Your Cart</h1>
-
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price
-            <br />
-            (per oz)</th>
-        <th>Total Price</th>
-    </tr>
-
-    @for (int i = 0; i < @Model.Items.Count(); i++)
+@using (Html.BeginForm("test", "StorefrontController", FormMethod.Post))
     {
-        <tr>
-             <td>@Model.Items[i].Item.Name</td>
-             <td>@Model.Items[i].Quantity</td>
-             <td>@Model.Items[i].Item.Price</td>
-             <td>@Model.Items[i].TotalPrice</td>
-         </tr>
+                <input type="number" id=@Model.Quantity name="Quantity" placeholder="# (oz)" min="0" />
+                <input id="Submit" type="submit" value="Add to Cart" />
     }
-</table>
 
+   
 
-
-
-<a href="/Storefront/checkout">
-    <h3 id="GoToCheckout">[Go to Checkout]</h3>
-</a>
 
 <style>
-    
     body {
         background-color: #ececec;
     }
 
-    /*"Title" main header*/
     h1 {
         text-align: center;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
@@ -59,7 +32,6 @@
         color: #142d4c;
     }
 
-    /*Page Description*/
     h2 {
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         font-style: italic;
@@ -68,46 +40,50 @@
         color: #385170;
     }
 
-    /*Link to Checkout*/
-    #GoToCheckout{
+    h3 {
         padding: 50px;
         text-align: right;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         color: #142d4c;
     }
 
-    /*Link to Store*/
-    #GoBackToStore {
-        padding: 50px;
-        text-align: left;
+    p {
+        margin-left: 100px;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
+        font-weight: bold;
+        color: #385170;
     }
 
-    /*Table header*/
     th {
         color: #142d4c;
     }
 
-    /*Columns for Name and Price of items*/
     td:first-child, td:nth-child(3) {
         font-weight: bold
     }
 
-    /* Each item*/
     td {
         text-align: center;
         padding: 10px;
         font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia,serif;
         border-bottom: 1px solid #ddd;
     }
-  
-    /*Highlight item row when hovering*/
+
+    button {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+        font-weight: bold;
+    }
+
+    input::placeholder {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+    }
+
     tr:not(:first-child):hover {
         background-color: #9fd3c7;
     }
 
-    /*Table formatting*/
     table {
         border: 2px solid black;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
@@ -115,7 +91,4 @@
         margin-right: auto;
         color: #385170;
     }
-
-
-
 </style>

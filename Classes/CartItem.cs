@@ -12,12 +12,15 @@ public class CartItem
     public Item Item { get; set; }
     public int Quantity { get; set; }
 
+    public decimal TotalPrice {  get; set; }
+
 
     // public TotalCartPrice;
-    public CartItem(Item _item, int _quantity)
+    public CartItem(Item _item, int _quantity, decimal _totalPrice)
     {
         Item = _item;
         Quantity = _quantity;
+        TotalPrice = _totalPrice;
     }
 
 }
