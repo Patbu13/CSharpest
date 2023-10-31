@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Views",
+    "\\Views\\Storefront"
   ],
-  "SelectedNode": "\\CSharpest.sln",
+  "SelectedNode": "\\Views\\Storefront\\Cart.cshtml",
   "PreviewInSolutionExplorer": false
 }

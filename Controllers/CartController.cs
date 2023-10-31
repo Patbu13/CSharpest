@@ -40,14 +40,14 @@ namespace CSharpest.Controllers
         //}
 
         [HttpPost("AddItemToCart")]
-        public string AddItemToCart(Guid CartID, Guid ItemID, int Quantity)
+        public void AddItemToCart(Guid CartID, Guid ItemID, int Quantity)
         {
             List<Item> items = inventoryLoader.loadInventory();
             Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
 
             List<User> users = userLoader.loadUsers();
             User user = users.Find(x => x.AccountID == CartID); // get user from database using id
-
+            
             if (item != null && user.Cart != null && Quantity > 0 && item.Stock >=Quantity)
             {
 
@@ -65,16 +65,16 @@ namespace CSharpest.Controllers
             }
             else
             {
-                if (item == null) { return "Failure: Cannot add 'null' to cart."; }
+                if (item == null) { Environment.Exit(0); }
 
-                if (user.Cart == null) { return "Failure: Cart does not exist."; }
+                //if (user.Cart == null) { return "Failure: Cart does not exist."; }
 
-                if (Quantity < 0) { return "Failure: Quantity must be positive."; }
+                //if (Quantity < 0) { return "Failure: Quantity must be positive."; }
 
-                if (item.Stock < Quantity) { return "Failure: Not enough in stock."; }
+                //if (item.Stock < Quantity) { return "Failure: Not enough in stock."; }
             }
 
-            return "Success!";
+            //return "Success!";
         }
 
         [HttpPost("RemoveItemFromCart")]

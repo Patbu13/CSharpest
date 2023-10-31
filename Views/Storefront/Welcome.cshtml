@@ -52,18 +52,16 @@
             <td>@item.Description</td>
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            @using (@Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
-                {
+            <form action="~/Storefront/Welcome" name="Welcome" method="post">
                 <td>
-                    <input type="number" id="#@item.Name" name="Quantity" placeholder="# (oz)" />
-                    <input type="hidden" id="#@item.Name" name="CartID" value="@Model.CartId" />
-                    <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />
+                    <input type="number" id=@item.Name name="Quantity" placeholder="# (oz)" min="0" />
+                    <input type="hidden" id=@Model.CartId name="CartID" value=@Model.CartId />
+                    <input type="hidden" id=@item.ItemId name="ItemID" value=@item.ItemId />
                 </td>
                 <td>
-                    <input id="@item.Name" type="submit" value="Add to Cart" />
+                    <input id="Submit" type="submit" value="Add to Cart" />
                 </td>
-                }
-
+            </form>
 
         </tr>
 

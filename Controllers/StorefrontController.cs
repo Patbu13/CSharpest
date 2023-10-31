@@ -21,7 +21,7 @@ namespace CSharpest
             Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
             // GET: <StorefrontController>/welcome
-            [HttpGet("welcome")]
+            [HttpGet("Welcome")]
             public ActionResult Welcome()
             {
                 //ViewBag.Cart = cartController.GetCartItems(currUserID);
@@ -30,7 +30,7 @@ namespace CSharpest
             }
 
             // POST: <StorefrontController>/addToCart
-            [HttpPost("welcome")]
+            [HttpPost("Welcome")]
             public ActionResult Welcome(Guid CartID, Guid ItemID, int Quantity)
             {
                 cartController.AddItemToCart(CartID, ItemID, Quantity);
