@@ -119,7 +119,7 @@ namespace CSharpest
 
                 if (user.Cart != null)
                 {
-                    OrderPageModel model = new OrderPageModel(user.Cart.Items);
+                    OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal);
                     return View(model);
                 }
                 else

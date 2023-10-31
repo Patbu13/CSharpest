@@ -7,11 +7,16 @@ namespace CSharpest.Classes
     public class OrderPageModel
     {
         public List<CartItem> Items { get; set; }
+        public decimal Subtotal { get; set; }
+        public Guid CartId { get; set; }
+
+
         //public Guid CartId { get; set; }
         //public Card Card { get; set; }
 
-        public OrderPageModel(List<CartItem> items) {
-            Items = items;
+        public OrderPageModel(List<CartItem> _items, decimal _subtotal) {
+            Items = _items;
+            Subtotal = _subtotal;
             //CartId = cartId;
             //Card = card;
         }
