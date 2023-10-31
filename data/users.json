@@ -20,8 +20,8 @@
             "Stock": 100,
             "Bogo": false
           },
-          "Quantity": 24,
-          "TotalPrice": 7.44
+          "Quantity": 48,
+          "TotalPrice": 14.88
         },
         {
           "Item": {
@@ -36,7 +36,7 @@
           "TotalPrice": 1.11
         }
       ],
-      "Subtotal": 8.55
+      "Subtotal": 15.99
     },
     "UserCards": []
   },

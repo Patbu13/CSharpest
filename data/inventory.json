@@ -150,5 +150,37 @@
     "Price": 0.37,
     "Stock": 97,
     "Bogo": false
+  },
+  {
+    "Name": "Hershey\u0027s Kisses",
+    "Description": "Classic bite-sized milk chocolate bites",
+    "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+    "Price": 0.31,
+    "Stock": 64,
+    "Bogo": false
+  },
+  {
+    "Name": "Milky Way",
+    "Description": "Nougat topped with caramel, all covered in chocolate",
+    "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+    "Price": 0.37,
+    "Stock": 97,
+    "Bogo": false
+  },
+  {
+    "Name": "Hershey\u0027s Kisses",
+    "Description": "Classic bite-sized milk chocolate bites",
+    "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+    "Price": 0.31,
+    "Stock": 52,
+    "Bogo": false
+  },
+  {
+    "Name": "Milky Way",
+    "Description": "Nougat topped with caramel, all covered in chocolate",
+    "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+    "Price": 0.37,
+    "Stock": 97,
+    "Bogo": false
   }
 ]
