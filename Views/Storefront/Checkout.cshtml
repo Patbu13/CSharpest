@@ -1,9 +1,10 @@
 ﻿<!--
- Last modified by: Vivian D'Souza
+ Last modified by: Savannah Noblitt
  Windows Prog 547
- Last Updated : 10/24/23
+ Last Updated : 10/31/23
 -->
-@model Dictionary<CSharpest.Classes.Item, Tuple<int, decimal>>
+@using CSharpest.Classes
+@model CSharpest.Classes.CheckoutPageModel
 
 @{
     ViewBag.Title = "Checkout";
@@ -15,9 +16,10 @@
     <h3>[Go to back to Store]</h3>
 </a>
 
-<hr />
-</table>
+<hr/>
 
+
+<!-- Put this in BeginForm-->
 <form>
     <label for="cardNumber">Card number:</label>
     <input type="text" id="cardNumber" name="cardNumber"><br><br>
@@ -38,20 +40,20 @@
     <tr>
         <th>Name</th>
         <th>Quantity</th>
-        <th>Total Price</th>
         <th>Price by Ounce</th>
+        <th>Total Price</th>
     </tr>
 
-    @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
+    @for (int i = 0; i < @Model.Items.Count(); i++)
     {
         <tr>
-            <td>@item.Key.Name</td>
-            <td>@item.Value.Item1</td>
-            <td>@item.Value.Item2</td>
-            <td>@item.Key.Price</td>
-
+            <td>@Model.Items[i].Item.Name</td>
+            <td>@Model.Items[i].Quantity</td>
+            <td>@Model.Items[i].Item.Price</td>
+            <td>@Model.Items[i].**TOTAL PRICE**</td>
         </tr>
     }
+</table>
 
 
 <hr />
@@ -60,7 +62,12 @@
 <hr />
 <h3>Total Cost</h3>
 
+<!-- Place Order Button -->
+<a href="#">
+    <h3>[Place Order]</h3>
+</a>
 
+<!-- Go Back to Cart Button-->
 <a href="/Storefront/cart">
     <h3>[Go to back to Cart]</h3>
 </a>
