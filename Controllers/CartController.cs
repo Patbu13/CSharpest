@@ -64,6 +64,8 @@ namespace CSharpest.Controllers
                     CartItem cartItem = new CartItem(item, quantity, totalPrice);
                     user.Cart.Items.Add(cartItem);
                     user.Cart.Subtotal += cartItem.TotalPrice;
+                    user.Cart.Taxes += (user.Cart.Subtotal * 0.08m);
+                    user.Cart.Total += ((user.Cart.Subtotal * 1.08m) + 5.99m);
                     userWriter.writeUser(user);
                     
                 }
@@ -75,9 +77,12 @@ namespace CSharpest.Controllers
                         user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += quantity;
                         user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice += totalPrice;
                         user.Cart.Subtotal += quantity * item.Price;
+                        user.Cart.Taxes += (user.Cart.Subtotal * 0.08m);
+                        user.Cart.Total += ((user.Cart.Subtotal * 1.08m) + 5.99m);
                         userWriter.writeUser(user);
                     }
                 }
+
             }
             else
             {

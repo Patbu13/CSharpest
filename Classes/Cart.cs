@@ -17,11 +17,16 @@ public class Cart
     public List<CartItem>? Items { get; set; }
 
     public decimal Subtotal { get; set; }
+
+    public decimal Taxes { get; set;}
+    public decimal Total { get; set; }
     
     public Cart()
     {
         Items = new List<CartItem>();
         Subtotal = 0;
+        Taxes = 0;
+        Total = 0;
     }
 
     

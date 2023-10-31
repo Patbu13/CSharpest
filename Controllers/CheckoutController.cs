@@ -140,7 +140,14 @@ namespace CSharpest.Controllers
         [HttpPost("{total}")]
         public decimal calculateTotal(Cart cart)
         {
-            decimal total = 0;
+            //decimal total = 0;
+
+            List<User> users = userLoader.loadUsers();
+
+            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+            //ensure user was found
+            if (user == null) { Environment.Exit(0); }
+
 
             foreach (CartItem cartItem in cart.Items)
             { 
@@ -151,25 +158,32 @@ namespace CSharpest.Controllers
                 if (cartItem.Item.Bogo)
                 {
                     if (cartItem.Quantity % 2 == 1) {
-                        total += cartItem.Item.Price + (cartItem.Item.Price * (cartItem.Quantity / 2));
+                        user.Cart.Total += cartItem.Item.Price + (cartItem.Item.Price * (cartItem.Quantity / 2));
                     } else
                     {
-                        total += cartItem.Item.Price * (cartItem.Quantity / 2);
+                        user.Cart.Total += cartItem.Item.Price * (cartItem.Quantity / 2);
                     } 
                 } else
                 {
-                    total += cartItem.Item.Price * cartItem.Quantity;
+                    user.Cart.Total += cartItem.Item.Price * cartItem.Quantity;
                 }
                 
             }
 
             // adds tax to total; flat rate of 8% (for now)
-            total += (total * 1.08m);
+            user.Cart.Taxes = (user.Cart.Total * 1.08m);
+            user.Cart.Taxes = user.Cart.Taxes - (user.Cart.Taxes % 0.01m);
+
+            user.Cart.Total += (user.Cart.Taxes);
+            user.Cart.Total = user.Cart.Total - (user.Cart.Total % 0.01m);
+
 
             // calculate shipping; for now flat rate of 5.99
-            total += 5.99m;
+            user.Cart.Total += 5.99m;
 
-            return total;
+            userWriter.writeUser(user);
+
+            return user.Cart.Total;
         }
 
         // to be looked at later

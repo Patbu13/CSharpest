@@ -20,11 +20,25 @@
             "Stock": 100,
             "Bogo": false
           },
-          "Quantity": 12,
-          "TotalPrice": 3.72
+          "Quantity": 25,
+          "TotalPrice": 7.75
+        },
+        {
+          "Item": {
+            "Name": "Milky Way",
+            "Description": "Nougat topped with caramel, all covered in chocolate",
+            "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+            "Price": 0.37,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 3,
+          "TotalPrice": 1.11
         }
       ],
-      "Subtotal": 3.72
+      "Subtotal": 8.86,
+      "Taxes": 0.7088,
+      "Total": 15.5588
     },
     "UserCards": []
   },
@@ -40,7 +54,9 @@
     "Cart": {
       "CartID": "3c7f32ed-4a29-4e60-a390-81db8e2d662a",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -56,7 +72,9 @@
     "Cart": {
       "CartID": "4dcb6bc3-7ebf-4e23-a12b-d8c7d21eef62",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -72,7 +90,9 @@
     "Cart": {
       "CartID": "5e73b1f0-3d25-40d2-8c9e-3b07140dd1b5",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -88,7 +108,9 @@
     "Cart": {
       "CartID": "6f0e3d4a-88e6-4390-a8a1-7e2389a0f811",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -104,7 +126,9 @@
     "Cart": {
       "CartID": "7f21ed2c-8d54-4816-9d26-1a37d84c5270",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -120,7 +144,9 @@
     "Cart": {
       "CartID": "8ab5b2f6-95e7-45a1-a0e8-3f9b238e7a0c",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -136,7 +162,9 @@
     "Cart": {
       "CartID": "9bc6e3d1-8c7e-4d9b-a9b4-2d42c41d6109",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -152,7 +180,9 @@
     "Cart": {
       "CartID": "ababaaac-2345-4abc-aaaa-4a44aabcdeab",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -168,7 +198,9 @@
     "Cart": {
       "CartID": "bc5d7a3b-9aa2-4123-8b8c-5e4a8d4a682e",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -184,7 +216,9 @@
     "Cart": {
       "CartID": "cd123fa7-12bf-43e2-8dc7-1e2f3a45be3c",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -200,7 +234,9 @@
     "Cart": {
       "CartID": "def8e9ad-ec42-4d37-aba1-8c1e4d2ac2ed",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -216,7 +252,9 @@
     "Cart": {
       "CartID": "ef34d1cf-7bb9-4f2a-aae9-3cda8f8b6eb4",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -232,7 +270,9 @@
     "Cart": {
       "CartID": "f4c82e12-b37a-43e8-89d9-4f32c5f8d7e2",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -248,7 +288,9 @@
     "Cart": {
       "CartID": "974e9cfa-132e-4aa8-bd84-3cdcdba1da6e",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   },
@@ -264,7 +306,9 @@
     "Cart": {
       "CartID": "1806a6aa-8ed7-4721-9f85-3aab5268a112",
       "Items": [],
-      "Subtotal": 0
+      "Subtotal": 0,
+      "Taxes": 0,
+      "Total": 0
     },
     "UserCards": []
   }
