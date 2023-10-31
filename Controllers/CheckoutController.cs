@@ -23,18 +23,16 @@ namespace CSharpest.Controllers
         // takes in a new card and then saves it to user object
         // POST: <CheckoutController>/address
         [HttpPost("{card}")]
-        public bool takeCardInput(Card card, Guid userID)
+        public bool takeCardInput(CardCheckParams checkParams)
         {
             //FIND USER using userID will be working in phase 2, hardcode for now
-            List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == currUserID);
 
-            if (ValidateCardDetails(card))
+            if (ValidateCardDetails(checkParams.Card))
             {
                 // if card validation successful, save to user's list of cards
-                if (!(user.UserCards.Contains(card)))
+                if (!(checkParams.User.UserCards.Contains(checkParams.Card)))
                 {
-                    user.UserCards.Add(card);
+                    checkParams.User.UserCards.Add(checkParams.Card);
                 }
                 // otherwise, validation is still successful
                 return true;
@@ -92,7 +90,7 @@ namespace CSharpest.Controllers
 
         // POST: <CheckoutController>/purchase
         [HttpPost("{purchase}")]
-        public bool purchase (PurchaseRequestParams purchaseParams)
+        public bool purchase (User user)
         {
             // ALREADY CHECKED IN CART
             // Logically, should be in checkout but trying to meet deadline
@@ -108,20 +106,20 @@ namespace CSharpest.Controllers
             }*/
 
             // save this transaction to user's history
-            Transaction newTransaction = new Transaction(Guid.NewGuid(), purchaseParams.Cart.Items, DateTime.Now);
-            if (purchaseParams.User.TransHistory != null)
+            Transaction newTransaction = new Transaction(Guid.NewGuid(), user.Cart.Items, DateTime.Now);
+            if (user.TransHistory != null)
             {
-                purchaseParams.User.TransHistory.Add(newTransaction);
+                user.TransHistory.Add(newTransaction);
             } else
             {
-                purchaseParams.User.TransHistory = new List<Transaction> { newTransaction };
+                user.TransHistory = new List<Transaction> { newTransaction };
             }
 
             List<Item> items = inventoryLoader.loadInventory();
 
-            if (purchaseParams.User.TransHistory.Contains(newTransaction))
+            if (user.TransHistory.Contains(newTransaction))
             {
-                foreach (var cartItem in purchaseParams.Cart.Items)
+                foreach (var cartItem in user.Cart.Items)
                 {
                     var item = items.Find(x => x.ItemId == cartItem.Item.ItemId);
                     item.Stock -= cartItem.Quantity;

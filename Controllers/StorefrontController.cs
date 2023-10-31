@@ -18,6 +18,7 @@ namespace CSharpest
         {
             CartController cartController = new CartController();
             ItemController itemController = new ItemController();
+            CheckoutController checkoutController = new CheckoutController();
             UserLoader userLoader = new UserLoader(@".\data\users.json");
             Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
@@ -91,9 +92,9 @@ namespace CSharpest
                 
             }
 
-            // POST: <StorefrontController>/checkout
+            /*// POST: <StorefrontController>/checkout
             [HttpPost("checkout")]
-            public ActionResult Checkout(int cardNumber, int month, int year, string name, int cvc) 
+            public ActionResult Checkout([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvc, [FromForm]string name) 
             {
                 List<User> users = userLoader.loadUsers();
                 User user = users.Find(x => x.AccountID == currUserID);
@@ -108,8 +109,37 @@ namespace CSharpest
                 {
                     return View(null);
                 }
+            }*/
+
+            // POST: <StorefrontController>/orderConfirmation
+            [HttpPost("orderConfirmation")]
+            public ActionResult OrderConfirmation([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvc, [FromForm] string name)
+            {
+                List<User> users = userLoader.loadUsers();
+                User user = users.Find(x => x.AccountID == currUserID);
+                Card card = new Card(cardNumber, month, year, name, cvc);
+                CardCheckParams cardCheck = new CardCheckParams(user, card);
+
+                if (checkoutController.takeCardInput(cardCheck))
+                {
+                    if (user.Cart != null)
+                    {
+                        OrderPageModel model = new OrderPageModel(user.Cart.Items, checkoutController.purchase(user));
+                        return View(model);
+                    }
+                    else
+                    {
+                        return View(null);
+                    }
+                } else
+                {
+                    return View(null);
+                }
+
+                
             }
 
+            // Don't think this gets used
             // GET: <StorefrontController>/orderConfirmation
             [HttpGet("orderConfirmation")]
             public ActionResult OrderConfirmation()
@@ -119,7 +149,11 @@ namespace CSharpest
 
                 if (user.Cart != null)
                 {
+<<<<<<< HEAD
                     OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal);
+=======
+                    OrderPageModel model = new OrderPageModel(user.Cart.Items, true);
+>>>>>>> 903af12156c4186e58e88297057cee37bcf997ea
                     return View(model);
                 }
                 else
