@@ -20,6 +20,7 @@
             "Stock": 100,
             "Bogo": true
           },
+<<<<<<< HEAD
           "Quantity": 37,
           "TotalPrice": 39.59
         },
@@ -49,6 +50,25 @@
         }
       ],
       "Subtotal": 52.72
+=======
+          "Quantity": 5,
+          "TotalPrice": 5.35
+        },
+        {
+          "Item": {
+            "Name": "War Heads",
+            "Description": "Extremely sour hard candy",
+            "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
+            "Price": 0.54,
+            "Stock": 100,
+            "Bogo": true
+          },
+          "Quantity": 12,
+          "TotalPrice": 6.48
+        }
+      ],
+      "Subtotal": 11.83
+>>>>>>> 571a6f862980b7eac6953425fe98ed378be5d025
     },
     "UserCards": []
   },

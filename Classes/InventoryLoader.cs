@@ -36,6 +36,25 @@ namespace CSharpest.Classes
             return storeInventory;
         }
 
+        public SortedSet<Item> loadInventorySorted()
+        {
+            SortedSet<Item> storeInventory = new SortedSet<Item>();
+
+
+            using StreamReader reader = new StreamReader(_filepath);
+            var json = reader.ReadToEnd();
+            var jarray = JArray.Parse(json);
+
+            foreach (var i in jarray)
+            {
+                Item item = i.ToObject<Item>();
+                storeInventory.Add(item);
+            }
+
+            return storeInventory;
+        }
+
+
 
     }
 }
