@@ -10,7 +10,7 @@
     ViewBag.Title = "Checkout";
 }
 
-<h1>CSharpest Store: Your Total</h1>
+<h1>CSharpest Store: Checkout Page</h1>
 
 <a href="/Storefront/welcome">
     <h3>[Go to back to Store]</h3>
@@ -50,7 +50,7 @@
             <td>@Model.Items[i].Item.Name</td>
             <td>@Model.Items[i].Quantity</td>
             <td>@Model.Items[i].Item.Price</td>
-            <td>@Model.Items[i].**TOTAL PRICE**</td>
+            <td>@Model.Items[i].TotalPrice</td>
         </tr>
     }
 </table>
@@ -71,3 +71,76 @@
 <a href="/Storefront/cart">
     <h3>[Go to back to Cart]</h3>
 </a>
+
+<style>
+
+    body {
+        background-color: #ececec;
+    }
+
+    /*"Title" main header*/
+    h1 {
+        text-align: center;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-variant: small-caps;
+        color: #142d4c;
+    }
+
+    /*Page Description*/
+    h2 {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-style: italic;
+        font-variant: small-caps;
+        margin-left: 100px;
+        color: #385170;
+    }
+
+    /*Link to Checkout*/
+    #GoToCheckout {
+        padding: 50px;
+        text-align: right;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #142d4c;
+    }
+
+    /*Link to Store*/
+    #GoBackToStore {
+        padding: 50px;
+        text-align: left;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #142d4c;
+    }
+
+    /*Table header*/
+    th {
+        color: #142d4c;
+    }
+
+    /*Columns for Name and Price of items*/
+    td:first-child, td:nth-child(3) {
+        font-weight: bold
+    }
+
+    /* Each item*/
+    td {
+        text-align: center;
+        padding: 10px;
+        font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia,serif;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /*Highlight item row when hovering*/
+    tr:not(:first-child):hover {
+        background-color: #9fd3c7;
+    }
+
+    /*Table formatting*/
+    table {
+        border: 2px solid black;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        margin-left: auto;
+        margin-right: auto;
+        color: #385170;
+    }
+
+</style>

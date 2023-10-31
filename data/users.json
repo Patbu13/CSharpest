@@ -10,20 +10,7 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [
-        {
-          "Item": {
-            "Name": "Cadbury Bar",
-            "Description": "Iconic dairy milk bar ",
-            "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
-            "Price": 1.07,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 18,
-          "TotalPrice": 19.26
-        }
-      ]
+      "Items": []
     },
     "UserCards": null
   },
