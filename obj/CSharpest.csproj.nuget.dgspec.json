@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\Patbu13\\CSharpest\\CSharpest.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Patbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Savannah\\source\\repos\\CSharpest\\CSharpest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Savannah\\source\\repos\\CSharpest\\CSharpest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Savannah\\source\\repos\\CSharpest\\CSharpest.csproj",
+        "projectName": "CSharpest",
+        "projectPath": "C:\\Users\\Savannah\\source\\repos\\CSharpest\\CSharpest.csproj",
+        "packagesPath": "C:\\Users\\Savannah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Savannah\\source\\repos\\CSharpest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Savannah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> d38458b2104d57ed594e344a824dd56d7ca6467f
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

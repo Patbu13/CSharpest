@@ -11,8 +11,6 @@
     ViewBag.Title = "CSharpest Store";
 }
 
-<link href="~/Content/Welcome.css" rel="stylesheet" type="text/css" />
-
 <!--Not using this anymore-->
 @* <script>
     function addItemToCart(id) {
@@ -41,6 +39,7 @@
         <th>Price <br/>
             (per oz)</th>
         <th>Stock</th>
+        <th>Sale</th>
         <th>Quantity (oz)</th>
         <th>Add to Cart</th>
     </tr>
@@ -52,7 +51,20 @@
             <td>@item.Description</td>
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            <form action="~/Storefront/Welcome" name="Welcome" method="post">
+
+            @if (item.Bogo)
+            {
+                <td>
+                    BOGO
+                </td>
+            }
+            else
+            {
+                <td></td>
+            }
+
+            @using (@Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
+                {
                 <td>
                     <input type="number" id=@item.Name name="Quantity" placeholder="# (oz)" min="0" />
                     <input type="hidden" id=@Model.CartId name="CartID" value=@Model.CartId />
