@@ -1,10 +1,11 @@
 ﻿<!--
- Last modified by: Vivian D'Souza
+ Last modified by: Patrick Burroughs
  Windows Prog 547
- Last Updated : 10/24/23
+ Last Updated : 10/30/23
 -->
 <!--Loading dictionary list from Cart-->
-@model Dictionary<CSharpest.Classes.Item, Tuple<int, decimal>>
+@using CSharpest.Classes
+@model CSharpest.Classes.CartPageModel
 
 @{
     ViewBag.Title = "Your Cart";
@@ -24,13 +25,13 @@
         <th>Total Price</th>
     </tr>
 
-    @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
+    @for (int i = 0; i < @Model.Items.Count(); i++)
     {
         <tr>
-             <td>@item.Key.Name</td>
-             <td>@item.Value.Item1</td>
-             <td>@item.Key.Price</td>
-             <td>@item.Value.Item2</td>
+             <td>@Model.Items[i].Item.Name</td>
+             <td>@Model.Items[i].Quantity</td>
+             <td>@Model.Items[i].Item.Price</td>
+             @* <td>@Model.Items[i].**TOTAL PRICE**</td> *@
          </tr>
     }
 </table>

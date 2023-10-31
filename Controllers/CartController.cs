@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 //	Last modified by: Patrick Burroughs
 //	Windows Prog 547
-//	Last Updated : 10/29/23
+//	Last Updated : 10/30/23
 namespace CSharpest.Controllers
 {
     [Route("[controller]")]
@@ -16,19 +16,21 @@ namespace CSharpest.Controllers
         InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         UserLoader userLoader = new UserLoader(@".\data\users.json");
         UserWriter userWriter = new UserWriter(@".\data\users.json");
+        Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
-        public Dictionary<Item, Tuple<int, decimal>> GetCartItems(Guid UserID)
+        public List<CartItem> GetCartItems(Guid UserID)
         {
             List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == UserID);
+            User user = users.Find(x => x.AccountID == currUserID);
+
             if (user == null)
             {
                 user = new User("Example", "User", "exampleuser@email.com", "ExamplePW","phone", "address", new Cart());
             }
 
-            Dictionary < Item, Tuple<int, decimal> > cartItems = user.Cart.Items;
+            List<CartItem> cartItems = user.Cart.Items;
             return cartItems;
         }
 
@@ -40,43 +42,56 @@ namespace CSharpest.Controllers
         //}
 
         [HttpPost("AddItemToCart")]
-        public void AddItemToCart(Guid CartID, Guid ItemID, int Quantity)
+        public void AddItemToCart(Guid ItemID, int quantity)
         {
             List<Item> items = inventoryLoader.loadInventory();
             Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
+            //ensure item was found
+            if (item == null) { Environment.Exit(0); }
 
+            //Create CartItem
+            CartItem cartItem = new CartItem(item, quantity);
+
+            //Has been modified to not concern itself with getting current user back from frontend
+            //currUserID has been hard coded for phase 1
             List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == CartID); // get user from database using id
-            
-            if (item != null && user.Cart != null && Quantity > 0 && item.Stock >=Quantity)
+            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+            //ensure user was found
+            if (user == null) { Environment.Exit(0); }
+
+            //Adds x number of item y to cart
+            if (user.Cart != null && cartItem.Quantity > 0 && item.Stock >= cartItem.Quantity)
             {
 
-                if (user.Cart.Items.ContainsKey(item))
+                if (user.Cart.Items.Find(x => x.Item.ItemId == ItemID) == null)
                 {
-                    int currQuant = user.Cart.Items[item].Item1 + Quantity;
-                    user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    //First instance of this item being in cart
+                    user.Cart.Items.Add(cartItem);
                     userWriter.writeUser(user);
+                    
                 }
                 else
                 {
-                    user.Cart.Items.Add(item, Tuple.Create(Quantity, Quantity * item.Price));
+                    //Customer is adding more of this item to cart
+                    //LINQ?? maybe :)
+                    //Now realizing a List was probably not the best for this.. too late -patrick
+                    user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += cartItem.Quantity;
                     userWriter.writeUser(user);
                 }
             }
             else
             {
-                if (item == null) { Environment.Exit(0); }
 
-                //if (user.Cart == null) { return "Failure: Cart does not exist."; }
+                if (user.Cart == null) { Environment.Exit(0); } // User added nothing to cart
 
-                //if (Quantity < 0) { return "Failure: Quantity must be positive."; }
+                if (cartItem.Quantity < 0) { Environment.Exit(0); } // Should never happen but can't hurt
 
-                //if (item.Stock < Quantity) { return "Failure: Not enough in stock."; }
+                if (item.Stock < cartItem.Quantity) { Environment.Exit(0); } // Not enough in stock to purchase that amount
             }
 
-            //return "Success!";
         }
 
+/*        //NEEDS DONE
         [HttpPost("RemoveItemFromCart")]
 
         // Remove an item from the cart
@@ -89,7 +104,7 @@ namespace CSharpest.Controllers
             if (itemParams.Item != null && itemParams.Quantity > 0)
             {
 
-                if (user.Cart.Items.ContainsKey(itemParams.Item))
+                if (user.Cart.Items.Contains(itemParams.Item))
                 {
                     int currQuant = user.Cart.Items[itemParams.Item].Item1;
                     if (currQuant > itemParams.Quantity)
@@ -105,6 +120,6 @@ namespace CSharpest.Controllers
                     }
                 }
             }
-        }
+        }*/
     }
 }
