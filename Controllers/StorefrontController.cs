@@ -24,8 +24,18 @@ namespace CSharpest
             [HttpGet("welcome")]
             public ActionResult Welcome()
             {
-                ViewBag.Cart = cartController.GetCartItems(currUserID);
-                return View(itemController.GetAllItems());
+                //ViewBag.Cart = cartController.GetCartItems(currUserID);
+                WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0);
+                return View(model);
+            }
+
+            // POST: <StorefrontController>/addToCart
+            [HttpPost("welcome")]
+            public ActionResult Welcome(int Quantity)
+            {
+                cartController.AddItemToCart(Quantity);
+                WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0);
+                return View(model);
             }
 
             // GET: <StorefrontController>/cart
@@ -49,16 +59,6 @@ namespace CSharpest
             {
                 return View();
             }
-
-            // POST: <StorefrontController>/addToCart
-            [HttpPost("welcome")]
-            public ActionResult Welcome(AddItemReqParams itemParams)
-            {
-                cartController.AddItemToCart(itemParams);
-                return PartialView("Welcome");
-            }
-
-
 
         }
     }

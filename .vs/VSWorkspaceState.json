@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Classes",
-    "\\Controllers",
-    "\\data",
-    "\\Views",
-    "\\Views\\Storefront"
+    ""
   ],
-  "SelectedNode": "\\Views\\Storefront\\Welcome.cshtml",
+  "SelectedNode": "\\CSharpest.sln",
   "PreviewInSolutionExplorer": false
 }
