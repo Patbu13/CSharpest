@@ -45,27 +45,30 @@ namespace CSharpest.Controllers
         public void AddItemToCart(Guid ItemID, int quantity)
         {
             List<Item> items = inventoryLoader.loadInventory();
-            Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
-            //ensure item was found
-            if (item == null) { Environment.Exit(0); }
-
-            //Create CartItem
-            CartItem cartItem = new CartItem(item, quantity);
-
             //Has been modified to not concern itself with getting current user back from frontend
             //currUserID has been hard coded for phase 1
             List<User> users = userLoader.loadUsers();
+
             User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
             //ensure user was found
             if (user == null) { Environment.Exit(0); }
 
+            Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
+            //ensure item was found
+            if (item == null) { Environment.Exit(0); }
+
+            //Create totalPrice of product
+            decimal totalPrice = item.Price * (decimal)quantity; 
+
             //Adds x number of item y to cart
-            if (user.Cart != null && cartItem.Quantity > 0 && item.Stock >= cartItem.Quantity)
+            if (user.Cart != null && quantity > 0 && item.Stock >= quantity)
             {
 
                 if (user.Cart.Items.Find(x => x.Item.ItemId == ItemID) == null)
                 {
                     //First instance of this item being in cart
+                    //Create CartItem
+                    CartItem cartItem = new CartItem(item, quantity, totalPrice);
                     user.Cart.Items.Add(cartItem);
                     userWriter.writeUser(user);
                     
@@ -75,7 +78,8 @@ namespace CSharpest.Controllers
                     //Customer is adding more of this item to cart
                     //LINQ?? maybe :)
                     //Now realizing a List was probably not the best for this.. too late -patrick
-                    user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += cartItem.Quantity;
+                    user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += quantity;
+                    user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice += totalPrice;
                     userWriter.writeUser(user);
                 }
             }
@@ -84,9 +88,9 @@ namespace CSharpest.Controllers
 
                 if (user.Cart == null) { Environment.Exit(0); } // User added nothing to cart
 
-                if (cartItem.Quantity < 0) { Environment.Exit(0); } // Should never happen but can't hurt
+                if (quantity < 0) { Environment.Exit(0); } // Should never happen but can't hurt
 
-                if (item.Stock < cartItem.Quantity) { Environment.Exit(0); } // Not enough in stock to purchase that amount
+                if (item.Stock < quantity) { Environment.Exit(0); } // Not enough in stock to purchase that amount
             }
 
         }

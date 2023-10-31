@@ -20,29 +20,8 @@
             "Stock": 100,
             "Bogo": true
           },
-          "Quantity": 37
-        },
-        {
-          "Item": {
-            "Name": "Hershey\u0027s Kisses",
-            "Description": "Classic bite-sized milk chocolate bites",
-            "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
-            "Price": 0.31,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 13
-        },
-        {
-          "Item": {
-            "Name": "100 Grand",
-            "Description": "Fun-sized chocolate bar with caramel and crispy rice",
-            "ItemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
-            "Price": 0.61,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 13
+          "Quantity": 6,
+          "TotalPrice": 6.42
         }
       ]
     },
