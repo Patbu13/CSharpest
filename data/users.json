@@ -10,65 +10,8 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [
-        {
-          "Item": {
-            "Name": "Cadbury Bar",
-            "Description": "Iconic dairy milk bar ",
-            "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
-            "Price": 1.07,
-            "Stock": 100,
-            "Bogo": true
-          },
-<<<<<<< HEAD
-          "Quantity": 37,
-          "TotalPrice": 39.59
-        },
-        {
-          "Item": {
-            "Name": "Hershey\u0027s Kisses",
-            "Description": "Classic bite-sized milk chocolate bites",
-            "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
-            "Price": 0.31,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 13,
-          "TotalPrice": 4.03
-        },
-        {
-          "Item": {
-            "Name": "Air Heads",
-            "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
-            "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-            "Price": 0.7,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 13,
-          "TotalPrice": 9.1
-        }
-      ],
-      "Subtotal": 52.72
-=======
-          "Quantity": 5,
-          "TotalPrice": 5.35
-        },
-        {
-          "Item": {
-            "Name": "War Heads",
-            "Description": "Extremely sour hard candy",
-            "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
-            "Price": 0.54,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 12,
-          "TotalPrice": 6.48
-        }
-      ],
-      "Subtotal": 11.83
->>>>>>> 571a6f862980b7eac6953425fe98ed378be5d025
+      "Items": [],
+      "Subtotal": 0
     },
     "UserCards": []
   },
