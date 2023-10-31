@@ -10,10 +10,47 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [],
-      "Subtotal": 0
+      "Items": [
+        {
+          "Item": {
+            "Name": "Cadbury Bar",
+            "Description": "Iconic dairy milk bar ",
+            "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
+            "Price": 1.07,
+            "Stock": 100,
+            "Bogo": true
+          },
+          "Quantity": 37,
+          "TotalPrice": 39.59
+        },
+        {
+          "Item": {
+            "Name": "Hershey\u0027s Kisses",
+            "Description": "Classic bite-sized milk chocolate bites",
+            "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+            "Price": 0.31,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 13,
+          "TotalPrice": 4.03
+        },
+        {
+          "Item": {
+            "Name": "Air Heads",
+            "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
+            "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
+            "Price": 0.7,
+            "Stock": 100,
+            "Bogo": true
+          },
+          "Quantity": 13,
+          "TotalPrice": 9.1
+        }
+      ],
+      "Subtotal": 52.72
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Bob",
@@ -29,7 +66,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Charlie",
@@ -45,7 +82,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "David",
@@ -61,7 +98,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Eve",
@@ -77,7 +114,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Frank",
@@ -93,7 +130,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Grace",
@@ -109,7 +146,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Henry",
@@ -125,7 +162,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Ivy",
@@ -141,7 +178,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Jack",
@@ -157,7 +194,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Katie",
@@ -173,7 +210,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Leo",
@@ -189,7 +226,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Mia",
@@ -205,7 +242,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Noah",
@@ -221,7 +258,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Olivia",
@@ -237,7 +274,7 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   },
   {
     "FirstName": "Peter",
@@ -253,6 +290,6 @@
       "Items": [],
       "Subtotal": 0
     },
-    "UserCards": null
+    "UserCards": []
   }
 ]
