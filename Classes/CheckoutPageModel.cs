@@ -8,7 +8,7 @@ namespace CSharpest.Classes
     {
         public List<CartItem> Items { get; set; }
         public Guid CartId { get; set; }
-        public Card Card { get; set; }
+        public Card? Card { get; set; }
 
         public CheckoutPageModel(List<CartItem> items, Guid cartId, Card card) {
             Items = items;
@@ -16,5 +16,10 @@ namespace CSharpest.Classes
             Card = card;
         }
 
+        public CheckoutPageModel(List<CartItem> items, Guid cartId)
+        {
+            Items = items;
+            CartId = cartId;
+        }
     }
 }

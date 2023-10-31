@@ -41,7 +41,6 @@ namespace CSharpest
                 return View(model);
             }
 
-            //NEED TO LOOK AT THIS
             // GET: <StorefrontController>/cart
             [HttpGet("cart")]
             public ActionResult Cart()
@@ -85,7 +84,7 @@ namespace CSharpest
                 User user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
-                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID, user.UserCards[0]);
+                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID);
                     return View(model);
                 } else
                 {
