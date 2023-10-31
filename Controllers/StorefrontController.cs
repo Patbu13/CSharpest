@@ -92,24 +92,33 @@ namespace CSharpest
                 
             }
 
-            /*// POST: <StorefrontController>/checkout
+            // POST: <StorefrontController>/checkout
             [HttpPost("checkout")]
-            public ActionResult Checkout([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvc, [FromForm]string name) 
+            public ActionResult Checkout([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvv, [FromForm]string name) 
             {
                 List<User> users = userLoader.loadUsers();
                 User user = users.Find(x => x.AccountID == currUserID);
-                Card card = new Card (cardNumber, month, year, name, cvc);
-                user.UserCards.Add(card);
-                if (user.Cart != null)
+                Card card = new Card(cardNumber, month, year, name, cvv);
+                CardCheckParams cardCheck = new CardCheckParams(user, card);
+
+                if (checkoutController.takeCardInput(cardCheck))
                 {
-                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID, user.UserCards[0]);
-                    return View(model);
+                    if (user.Cart != null)
+                    {
+                        OrderPageModel model = new OrderPageModel(user.Cart.Items, checkoutController.purchase(user));
+                        return View("orderConfirmation", model);
+                    }
+                    else
+                    {
+
+                        return View(null);
+                    }
                 }
                 else
                 {
                     return View(null);
                 }
-            }*/
+            }
 
             // POST: <StorefrontController>/orderConfirmation
             [HttpPost("orderConfirmation")]

@@ -10,8 +10,21 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [],
-      "Subtotal": 0
+      "Items": [
+        {
+          "Item": {
+            "Name": "Hershey\u0027s Kisses",
+            "Description": "Classic bite-sized milk chocolate bites",
+            "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+            "Price": 0.31,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 12,
+          "TotalPrice": 3.72
+        }
+      ],
+      "Subtotal": 3.72
     },
     "UserCards": []
   },
