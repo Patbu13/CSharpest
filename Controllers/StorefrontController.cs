@@ -4,6 +4,7 @@ using System.Web;
 using System.Net;
 using NuGet.Packaging;
 using CSharpest.Controllers;
+using System.Drawing.Text;
 //	Last modified by: Vivian D'Souza
 //	Windows Prog 547
 //	Last Updated : 10/24/23
@@ -133,7 +134,7 @@ namespace CSharpest
                 {
                     if (user.Cart != null)
                     {
-                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal,checkoutController.purchase(user));
+                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal, checkoutController.purchase(user));
                         return View(model);
                     }
                     else
