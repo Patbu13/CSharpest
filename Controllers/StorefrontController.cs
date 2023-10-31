@@ -124,7 +124,7 @@ namespace CSharpest
                 {
                     if (user.Cart != null)
                     {
-                        OrderPageModel model = new OrderPageModel(user.Cart.Items, checkoutController.purchase(user));
+                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal,checkoutController.purchase(user));
                         return View(model);
                     }
                     else
@@ -149,7 +149,7 @@ namespace CSharpest
 
                 if (user.Cart != null)
                 {
-                    OrderPageModel model = new OrderPageModel(user.Cart.Items, true);
+                    OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal, true);
                     return View(model);
                 }
                 else

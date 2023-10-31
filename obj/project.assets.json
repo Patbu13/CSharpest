@@ -11852,19 +11852,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Patbu\\.nuget\\packages\\": {}
+    "C:\\Users\\vivia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
+      "projectUniqueName": "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj",
       "projectName": "CSharpest",
-      "projectPath": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
-      "packagesPath": "C:\\Users\\Patbu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\obj\\",
+      "projectPath": "C:\\Users\\vivia\\source\\repos\\CSharpest\\CSharpest.csproj",
+      "packagesPath": "C:\\Users\\vivia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vivia\\source\\repos\\CSharpest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Patbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vivia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11948,7 +11953,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
