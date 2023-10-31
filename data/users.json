@@ -10,8 +10,33 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [],
-      "Subtotal": 0
+      "Items": [
+        {
+          "Item": {
+            "Name": "Cadbury Bar",
+            "Description": "Iconic dairy milk bar ",
+            "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
+            "Price": 1.07,
+            "Stock": 100,
+            "Bogo": true
+          },
+          "Quantity": 5,
+          "TotalPrice": 5.35
+        },
+        {
+          "Item": {
+            "Name": "War Heads",
+            "Description": "Extremely sour hard candy",
+            "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
+            "Price": 0.54,
+            "Stock": 100,
+            "Bogo": true
+          },
+          "Quantity": 12,
+          "TotalPrice": 6.48
+        }
+      ],
+      "Subtotal": 11.83
     },
     "UserCards": null
   },
