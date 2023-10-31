@@ -16,14 +16,19 @@ namespace CSharpest.Controllers
     {
         InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         InventoryWriter inventoryWriter = new InventoryWriter(@".\data\inventory.json");
+        UserLoader userLoader = new UserLoader(@".\data\users.json");
         UserWriter userWriter = new UserWriter(@".\data\users.json");
+        Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
-        /*// takes in a new card and then saves it to user object
+        // takes in a new card and then saves it to user object
         // POST: <CheckoutController>/address
         [HttpPost("{card}")]
         public bool takeCardInput(Card card, Guid userID)
         {
-            //FIND USER using USERID once json written
+            //FIND USER using userID will be working in phase 2, hardcode for now
+            List<User> users = userLoader.loadUsers();
+            User user = users.Find(x => x.AccountID == currUserID);
+
             if (ValidateCardDetails(card))
             {
                 // if card validation successful, save to user's list of cards
@@ -44,6 +49,12 @@ namespace CSharpest.Controllers
         [HttpPost("{cardCheck}")]
         public bool ValidateCardDetails(Card card)
         {
+            // checks card nullity
+            if (card == null)
+            {
+                return false;
+            }
+
             // checks for valid credit card number length
             if (card.Number.ToString().Length > 19 || card.Number.ToString().Length < 16)
             {
@@ -69,9 +80,9 @@ namespace CSharpest.Controllers
                 return false;
             }
             return true;
-        }*/
+        }
 
-
+        // Adding address functionality either if we have time or in phase 2
         /*// POST: <CheckoutController>/address
         [HttpPost("{address}")]
         public bool ValidateShippingAddress(User user)
@@ -136,7 +147,21 @@ namespace CSharpest.Controllers
             { 
                 // multiplies the cost of each item times the quantity of that item
                 // then adds product to total
-                total += ((cartItem.Item.Price) * (cartItem.Quantity));
+
+                // checks if item is Buy one Get one free
+                if (cartItem.Item.Bogo)
+                {
+                    if (cartItem.Quantity % 2 == 1) {
+                        total += cartItem.Item.Price + (cartItem.Item.Price * (cartItem.Quantity / 2));
+                    } else
+                    {
+                        total += cartItem.Item.Price * (cartItem.Quantity / 2);
+                    } 
+                } else
+                {
+                    total += cartItem.Item.Price * cartItem.Quantity;
+                }
+                
             }
 
             // adds tax to total; flat rate of 8% (for now)
