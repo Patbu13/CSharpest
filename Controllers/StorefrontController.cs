@@ -18,6 +18,7 @@ namespace CSharpest
         {
             CartController cartController = new CartController();
             ItemController itemController = new ItemController();
+            UserLoader userLoader = new UserLoader(@".\data\users.json");
             Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
             // GET: <StorefrontController>/welcome
@@ -45,16 +46,35 @@ namespace CSharpest
             [HttpGet("cart")]
             public ActionResult Cart()
             {
-                CartPageModel model = new CartPageModel(currUserID);
-                return View(model);
+                List<User> users = userLoader.loadUsers();
+                User user = users.Find(x => x.AccountID == currUserID);
+                if (user.Cart != null)
+                {
+                    CartPageModel model = new CartPageModel(user.Cart.Items, currUserID);
+                    return View(model);
+                } else
+                {
+                    return View(null);
+                }
+                
+                
             }
 
             // POST: <StorefrontController>/cart
             [HttpPost("cart")]
             public ActionResult Cart([FromForm] Guid cartID)
             {
-                CartPageModel model = new CartPageModel(currUserID);
-                return View(model);
+                List<User> users = userLoader.loadUsers();
+                User user = users.Find(x => x.AccountID == currUserID);
+                if (user.Cart != null)
+                {
+                    CartPageModel model = new CartPageModel(user.Cart.Items, currUserID);
+                    return View(model);
+                }
+                else
+                {
+                    return View(null);
+                }
             }
 
             // GET: <StorefrontController>/checkout

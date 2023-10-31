@@ -11,7 +11,8 @@ namespace CSharpest.Classes
         public Guid ItemId { get; set; }
 
         //Setup format for the future, phase 2
-        public CartPageModel(Guid cartId) {
+        public CartPageModel(List<CartItem> _items, Guid cartId) {
+            Items = _items;
             CartId = cartId;
         }
 
