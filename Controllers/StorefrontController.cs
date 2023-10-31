@@ -47,7 +47,7 @@ namespace CSharpest
                 User user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
-                    CartPageModel model = new CartPageModel(user.Cart.Items, currUserID);
+                    CartPageModel model = new CartPageModel(user.Cart.Items, user.Cart.Subtotal, currUserID);
                     return View(model);
                 } else
                 {
@@ -65,7 +65,7 @@ namespace CSharpest
                 User user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
-                    CartPageModel model = new CartPageModel(user.Cart.Items, currUserID);
+                    CartPageModel model = new CartPageModel(user.Cart.Items, user.Cart.Subtotal, currUserID);
                     return View(model);
                 }
                 else

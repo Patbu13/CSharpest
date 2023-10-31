@@ -7,6 +7,7 @@ namespace CSharpest.Classes
     public class CartPageModel
     {
         public List<CartItem> Items { get; set; }
+        public decimal Subtotal { get; set; }
         public Guid CartId { get; set; }
         public Guid ItemId { get; set; }
 
@@ -16,5 +17,11 @@ namespace CSharpest.Classes
             CartId = cartId;
         }
 
+        public CartPageModel(List<CartItem> _items, decimal _subtotal, Guid cartId)
+        {
+            Subtotal = _subtotal;
+            Items = _items;
+            CartId = cartId;
+        }
     }
 }

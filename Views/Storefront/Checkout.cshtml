@@ -18,6 +18,29 @@
 
 <hr/>
 
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price <br/>
+            (/ oz)</th>
+        <th>Total Price</th>
+    </tr>
+
+    @for (int i = 0; i < @Model.Items.Count(); i++)
+    {
+        <tr>
+            <td>@Model.Items[i].Item.Name</td>
+            <td>@Model.Items[i].Quantity</td>
+            <td>@Model.Items[i].Item.Price</td>
+            <td>@Model.Items[i].TotalPrice</td>
+        </tr>
+    }
+</table>
+
+<hr/>
+
+<p>Please Insert Card Information:</p>
 
 <!-- Put this in BeginForm-->
 <form>
@@ -36,40 +59,22 @@
     <input type="submit" value="Submit">
 </form>
 
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price by Ounce</th>
-        <th>Total Price</th>
-    </tr>
-
-    @for (int i = 0; i < @Model.Items.Count(); i++)
-    {
-        <tr>
-            <td>@Model.Items[i].Item.Name</td>
-            <td>@Model.Items[i].Quantity</td>
-            <td>@Model.Items[i].Item.Price</td>
-            <td>@Model.Items[i].TotalPrice</td>
-        </tr>
-    }
-</table>
-
-
 <hr />
+
+<!-- Display These-->
 <h3>Shipping Costs</h3>
 <h3>Taxes</h3>
 <hr />
 <h3>Total Cost</h3>
 
 <!-- Place Order Button -->
-<a href="#">
+<a href="#" id="PlaceOrder">
     <h3>[Place Order]</h3>
 </a>
 
 <!-- Go Back to Cart Button-->
 <a href="/Storefront/cart">
-    <h3>[Go to back to Cart]</h3>
+    <h3>[Go Back to Cart]</h3>
 </a>
 
 <style>
@@ -95,13 +100,6 @@
         color: #385170;
     }
 
-    /*Link to Checkout*/
-    #GoToCheckout {
-        padding: 50px;
-        text-align: right;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
-    }
 
     /*Link to Store*/
     #GoBackToStore {
@@ -109,6 +107,36 @@
         text-align: left;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         color: #142d4c;
+    }
+
+    /*Link to Place Order*/
+    #PlaceOrder {
+        padding: 50px;
+        text-align: right;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #142d4c;
+    }
+
+    /*Small Headers*/
+    h3 {
+        padding: 20px;
+        text-align: left;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #142d4c;
+    }
+
+    /*Card Information Statement*/
+    p {
+        margin-left: 50px;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-weight: bold;
+        color: #385170;
+    }
+
+    /*Form*/
+    form {
+        margin-left: 50px;
+        padding: 20px;
     }
 
     /*Table header*/

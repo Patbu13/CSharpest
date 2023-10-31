@@ -70,6 +70,7 @@ namespace CSharpest.Controllers
                     //Create CartItem
                     CartItem cartItem = new CartItem(item, quantity, totalPrice);
                     user.Cart.Items.Add(cartItem);
+                    user.Cart.Subtotal += cartItem.TotalPrice;
                     userWriter.writeUser(user);
                     
                 }
@@ -80,6 +81,7 @@ namespace CSharpest.Controllers
                     //Now realizing a List was probably not the best for this.. too late -patrick
                     user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += quantity;
                     user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice += totalPrice;
+                    user.Cart.Subtotal += quantity * item.Price;
                     userWriter.writeUser(user);
                 }
             }
