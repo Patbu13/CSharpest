@@ -126,7 +126,6 @@ namespace CSharpest.Controllers
                     item.Stock -= cartItem.Quantity;
                     inventoryWriter.writeInventory(item);
                 }
-                
                 return true;
                 //return (true, "Successful transaction");
             } else

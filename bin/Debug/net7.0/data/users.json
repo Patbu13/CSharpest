@@ -20,11 +20,23 @@
             "Stock": 100,
             "Bogo": false
           },
-          "Quantity": 12,
-          "TotalPrice": 3.72
+          "Quantity": 36,
+          "TotalPrice": 11.16
+        },
+        {
+          "Item": {
+            "Name": "Milky Way",
+            "Description": "Nougat topped with caramel, all covered in chocolate",
+            "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+            "Price": 0.37,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 3,
+          "TotalPrice": 1.11
         }
       ],
-      "Subtotal": 3.72
+      "Subtotal": 12.27
     },
     "UserCards": []
   },
