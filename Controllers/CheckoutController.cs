@@ -1,6 +1,7 @@
 ﻿using CSharpest.Classes;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.Framework;
 
 //	Last modified by: Patrick Burroughs
 //	Windows Prog 547
@@ -73,7 +74,7 @@ namespace CSharpest.Controllers
                 return false;
             }
 
-            if (card.CVV.ToString().Length != 3 || card.CVV.ToString().Length != 4)
+            if (card.CVV.ToString().Length !> 4)
             {
                 return false;
             }

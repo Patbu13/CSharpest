@@ -1,130 +1,154 @@
-  [
+[
   {
-    "name": "Cadbury Bar",
-    "description": "Iconic dairy milk bar ",
-    "itemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
-    "price": "1.07",
-    "stock": 100,
-    "bogo": true
+    "Name": "Cadbury Bar",
+    "Description": "Iconic dairy milk bar ",
+    "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
+    "Price": 1.07,
+    "Stock": 100,
+    "Bogo": true
   },
   {
-    "name": "Hershey's Kisses",
-    "description": "Classic bite-sized milk chocolate bites",
-    "itemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
-    "price": "0.31",
-    "stock": 100,
-    "bogo": false
-  },
-    {
-      "name": "100 Grand",
-      "description": "Fun-sized chocolate bar with caramel and crispy rice",
-      "itemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
-      "price": "0.61",
-      "stock": 100,
-      "bogo": false
-    },
-  {
-    "name": "War Heads",
-    "description": "Extremely sour hard candy",
-    "itemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
-    "price": "0.54",
-    "stock": 100,
-    "bogo": true
+    "Name": "Hershey\u0027s Kisses",
+    "Description": "Classic bite-sized milk chocolate bites",
+    "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+    "Price": 0.31,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Reese's Peanut Butter Cups",
-    "description": "Soft peanut butter covered in chocolate",
-    "itemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
-    "price": "0.50",
-    "stock": 100,
-    "bogo": false
+    "Name": "100 Grand",
+    "Description": "Fun-sized chocolate bar with caramel and crispy rice",
+    "ItemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
+    "Price": 0.61,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Starburst",
-    "description": "Soft, chewable, fruit-flavored taffy",
-    "itemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
-    "price": "0.59",
-    "stock": 100,
-    "bogo": false
+    "Name": "War Heads",
+    "Description": "Extremely sour hard candy",
+    "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
+    "Price": 0.54,
+    "Stock": 100,
+    "Bogo": true
   },
   {
-    "name": "Hot Tamales",
-    "description": "Chewy cinnamon-flavored candy with a kick",
-    "itemId": "069dfa8a-abf1-4803-b88c-6bcd27dbb553",
-    "price": "0.69",
-    "stock": 100,
-    "bogo": false
+    "Name": "Reese\u0027s Peanut Butter Cups",
+    "Description": "Soft peanut butter covered in chocolate",
+    "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
+    "Price": 0.5,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Air Heads",
-    "description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
-    "itemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-    "price": "0.70",
-    "stock": 100,
-    "bogo": true
+    "Name": "Starburst",
+    "Description": "Soft, chewable, fruit-flavored taffy",
+    "ItemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
+    "Price": 0.59,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Milky Way",
-    "description": "Nougat topped with caramel, all covered in chocolate",
-    "itemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
-    "price": "0.37",
-    "stock": 100,
-    "bogo": false
+    "Name": "Hot Tamales",
+    "Description": "Chewy cinnamon-flavored candy with a kick",
+    "ItemId": "069dfa8a-abf1-4803-b88c-6bcd27dbb553",
+    "Price": 0.69,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Smarties",
-    "description": "Sweet Powdered tablets that melt in your mouth",
-    "itemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
-    "price": "0.53",
-    "stock": 100,
-    "bogo": false
+    "Name": "Air Heads",
+    "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
+    "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
+    "Price": 0.7,
+    "Stock": 100,
+    "Bogo": true
   },
   {
-    "name": "Snickers",
-    "description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
-    "itemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
-    "price": "0.47",
-    "stock": 100,
-    "bogo": false
+    "Name": "Milky Way",
+    "Description": "Nougat topped with caramel, all covered in chocolate",
+    "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+    "Price": 0.37,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Crunch",
-    "description": "Milk chocolate with crispy rice",
-    "itemId": "d81e6f6a-93a3-499a-91e0-88dada033b32",
-    "price": "0.62",
-    "stock": 100,
-    "bogo": false
+    "Name": "Smarties",
+    "Description": "Sweet Powdered tablets that melt in your mouth",
+    "ItemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
+    "Price": 0.53,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Almond Joy",
-    "description": "Almond and cocount flakes encased in milk chocolate",
-    "itemId": "ab1c40e1-9c79-43ea-b415-a116fe9c58c9",
-    "price": "0.65",
-    "stock": 100,
-    "bogo": false
+    "Name": "Snickers",
+    "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
+    "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
+    "Price": 0.47,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Nerds",
-    "description": "Sweet, tangy, crunchy fruit-flavored pebbles",
-    "itemId": "19085e1d-dfce-4616-8aaf-503cd3e0e44d",
-    "price": "0.87",
-    "stock": 100,
-    "bogo": true
+    "Name": "Crunch",
+    "Description": "Milk chocolate with crispy rice",
+    "ItemId": "d81e6f6a-93a3-499a-91e0-88dada033b32",
+    "Price": 0.62,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "Kit Kat",
-    "description": "Chocolate covered wafers",
-    "itemId": "0692703f-794d-4181-bb50-b549468f019c",
-    "price": "0.47",
-    "stock": 100,
-    "bogo": false
+    "Name": "Almond Joy",
+    "Description": "Almond and cocount flakes encased in milk chocolate",
+    "ItemId": "ab1c40e1-9c79-43ea-b415-a116fe9c58c9",
+    "Price": 0.65,
+    "Stock": 100,
+    "Bogo": false
   },
   {
-    "name": "M&Ms",
-    "description": "Button shaped chocolates covered in a hard shell",
-    "itemId": "5396bc7c-0917-41c0-be43-b1734dc22a05",
-    "price": "0.63",
-    "stock": 100,
-    "bogo": false
+    "Name": "Nerds",
+    "Description": "Sweet, tangy, crunchy fruit-flavored pebbles",
+    "ItemId": "19085e1d-dfce-4616-8aaf-503cd3e0e44d",
+    "Price": 0.87,
+    "Stock": 100,
+    "Bogo": true
+  },
+  {
+    "Name": "Kit Kat",
+    "Description": "Chocolate covered wafers",
+    "ItemId": "0692703f-794d-4181-bb50-b549468f019c",
+    "Price": 0.47,
+    "Stock": 100,
+    "Bogo": false
+  },
+  {
+    "Name": "M\u0026Ms",
+    "Description": "Button shaped chocolates covered in a hard shell",
+    "ItemId": "5396bc7c-0917-41c0-be43-b1734dc22a05",
+    "Price": 0.63,
+    "Stock": 100,
+    "Bogo": false
+  },
+  {
+    "Name": "Hershey\u0027s Kisses",
+    "Description": "Classic bite-sized milk chocolate bites",
+    "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+    "Price": 0.31,
+    "Stock": 88,
+    "Bogo": false
+  },
+  {
+    "Name": "Hershey\u0027s Kisses",
+    "Description": "Classic bite-sized milk chocolate bites",
+    "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+    "Price": 0.31,
+    "Stock": 76,
+    "Bogo": false
+  },
+  {
+    "Name": "Milky Way",
+    "Description": "Nougat topped with caramel, all covered in chocolate",
+    "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+    "Price": 0.37,
+    "Stock": 97,
+    "Bogo": false
   }
 ]
