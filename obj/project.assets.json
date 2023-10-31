@@ -11852,34 +11852,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Patbu\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Savannah\\.nuget\\packages\\": {}
->>>>>>> d38458b2104d57ed594e344a824dd56d7ca6467f
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\Patbu13\\CSharpest\\CSharpest.csproj",
+      "projectUniqueName": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
       "projectName": "CSharpest",
-      "projectPath": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\Patbu13\\CSharpest\\CSharpest.csproj",
+      "projectPath": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\CSharpest.csproj",
       "packagesPath": "C:\\Users\\Patbu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\Patbu13\\CSharpest\\obj\\",
+      "outputPath": "C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Patbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\Savannah\\source\\repos\\CSharpest\\CSharpest.csproj",
-      "projectName": "CSharpest",
-      "projectPath": "C:\\Users\\Savannah\\source\\repos\\CSharpest\\CSharpest.csproj",
-      "packagesPath": "C:\\Users\\Savannah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Savannah\\source\\repos\\CSharpest\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Savannah\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> d38458b2104d57ed594e344a824dd56d7ca6467f
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11968,6 +11953,12 @@
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Patbu\\OneDrive\\USC\\Fall '23\\CSCE 547 - Windows Prog\\CSharpest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1603",
       "level": "Warning",

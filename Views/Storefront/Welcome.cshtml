@@ -37,7 +37,7 @@
         <th>Description</th>
         <!-- <th>ID</th> -->
         <th>Price <br/>
-            (per oz)</th>
+            (/oz)</th>
         <th>Stock</th>
         <th>Sale</th>
         <th>Quantity (oz)</th>
@@ -63,7 +63,7 @@
                 <td></td>
             }
 
-            @using (@Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
+            @using (Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
                 {
                 <td>
                     <input type="number" id=@item.Name name="Quantity" placeholder="# (oz)" min="0" />
@@ -73,8 +73,7 @@
                 <td>
                     <input id="Submit" type="submit" value="Add to Cart" />
                 </td>
-            </form>
-
+                }
         </tr>
 
     }
