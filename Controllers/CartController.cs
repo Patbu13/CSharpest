@@ -16,6 +16,7 @@ namespace CSharpest.Controllers
         InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         UserLoader userLoader = new UserLoader(@".\data\users.json");
         UserWriter userWriter = new UserWriter(@".\data\users.json");
+        Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
         // GET: api/<CartController>
         [HttpGet("GetCartItems")]
@@ -46,7 +47,7 @@ namespace CSharpest.Controllers
             Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
 
             List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == CartID); // get user from database using id
+            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
             
             if (item != null && user.Cart != null && Quantity > 0 && item.Stock >=Quantity)
             {
@@ -67,11 +68,11 @@ namespace CSharpest.Controllers
             {
                 if (item == null) { Environment.Exit(0); }
 
-                //if (user.Cart == null) { return "Failure: Cart does not exist."; }
+                if (user.Cart == null) { Environment.Exit(0); }
 
-                //if (Quantity < 0) { return "Failure: Quantity must be positive."; }
+                if (Quantity < 0) { Environment.Exit(0); }
 
-                //if (item.Stock < Quantity) { return "Failure: Not enough in stock."; }
+                if (item.Stock < Quantity) { Environment.Exit(0); }
             }
 
             //return "Success!";

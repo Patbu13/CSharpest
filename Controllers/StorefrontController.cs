@@ -31,9 +31,9 @@ namespace CSharpest
 
             // POST: <StorefrontController>/addToCart
             [HttpPost("Welcome")]
-            public ActionResult Welcome(Guid CartID, Guid ItemID, int Quantity)
+            public ActionResult Welcome([FromForm] int quantity, [FromForm] Guid currUserID, [FromForm] Guid itemId)
             {
-                cartController.AddItemToCart(CartID, ItemID, Quantity);
+                cartController.AddItemToCart(currUserID, itemId, quantity);
                 WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0, currUserID);
                 return View(model);
             }

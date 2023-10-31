@@ -24,7 +24,7 @@
         <th>Total Price</th>
     </tr>
 
-    @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
+    @foreach (CSharpest.Classes.Item, KeyValuePair<Tuple<int, decimal>> item in @Model)
     {
         <tr>
              <td>@item.Key.Name</td>
