@@ -1,4 +1,4 @@
-﻿d<!--
+﻿<!--
  Last modified by: Vivian D'Souza
  Windows Prog 547
  Last Updated : 10/24/23
@@ -10,7 +10,9 @@
     ViewBag.Title = "Your Cart";
 }
 
-<link href="~/Content/Cart.css" rel="stylesheet" type="text/css"/>
+<a href="/Storefront/welcome">
+    <h3 id="GoBackToStore">[Go to back to Store]</h3>
+</a>
 
 <h1>CSharpest Store: Your Cart</h1>
 
@@ -18,8 +20,8 @@
     <tr>
         <th>Name</th>
         <th>Quantity</th>
-        <th>Total Price</th>
         <th>Price by Ounce</th>
+        <th>Total Price</th>
     </tr>
 
     @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
@@ -27,18 +29,32 @@
         <tr>
              <td>@item.Key.Name</td>
              <td>@item.Value.Item1</td>
-            <td>@item.Value.Item2</td>
-            <td>@item.Key.Price</td>
-
+             <td>@item.Key.Price</td>
+             <td>@item.Value.Item2</td>
          </tr>
     }
 </table>
 
 
-<a href="/Storefront/welcome">
-    <h3>[Go to back to Store]</h3>
-</a>
+
 
 <a href="/Storefront/checkout">
-    <h3>[Go to Checkout]</h3>
+    <h3 id="GoToCheckout">[Go to Checkout]</h3>
 </a>
+
+<style>
+    h1 {text-align:center;}
+    .GoBackToStore {text-align:left;}
+
+    .GoToCheckout {
+        text-align: right;
+    }
+
+    table {
+        border: 2px solid black;
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        margin-left: auto;
+        margin-right: auto;
+        color: #385170;
+    }
+</style>
