@@ -9,29 +9,29 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSharpest
 build_property.RootNamespace = CSharpest
-build_property.ProjectDir = C:\Users\Patbu\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest\
+build_property.ProjectDir = C:\Users\Savannah\source\repos\CSharpest\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Patbu\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest
+build_property.MSBuildProjectDirectory = C:\Users\Savannah\source\repos\CSharpest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Patbu/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/CSharpest/Views/Storefront/Cart.cshtml]
+[C:/Users/Savannah/source/repos/CSharpest/Views/Storefront/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Patbu/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/CSharpest/Views/Storefront/Checkout.cshtml]
+[C:/Users/Savannah/source/repos/CSharpest/Views/Storefront/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Patbu/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
+[C:/Users/Savannah/source/repos/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxPcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Patbu/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/CSharpest/Views/Storefront/Test.cshtml]
+[C:/Users/Savannah/source/repos/CSharpest/Views/Storefront/Test.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Patbu/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/CSharpest/Views/Storefront/Welcome.cshtml]
+[C:/Users/Savannah/source/repos/CSharpest/Views/Storefront/Welcome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
