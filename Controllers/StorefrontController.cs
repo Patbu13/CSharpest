@@ -25,8 +25,6 @@ namespace CSharpest
             [HttpGet("Welcome")]
             public ActionResult Welcome()
             {
-                //ViewBag.Cart = cartController.GetCartItems(currUserID);
-
                 WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0, currUserID);
                 return View(model);
             }
@@ -116,7 +114,18 @@ namespace CSharpest
             [HttpGet("orderConfirmation")]
             public ActionResult OrderConfirmation()
             {
-                return View();
+                List<User> users = userLoader.loadUsers();
+                User user = users.Find(x => x.AccountID == currUserID);
+
+                if (user.Cart != null)
+                {
+                    OrderPageModel model = new OrderPageModel(user.Cart.Items);
+                    return View(model);
+                }
+                else
+                {
+                    return View(null);
+                }
             }
 
         }
