@@ -4,15 +4,14 @@
 
 namespace CSharpest.Classes
 {
-    public class WelcomePageModel
+    public class CartPageModel
     {
-        public List<Item> Items { get; set; }
-        public int Quantity { get; set; }
+        public List<CartItem> Items { get; set; }
         public Guid CartId { get; set; }
         public Guid ItemId { get; set; }
 
-        public WelcomePageModel(List<Item> items, int Quantity, Guid cartId) {
-            Items = items;
+        //Setup format for the future, phase 2
+        public CartPageModel(Guid cartId) {
             CartId = cartId;
         }
 

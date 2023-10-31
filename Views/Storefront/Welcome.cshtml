@@ -1,5 +1,5 @@
 ﻿<!--
- Last modified by: Savannah Noblitt
+ Last modified by: Patrick Burroughs
  Windows Prog 547
  Last Updated : 10/30/23
 --> 
@@ -12,18 +12,25 @@
 
 <h1>Welcome to the CSharpest Store!</h1>
 
-<a href="/Storefront/cart" id="CartLink">
-    <h3>[Go to Cart]</h3>
+<a>
+    @using (Html.BeginForm("cart", "Storefront", FormMethod.Post))
+    {
+        <input type="submit" id="SubCart" value="Go to Cart">
+        <input type="hidden" id=@Model.CartId name="cartID" value=@Model.CartId />
+    }
 </a>
+
+
+
 
 <h2>Shop Our Store's Current Inventory:</h2>
 <p>Disclaimer: All products sold by the ounce (minimum purchase: 1 oz)</p>
 
 <table class="table">
     <tr>
+        <!-- Row headers -->
         <th>Name</th>
         <th>Description</th>
-        <!-- <th>ID</th> -->
         <th>Price <br/>
             (/oz)</th>
         <th>Stock</th>
@@ -32,6 +39,7 @@
         <th>Add to Cart</th>
     </tr>
 
+    <!-- Display each item in their own row -->
     @for (int i = 0; i < @Model.Items.Count(); i++)
     {
         <tr>
@@ -59,7 +67,7 @@
                     <input type="hidden" id=@Model.Items[i].ItemId name="ItemID" value=@Model.Items[i].ItemId />
                 </td>
                 <td>
-                    <input id="Submit" type="submit" value="Add to Cart" />
+                    <input id="SubmitWelcome" type="submit" value="Add to Cart" />
                 </td>
                 }
         </tr>
@@ -72,6 +80,7 @@
         background-color: #ececec;
     }
 
+    <!-- "Title" main header -->
     h1 {
         text-align: center;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
@@ -79,6 +88,7 @@
         color: #142d4c;
     }
 
+    <!-- Page Description -->
     h2 {
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         font-style: italic;
@@ -87,6 +97,7 @@
         color: #385170;
     }
 
+    <!-- Link to Cart -->
     h3 {
         padding: 50px;
         text-align: right;
@@ -94,6 +105,7 @@
         color: #142d4c;
     }
 
+    <!-- Disclaimer -->
     p {
         margin-left: 100px;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
@@ -101,14 +113,17 @@
         color: #385170;
     }
 
+    <!-- Table header -->
     th {
         color: #142d4c;
     }
 
+    <!-- Columns for Name and Price of items -->
     td:first-child, td:nth-child(3) {
         font-weight: bold
     }
 
+    <!-- Each item -->
     td {
         text-align: center;
         padding: 10px;
@@ -116,21 +131,25 @@
         border-bottom: 1px solid #ddd;
     }
 
+    <!-- Add to cart buttons -->
     button {
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         color: #385170;
         font-weight: bold;
     }
 
+    <!-- Placeholder text in quantity text boxes -->
     input::placeholder {
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         color: #385170;
     }
 
+    <!-- Highlight item row when hovering -->
     tr:not(:first-child):hover {
         background-color: #9fd3c7;
     }
 
+    <!-- Table formatting -->
     table {
         border: 2px solid black;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;

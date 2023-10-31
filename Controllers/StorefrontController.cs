@@ -25,6 +25,7 @@ namespace CSharpest
             public ActionResult Welcome()
             {
                 //ViewBag.Cart = cartController.GetCartItems(currUserID);
+
                 WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0, currUserID);
                 return View(model);
             }
@@ -33,17 +34,27 @@ namespace CSharpest
             [HttpPost("Welcome")]
             public ActionResult Welcome([FromForm] int quantity, [FromForm] Guid currUserID, [FromForm] Guid itemId)
             {
-                cartController.AddItemToCart(currUserID, itemId, quantity);
+                //Currently not implementing "current user" functionality so don't need currUserID here
+                cartController.AddItemToCart(itemId, quantity);
                 WelcomePageModel model = new WelcomePageModel(itemController.GetAllItems(), 0, currUserID);
                 return View(model);
             }
 
+            //NEED TO LOOK AT THIS
             // GET: <StorefrontController>/cart
             [HttpGet("cart")]
             public ActionResult Cart()
             {
+                CartPageModel model = new CartPageModel(currUserID);
+                return View(model);
+            }
 
-                return View(cartController.GetCartItems(currUserID));
+            // POST: <StorefrontController>/cart
+            [HttpPost("cart")]
+            public ActionResult Cart([FromForm] Guid cartID)
+            {
+                CartPageModel model = new CartPageModel(currUserID);
+                return View(model);
             }
 
             // GET: <StorefrontController>/checkout

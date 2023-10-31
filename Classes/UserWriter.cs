@@ -20,13 +20,11 @@ namespace CSharpest.Classes
         {
             UserLoader userLoader = new UserLoader(_filepath);
             List<User> currUsers = userLoader.loadUsers();
+            User? foundUser = currUsers.Find(x => x.AccountID == user.AccountID);
 
-            bool exists = currUsers.Contains(user);
-
-            if (exists)
+            if (foundUser != null)
             {
-                int index = currUsers.IndexOf(user);
-                currUsers[index] = user;
+                currUsers[currUsers.IndexOf(foundUser)] = user;
             }
             else
             {

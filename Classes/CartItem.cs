@@ -9,16 +9,15 @@ namespace CSharpest.Classes;
 //  Shopping cart for a user that holds items
 public class CartItem
 {
-    public Item item { get; set; }
+    public Item Item { get; set; }
     public int Quantity { get; set; }
 
 
     // public TotalCartPrice;
-    public CartItem(Item my_item, int quantity)
+    public CartItem(Item _item, int _quantity)
     {
-        item = my_item;
-        Quantity = quantity;
+        Item = _item;
+        Quantity = _quantity;
     }
-
 
 }

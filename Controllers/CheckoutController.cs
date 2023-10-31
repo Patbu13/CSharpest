@@ -1,17 +1,22 @@
 ﻿using CSharpest.Classes;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 
 //	Last modified by: Patrick Burroughs
 //	Windows Prog 547
-//	Last Updated : 10/29/23
+//	Last Updated : 10/30/23
 
+// Handles the checkout process for user completing purchase
+// Handles card info, deals with discount bundles
 namespace CSharpest.Controllers
 {
     [Route("[controller]")]
     [ApiController]
     public class CheckoutController : ControllerBase
     {
+        InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
         InventoryWriter inventoryWriter = new InventoryWriter(@".\data\inventory.json");
+        UserWriter userWriter = new UserWriter(@".\data\users.json");
 
         /*// takes in a new card and then saves it to user object
         // POST: <CheckoutController>/address
@@ -78,26 +83,38 @@ namespace CSharpest.Controllers
         [HttpPost("{purchase}")]
         public bool purchase (PurchaseRequestParams purchaseParams)
         {
-            // check in-stock by quantity purchased
+            // ALREADY CHECKED IN CART
+            // Logically, should be in checkout but trying to meet deadline
+
+            /*// check in-stock by quantity purchased
             foreach (var item in purchaseParams.Cart.Items)
             {
-                if (item.Key.Stock - item.Value.Item1 < 0)
+                if (item.Stock - item.Value.Item1 < 0)
                 {
                     return false;
                     //return (false, $"Not enough \"{item.Key.Name}\" (ID:{item.Key.ItemId}) in stock");
                 }
-            }
+            }*/
 
             // save this transaction to user's history
-            Transaction newTransaction = new Transaction(Guid.NewGuid(), (from k in purchaseParams.Cart.Items select k.Key), DateTime.Now);
-            purchaseParams.User.TransHistory.Add(newTransaction);
+            Transaction newTransaction = new Transaction(Guid.NewGuid(), purchaseParams.Cart.Items, DateTime.Now);
+            if (purchaseParams.User.TransHistory != null)
+            {
+                purchaseParams.User.TransHistory.Add(newTransaction);
+            } else
+            {
+                purchaseParams.User.TransHistory = new List<Transaction> { newTransaction };
+            }
+
+            List<Item> items = inventoryLoader.loadInventory();
 
             if (purchaseParams.User.TransHistory.Contains(newTransaction))
             {
-                foreach (var item in purchaseParams.Cart.Items)
+                foreach (var cartItem in purchaseParams.Cart.Items)
                 {
-                    item.Key.Stock -= item.Value.Item1;
-                    inventoryWriter.writeInventory(item.Key);
+                    var item = items.Find(x => x.ItemId == cartItem.Item.ItemId);
+                    item.Stock -= cartItem.Quantity;
+                    inventoryWriter.writeInventory(item);
                 }
                 
                 return true;
@@ -115,13 +132,11 @@ namespace CSharpest.Controllers
         {
             decimal total = 0;
 
-            for (int i = 0; i < cart.Items.Count; i++)
-            {
-                KeyValuePair<Item, Tuple<int, decimal>> currItem = cart.Items.ElementAt(i);
-
-                // adds to total the cost of each item, times the quantity of that item
-                total += ((currItem.Key.Price) * (currItem.Value.Item1));
-                // total += currItem.Value.Item2;
+            foreach (CartItem cartItem in cart.Items)
+            { 
+                // multiplies the cost of each item times the quantity of that item
+                // then adds product to total
+                total += ((cartItem.Item.Price) * (cartItem.Quantity));
             }
 
             // adds tax to total; flat rate of 8% (for now)
