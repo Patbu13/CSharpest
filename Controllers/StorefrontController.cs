@@ -41,7 +41,6 @@ namespace CSharpest
                 return View(model);
             }
 
-            //NEED TO LOOK AT THIS
             // GET: <StorefrontController>/cart
             [HttpGet("cart")]
             public ActionResult Cart()
@@ -81,7 +80,36 @@ namespace CSharpest
             [HttpGet("checkout")]
             public ActionResult Checkout()
             {
-                return View(cartController.GetCartItems(currUserID));
+                List<User> users = userLoader.loadUsers();
+                User user = users.Find(x => x.AccountID == currUserID);
+                if (user.Cart != null)
+                {
+                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID);
+                    return View(model);
+                } else
+                {
+                    return View(null);
+                }
+                
+            }
+
+            // POST: <StorefrontController>/checkout
+            [HttpPost("checkout")]
+            public ActionResult Checkout(int cardNumber, int month, int year, string name, int cvc) 
+            {
+                List<User> users = userLoader.loadUsers();
+                User user = users.Find(x => x.AccountID == currUserID);
+                Card card = new Card (cardNumber, month, year, name, cvc);
+                user.UserCards.Add(card);
+                if (user.Cart != null)
+                {
+                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID, user.UserCards[0]);
+                    return View(model);
+                }
+                else
+                {
+                    return View(null);
+                }
             }
 
             // GET: <StorefrontController>/orderConfirmation

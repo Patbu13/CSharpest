@@ -20,7 +20,8 @@
             "Stock": 100,
             "Bogo": true
           },
-          "Quantity": 25
+          "Quantity": 31,
+          "TotalPrice": 33.17
         }
       ]
     },
