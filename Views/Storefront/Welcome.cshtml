@@ -3,7 +3,8 @@
  Windows Prog 547
  Last Updated : 10/30/23
 --> 
-@model List<CSharpest.Classes.Item>;
+@model CSharpest.Classes.WelcomePageModel;
+
 
 
 @{
@@ -44,25 +45,25 @@
         <th>Add to Cart</th>
     </tr>
 
-    @foreach (var item in @Model)
+    @foreach (var item in @Model.Items)
     {
         <tr>
             <td>@item.Name</td>
             <td>@item.Description</td>
             <td>@item.Price</td>
             <td>@item.Stock</td>
-                @using (@Html.BeginForm("Welcome", "Storefront", FormMethod.Post))
+            @using (@Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
                 {
                 <td>
-                    <input type="text" id="#@item.Name" name="Quantity" placeholder="# (oz)" />
-                    <input type="hidden" id="#@item.Name" name="CartID" value="@item.ItemId" />
-
-                    <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />
+                    <input type="number" id="#@item.Name" name="Quantity" placeholder="# (oz)" />
+                     <!--<input type="hidden" id="#@item.Name" name="CartID" value="@item.ItemId" />
+                    <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />-->
+                </td>
+                <td>
+                    <input id="@item.Name" type="submit" value="Add to Cart" />
                 </td>
                 }
-            <td>
-                <input id="@item.Name" type="submit" value="Add to Cart" />
-            </td>
+
 
         </tr>
 
