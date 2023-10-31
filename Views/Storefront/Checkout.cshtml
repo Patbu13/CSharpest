@@ -38,8 +38,9 @@
     <tr>
         <th>Name</th>
         <th>Quantity</th>
-        <th>Total Price</th>
         <th>Price by Ounce</th>
+        <th>Total Price</th>
+       
     </tr>
 
     @foreach (KeyValuePair<CSharpest.Classes.Item, Tuple<int, decimal>> item in @Model)
@@ -47,9 +48,8 @@
         <tr>
             <td>@item.Key.Name</td>
             <td>@item.Value.Item1</td>
-            <td>@item.Value.Item2</td>
             <td>@item.Key.Price</td>
-
+            <td>@item.Value.Item2</td>
         </tr>
     }
 
@@ -59,6 +59,8 @@
 <h3>Taxes</h3>
 <hr />
 <h3>Total Cost</h3>
+
+<!-- Add Place Order Button Here-->
 
 
 <a href="/Storefront/cart">
