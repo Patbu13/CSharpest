@@ -1,9 +1,10 @@
 ﻿<!--
- Last modified by: Patrick Burroughs
+ Last modified by: Savannah Noblitt
  Windows Prog 547
  Last Updated : 10/30/23
 --> 
-@model List<CSharpest.Classes.Item>
+@model List<CSharpest.Classes.Item>;
+
 
 @{
     ViewBag.Title = "CSharpest Store";
@@ -11,9 +12,14 @@
 
 <link href="~/Content/Welcome.css" rel="stylesheet" type="text/css" />
 
+<!--Not using this anymore-->
 <script>
-    function addItemToCart() {
-        alert("Hello");
+    function addItemToCart(id) {
+
+        let itemId = "#" + id;
+        let quantity = document.getElementById(itemId).value;
+
+
     }
 </script>
 
@@ -31,7 +37,7 @@
         <th>Name</th>
         <th>Description</th>
         <!-- <th>ID</th> -->
-        <th>Price <br/>
+        <th>Price </br>
             (per oz)</th>
         <th>Stock</th>
         <th>Quantity (oz)</th>
@@ -43,16 +49,27 @@
         <tr>
             <td>@item.Name</td>
             <td>@item.Description</td>
-            <!-- <td>item.ItemId</td> -->
             <td>@item.Price</td>
             <td>@item.Stock</td>
-            <td><input type="text" name="InputField" placeholder="# (oz)" /></td>
+            <td><input type="text" name="InputField" value="Quantity Needed (oz)" /></td>
             <td>
                 <!-- Add in link to Add Item to Cart-->
-                <button onclick="myFunction()">Add to Cart</button>
-                
-             </td>
-        </tr>
+
+      @using (@Html.BeginForm("welcome", "StorefrontController", FormMethod.Post))
+      {
+            <td>
+                <input type="text" id="#@item.Name" name="Quantity" value="Quantity Needed" />
+                <input type="hidden" id="#@item.Name" name="CartID" value="@item.ItemId" />
+
+                <input type="hidden" id="#@item.Name" name="ItemID" value="@item.ItemId" />
+            </td>
+            <td>
+                <input id="@item.Name" type="submit" value="Add to Cart" />
+            </td>
+      }
+                </td>
+            </tr>
+
     }
 </table>
 
