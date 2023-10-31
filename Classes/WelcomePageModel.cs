@@ -7,8 +7,12 @@
         //public Guid ItemID { get; set; }
         public int Quantity { get; set; }
 
-        public WelcomePageModel(List<Item> items, int quantity) {
+        public Guid CartId { get; set; }
+        public Guid ItemId { get; set; }
+
+        public WelcomePageModel(List<Item> items, int quantity, Guid cartId) {
             Items = items;
+            CartId = cartId;
             Quantity = quantity;
         }
 

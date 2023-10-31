@@ -33,51 +33,49 @@ namespace CSharpest.Controllers
         }
 
 
-        [HttpPost("AddItemToCart")]
-        public int AddItemToCart(int Quantity)
-        {
-            return Quantity; 
-        }
-
         //[HttpPost("AddItemToCart")]
-        //public string AddItemToCart(AddItemReqParams itemParams)
+        //public int AddItemToCart(int Quantity)
         //{
-        //    List<Item> items = inventoryLoader.loadInventory();
-        //    Item item = items.Find(x => x.ItemId == itemParams.ItemID); // get item from database using id
-
-        //    List<User> users = userLoader.loadUsers();
-        //    User user = users.Find(x => x.AccountID == itemParams.CartID); // get user from database using id
-
-        //    if (item != null && user.Cart != null && itemParams.Quantity > 0 && item.Stock >= itemParams.Quantity)
-        //    {
-
-        //        if (user.Cart.Items.ContainsKey(item))
-        //        {
-        //            int currQuant = user.Cart.Items[item].Item1 + itemParams.Quantity;
-        //            user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
-        //            userWriter.writeUser(user);
-        //        }
-        //        else
-        //        {
-        //            user.Cart.Items.Add(item, Tuple.Create(itemParams.Quantity, itemParams.Quantity * item.Price));
-        //            userWriter.writeUser(user);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (item == null) { return "Failure: Cannot add 'null' to cart."; }
-
-        //        if (user.Cart == null) { return "Failure: Cart does not exist."; }
-
-        //        if (itemParams.Quantity < 0) { return "Failure: Quantity must be positive."; }
-
-        //        if (item.Stock < itemParams.Quantity) { return "Failure: Not enough in stock."; }
-        //    }
-
-        //    RedirectToAction("Cart");
-         
-        //    return "Success!";
+        //    return Quantity; 
         //}
+
+        [HttpPost("AddItemToCart")]
+        public string AddItemToCart(Guid CartID, Guid ItemID, int Quantity)
+        {
+            List<Item> items = inventoryLoader.loadInventory();
+            Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
+
+            List<User> users = userLoader.loadUsers();
+            User user = users.Find(x => x.AccountID == CartID); // get user from database using id
+
+            if (item != null && user.Cart != null && Quantity > 0 && item.Stock >=Quantity)
+            {
+
+                if (user.Cart.Items.ContainsKey(item))
+                {
+                    int currQuant = user.Cart.Items[item].Item1 + Quantity;
+                    user.Cart.Items[item] = Tuple.Create(currQuant, currQuant * item.Price);
+                    userWriter.writeUser(user);
+                }
+                else
+                {
+                    user.Cart.Items.Add(item, Tuple.Create(Quantity, Quantity * item.Price));
+                    userWriter.writeUser(user);
+                }
+            }
+            else
+            {
+                if (item == null) { return "Failure: Cannot add 'null' to cart."; }
+
+                if (user.Cart == null) { return "Failure: Cart does not exist."; }
+
+                if (Quantity < 0) { return "Failure: Quantity must be positive."; }
+
+                if (item.Stock < Quantity) { return "Failure: Not enough in stock."; }
+            }
+
+            return "Success!";
+        }
 
         [HttpPost("RemoveItemFromCart")]
 
