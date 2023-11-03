@@ -21,6 +21,10 @@ namespace CSharpest
             // declaring services
             private ItemService itemService;
             private CardService cardService;
+            private CartService cartService;
+            private CheckoutService checkoutService;
+
+
 
 
             // declaring controllers
@@ -35,13 +39,11 @@ namespace CSharpest
                 itemService = new ItemService();
                 itemController = new ItemController(itemService);
                 cardController = new CardController(cardService);
-                checkoutController = new CheckoutController(itemService);
-                cartController = new CartController(itemService);
+                checkoutController = new CheckoutController(checkoutService);
+                cartController = new CartController(cartService);
 
 
             }
-            CartController cartController = new CartController();
-            CheckoutController checkoutController = new CheckoutController();
             UserLoader userLoader = new UserLoader(@".\data\users.json");
             Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
