@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CSharpest.Classes;
+using CSharpest.Services;
 using System.Web;
 using System.Net;
 using NuGet.Packaging;
 using CSharpest.Controllers;
+using System.Drawing.Text;
 //	Last modified by: Vivian D'Souza
 //	Windows Prog 547
 //	Last Updated : 10/24/23
@@ -16,8 +18,29 @@ namespace CSharpest
         // If using ActionResult and other methods from Web API, need to have controller inherit from Controller, not ControllerBase
         public class StorefrontController : Controller
         {
+            // declaring services
+            private ItemService itemService;
+            private CardService cardService;
+
+
+            // declaring controllers
+            private ItemController itemController;
+            private CardController cardController;
+            private CheckoutController checkoutController;
+            private CartController cartController;
+
+            public StorefrontController()
+            {
+                // initializes controllers that interact with StorefrontController
+                itemService = new ItemService();
+                itemController = new ItemController(itemService);
+                cardController = new CardController(cardService);
+                checkoutController = new CheckoutController(itemService);
+                cartController = new CartController(itemService);
+
+
+            }
             CartController cartController = new CartController();
-            ItemController itemController = new ItemController();
             CheckoutController checkoutController = new CheckoutController();
             UserLoader userLoader = new UserLoader(@".\data\users.json");
             Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
