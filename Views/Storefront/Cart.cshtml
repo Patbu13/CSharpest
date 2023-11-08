@@ -11,11 +11,31 @@
     ViewBag.Title = "Your Cart";
 }
 
-<a href="/Storefront/welcome">
-    <h3 id="GoBackToStore">[Go Back to Store]</h3>
-</a>
+<nav>
 
-<h1>CSharpest Store: Your Cart</h1>
+    <h1><span>C</span>Sharpest Store!</h1>
+
+    <ul>
+        <li class="Desc"><h3>Your one stop shop for sweets!</h3></li>
+        
+        <li>
+            <a href="/Storefront/Checkout">
+                <h3 id="GoToCheckout">Checkout</h3>
+            </a>
+        </li>
+
+        <li>
+            <a href="/Storefront/welcome">
+                <h3 id="GoToStore">Return to Store</h3>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+<hr />
+<body>
+<h2>Your Cart</h2>
 
 <table class="table">
     <tr>
@@ -44,16 +64,19 @@
         <td>@Model.Subtotal.ToString("$0.00")</td>
     </tr>
 </table>
+</body>
 
+<hr />
 
-
-
-<a href="/Storefront/checkout">
-    <h3 id="GoToCheckout">[Go to Checkout]</h3>
-</a>
+<footer>
+    <h1><span>C</span>Sharpest Store!</h1>
+</footer>
 
 <style>
-    
+    nav {
+        background-color: #142d4c;
+    }
+
     body {
         background-color: #ececec;
     }
@@ -61,9 +84,62 @@
     /*"Title" main header*/
     h1 {
         text-align: center;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         font-variant: small-caps;
-        color: #142d4c;
+        color: #ececec;
+        line-height: 80%;
+        font-size: 250%;
+    }
+
+    /*For making C in CSharpest larger*/
+    span {
+        vertical-align: middle;
+        font-size: 250%;
+        line-height: 100%;
+    }
+
+    /*Header Links*/
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Rockwell;
+        color: #ececec;
+    }
+
+    /*All header bar objects*/
+    li {
+        font-family: Rockwell;
+        font-size: 120%;
+        color: #ececec;
+    }
+
+    /* Text on left side of header */
+    li.Desc {
+        float: left;
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        text-decoration: none;
+        font-family: Rockwell;
+        color: #ececec;
+    }
+
+    /*Interactables on right side of header*/
+    a {
+        float: right;
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        text-decoration: none;
+        font-family: Rockwell;
+        color: #ececec;
+    }
+
+    /*Show that buttons are interactable*/
+    a:hover {
+        background-color: #385170;
     }
 
     /*Page Description*/
@@ -71,24 +147,8 @@
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         font-style: italic;
         font-variant: small-caps;
-        margin-left: 100px;
+        text-align:center;
         color: #385170;
-    }
-
-    /*Link to Checkout*/
-    #GoToCheckout{
-        padding: 50px;
-        text-align: right;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
-    }
-
-    /*Link to Store*/
-    #GoBackToStore {
-        padding: 50px;
-        text-align: left;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
     }
 
     /*Table header*/
@@ -129,6 +189,8 @@
         color: #385170;
     }
 
-
+    footer {
+        background-color: #142d4c;
+    }
 
 </style>

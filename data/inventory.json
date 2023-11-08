@@ -35,7 +35,7 @@
     "Name": "Reese\u0027s Peanut Butter Cups",
     "Description": "Soft peanut butter covered in chocolate",
     "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
-    "Price": 0.50,
+    "Price": 0.5,
     "Stock": 100,
     "Bogo": false
   },
@@ -59,7 +59,7 @@
     "Name": "Air Heads",
     "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
     "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-    "Price": 0.70,
+    "Price": 0.7,
     "Stock": 100,
     "Bogo": true
   },
@@ -125,6 +125,62 @@
     "ItemId": "5396bc7c-0917-41c0-be43-b1734dc22a05",
     "Price": 0.63,
     "Stock": 100,
+    "Bogo": false
+  },
+  {
+    "Name": "Hershey\u0027s Kisses",
+    "Description": "Classic bite-sized milk chocolate bites",
+    "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+    "Price": 0.31,
+    "Stock": 63,
+    "Bogo": false
+  },
+  {
+    "Name": "Milky Way",
+    "Description": "Nougat topped with caramel, all covered in chocolate",
+    "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
+    "Price": 0.37,
+    "Stock": 94,
+    "Bogo": false
+  },
+  {
+    "Name": "War Heads",
+    "Description": "Extremely sour hard candy",
+    "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
+    "Price": 0.54,
+    "Stock": 89,
+    "Bogo": true
+  },
+  {
+    "Name": "Snickers",
+    "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
+    "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
+    "Price": 0.47,
+    "Stock": 99,
+    "Bogo": false
+  },
+  {
+    "Name": "Reese\u0027s Peanut Butter Cups",
+    "Description": "Soft peanut butter covered in chocolate",
+    "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
+    "Price": 0.5,
+    "Stock": 98,
+    "Bogo": false
+  },
+  {
+    "Name": "Starburst",
+    "Description": "Soft, chewable, fruit-flavored taffy",
+    "ItemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
+    "Price": 0.59,
+    "Stock": 66,
+    "Bogo": false
+  },
+  {
+    "Name": "Smarties",
+    "Description": "Sweet Powdered tablets that melt in your mouth",
+    "ItemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
+    "Price": 0.53,
+    "Stock": 99,
     "Bogo": false
   }
 ]

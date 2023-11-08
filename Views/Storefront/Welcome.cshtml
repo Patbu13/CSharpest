@@ -9,13 +9,29 @@
 @{
     ViewBag.Title = "CSharpest Store";
 }
+<nav>
 
-<h1>Welcome to the CSharpest Store!</h1>
+<h1><span>C</span>Sharpest Store!</h1>
 
-<a href="/Storefront/cart">
-    <h3 id="GoToCart">Go to Cart</h3>
-</a>
+<ul>
+    <li class="Desc"><h3>Your one stop shop for sweets!</h3></li>
 
+    <li>
+        <a href="/Storefront/Checkout">
+            <h3 id="GoToCheckout">Checkout</h3>
+        </a>
+    </li>
+
+    <li><a href="/Storefront/cart">
+        <h3 id="GoToCart">View Cart</h3>
+        </a>
+    </li>
+
+</ul>
+
+</nav>
+<hr />
+<body>
 
 <h2>Shop Our Store's Current Inventory:</h2>
 <p>Disclaimer: All products sold by the ounce (minimum purchase: 1 oz)</p>
@@ -53,7 +69,7 @@
             {
                 <td></td>
             }
-
+                <!-- Display each item in their own row -->
             @using (Html.BeginForm("Welcome", "StorefrontController", FormMethod.Post))
             {
                 <td>
@@ -68,12 +84,19 @@
         </tr>
     }
 </table>
+</body>
 
+<hr />
 
-    <!-- Display each item in their own row -->
-    
+<footer>
+    <h1><span>C</span>Sharpest Store!</h1>
+</footer>
 
 <style>
+    nav {
+        background-color: #142d4c;
+    }
+
     body {
         background-color: #ececec;
     }
@@ -81,32 +104,77 @@
     /*"Title" main header*/
     h1 {
         text-align: center;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         font-variant: small-caps;
-        color: #142d4c;
+        color: #ececec;
+        line-height: 80%;
+        font-size:250%;
+    }
+
+    /*For making C in CSharpest larger*/
+    span {
+        vertical-align: middle;
+        font-size: 250%;
+        line-height: 100%;
+    }
+
+    /*Header Links*/
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Rockwell;
+    }    
+
+    /*All header bar objects*/
+    li {
+        font-family: Rockwell;
+        font-size: 120%;
+    }
+
+    /* Text on left side of header */
+    li.Desc {
+        float: left;
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        text-decoration: none;
+        font-family: Rockwell;
+        color: #ececec;
+        
+    } 
+
+    /*Interactables on right side of header*/
+    a {
+        float: right;
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        text-decoration: none;
+        font-family: Rockwell;
+        color: #ececec;
+
+    }
+
+    /*Show that buttons are interactable*/
+    a:hover {
+        background-color: #385170;
     }
 
     /*Page Description*/
     h2 {
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         font-style: italic;
         font-variant: small-caps;
         margin-left: 100px;
         color: #385170;
     }
 
-    /*Link to Cart*/
-    h3 {
-        padding: 50px;
-        text-align: right;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
-    }
-
     /*Disclaimer*/
     p {
         margin-left: 100px;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         font-weight: bold;
         color: #385170;
     }
@@ -131,14 +199,14 @@
 
     /*Add to cart buttons*/
     button {
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         color: #385170;
         font-weight: bold;
     }
 
     /*Placeholder text in quantity text boxes*/
     input::placeholder {
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         color: #385170;
     }
 
@@ -150,11 +218,14 @@
     /*Table formatting*/
     table {
         border: 2px solid black;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         margin-left: auto;
         margin-right: auto;
         color: #385170;
     }
 
-    
+    footer {
+        background-color: #142d4c;
+    }
+
 </style>
