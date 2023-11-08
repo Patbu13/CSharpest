@@ -20,8 +20,8 @@
             "Stock": 100,
             "Bogo": false
           },
-          "Quantity": 30,
-          "TotalPrice": 9.3
+          "Quantity": 37,
+          "TotalPrice": 11.47
         },
         {
           "Item": {
@@ -32,8 +32,8 @@
             "Stock": 100,
             "Bogo": false
           },
-          "Quantity": 3,
-          "TotalPrice": 1.11
+          "Quantity": 6,
+          "TotalPrice": 2.22
         },
         {
           "Item": {
@@ -44,13 +44,62 @@
             "Stock": 100,
             "Bogo": true
           },
-          "Quantity": 10,
-          "TotalPrice": 5.40
+          "Quantity": 11,
+          "TotalPrice": 5.94
+        },
+        {
+          "Item": {
+            "Name": "Snickers",
+            "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
+            "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
+            "Price": 0.47,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 1,
+          "TotalPrice": 0.47
+        },
+        {
+          "Item": {
+            "Name": "Reese\u0027s Peanut Butter Cups",
+            "Description": "Soft peanut butter covered in chocolate",
+            "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
+            "Price": 0.5,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 2,
+          "TotalPrice": 1
+        },
+        {
+          "Item": {
+            "Name": "Starburst",
+            "Description": "Soft, chewable, fruit-flavored taffy",
+            "ItemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
+            "Price": 0.59,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 34,
+          "TotalPrice": 20.06
+        },
+        {
+          "Item": {
+            "Name": "Smarties",
+            "Description": "Sweet Powdered tablets that melt in your mouth",
+            "ItemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
+            "Price": 0.53,
+            "Stock": 100,
+            "Bogo": false
+          },
+          "Quantity": 1,
+          "TotalPrice": 0.53
         }
       ],
-      "Subtotal": 15.81,
-      "Taxes": 3.5400,
-      "Total": 71.7500
+      "Subtotal": 41.69,
+      "Discount": 2.70,
+      "Taxes": 3.1192,
+      "Total": 48.0992
     },
     "UserCards": []
   },
@@ -67,6 +116,7 @@
       "CartID": "3c7f32ed-4a29-4e60-a390-81db8e2d662a",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -85,6 +135,7 @@
       "CartID": "4dcb6bc3-7ebf-4e23-a12b-d8c7d21eef62",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -103,6 +154,7 @@
       "CartID": "5e73b1f0-3d25-40d2-8c9e-3b07140dd1b5",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -121,6 +173,7 @@
       "CartID": "6f0e3d4a-88e6-4390-a8a1-7e2389a0f811",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -139,6 +192,7 @@
       "CartID": "7f21ed2c-8d54-4816-9d26-1a37d84c5270",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -157,6 +211,7 @@
       "CartID": "8ab5b2f6-95e7-45a1-a0e8-3f9b238e7a0c",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -175,6 +230,7 @@
       "CartID": "9bc6e3d1-8c7e-4d9b-a9b4-2d42c41d6109",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -193,6 +249,7 @@
       "CartID": "ababaaac-2345-4abc-aaaa-4a44aabcdeab",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -211,6 +268,7 @@
       "CartID": "bc5d7a3b-9aa2-4123-8b8c-5e4a8d4a682e",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -229,6 +287,7 @@
       "CartID": "cd123fa7-12bf-43e2-8dc7-1e2f3a45be3c",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -247,6 +306,7 @@
       "CartID": "def8e9ad-ec42-4d37-aba1-8c1e4d2ac2ed",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -265,6 +325,7 @@
       "CartID": "ef34d1cf-7bb9-4f2a-aae9-3cda8f8b6eb4",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -283,6 +344,7 @@
       "CartID": "f4c82e12-b37a-43e8-89d9-4f32c5f8d7e2",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -301,6 +363,7 @@
       "CartID": "974e9cfa-132e-4aa8-bd84-3cdcdba1da6e",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },
@@ -319,6 +382,7 @@
       "CartID": "1806a6aa-8ed7-4721-9f85-3aab5268a112",
       "Items": [],
       "Subtotal": 0,
+      "Discount": 0,
       "Taxes": 0,
       "Total": 0
     },

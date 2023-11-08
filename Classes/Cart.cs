@@ -17,7 +17,7 @@ public class Cart
     public List<CartItem>? Items { get; set; }
 
     public decimal Subtotal { get; set; }
-
+    public decimal Discount { get; set; }
     public decimal Taxes { get; set;}
     public decimal Total { get; set; }
     
@@ -25,6 +25,7 @@ public class Cart
     {
         Items = new List<CartItem>();
         Subtotal = 0;
+        Discount = 0;
         Taxes = 0;
         Total = 0;
     }

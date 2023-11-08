@@ -36,6 +36,8 @@ namespace CSharpest
                 // initializes controllers that interact with StorefrontController
                 itemService = new ItemService();
                 cartService = new CartService();
+                cardService = new CardService();
+                checkoutService = new CheckoutService();
 
                 itemController = new ItemController(itemService);
                 cartController = new CartController(cartService);
@@ -70,8 +72,8 @@ namespace CSharpest
             [HttpGet("cart")]
             public ActionResult Cart()
             {
-                List<User> users = userLoader.loadUsers();
-                User user = users.Find(x => x.AccountID == currUserID);
+                List<Shopper> users = userLoader.loadUsers();
+                Shopper user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
                     CartPageModel model = new CartPageModel(user.Cart.Items, user.Cart.Subtotal, currUserID);
@@ -88,8 +90,8 @@ namespace CSharpest
             [HttpPost("cart")]
             public ActionResult Cart([FromForm] Guid cartID)
             {
-                List<User> users = userLoader.loadUsers();
-                User user = users.Find(x => x.AccountID == currUserID);
+                List<Shopper> users = userLoader.loadUsers();
+                Shopper user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
                     CartPageModel model = new CartPageModel(user.Cart.Items, user.Cart.Subtotal, currUserID);
@@ -105,8 +107,9 @@ namespace CSharpest
             [HttpGet("checkout")]
             public ActionResult Checkout()
             {
-                List<User> users = userLoader.loadUsers();
-                User user = users.Find(x => x.AccountID == currUserID);
+                List<Shopper> users = userLoader.loadUsers();
+                Shopper user = users.Find(x => x.AccountID == currUserID);
+                user.Cart = checkoutController.calculateTotal(user.Cart);
                 if (user.Cart != null)
                 {
                     CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID, user.Cart);
@@ -122,8 +125,8 @@ namespace CSharpest
             [HttpPost("checkout")]
             public ActionResult Checkout([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvv, [FromForm]string name) 
             {
-                List<User> users = userLoader.loadUsers();
-                User user = users.Find(x => x.AccountID == currUserID);
+                List<Shopper> users = userLoader.loadUsers();
+                Shopper user = users.Find(x => x.AccountID == currUserID);
                 Card card = new Card(cardNumber, month, year, name, cvv);
                 CardCheckParams cardCheck = new CardCheckParams(user, card);
 
@@ -150,8 +153,8 @@ namespace CSharpest
             [HttpPost("orderConfirmation")]
             public ActionResult OrderConfirmation([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvc, [FromForm] string name)
             {
-                List<User> users = userLoader.loadUsers();
-                User user = users.Find(x => x.AccountID == currUserID);
+                List<Shopper> users = userLoader.loadUsers();
+                Shopper user = users.Find(x => x.AccountID == currUserID);
                 Card card = new Card(cardNumber, month, year, name, cvc);
                 CardCheckParams cardCheck = new CardCheckParams(user, card);
 
@@ -179,8 +182,8 @@ namespace CSharpest
             [HttpGet("orderConfirmation")]
             public ActionResult OrderConfirmation()
             {
-                List<User> users = userLoader.loadUsers();
-                User user = users.Find(x => x.AccountID == currUserID);
+                List<Shopper> users = userLoader.loadUsers();
+                Shopper user = users.Find(x => x.AccountID == currUserID);
 
                 if (user.Cart != null)
                 {

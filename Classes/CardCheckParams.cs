@@ -2,10 +2,10 @@
 {
     public class CardCheckParams
     {
-        public User User { get; set; }
+        public Shopper User { get; set; }
         public Card Card { get; set; }  
 
-        public CardCheckParams(User _user, Card _card)
+        public CardCheckParams(Shopper _user, Card _card)
         {
             User = _user;
             Card = _card;

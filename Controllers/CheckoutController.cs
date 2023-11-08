@@ -48,13 +48,13 @@ namespace CSharpest.Controllers
 
         // POST: <CheckoutController>/purchase
         [HttpPost("{purchase}")]
-        public bool purchase (User user)
+        public bool purchase (Shopper user)
         {
             return _checkoutService.purchase(user);
         }
 
         [HttpPost("{total}")]
-        public decimal calculateTotal(Cart cart)
+        public Cart calculateTotal(Cart cart)
         {
             return _checkoutService.calculateTotal(cart);
         }

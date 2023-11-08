@@ -16,11 +16,11 @@ namespace CSharpest.Classes
             _filepath = filepath;
         }
 
-        public void writeUser(User user)
+        public void writeUser(Shopper user)
         {
             UserLoader userLoader = new UserLoader(_filepath);
-            List<User> currUsers = userLoader.loadUsers();
-            User? foundUser = currUsers.Find(x => x.AccountID == user.AccountID);
+            List<Shopper> currUsers = userLoader.loadUsers();
+            Shopper? foundUser = currUsers.Find(x => x.AccountID == user.AccountID);
 
             if (foundUser != null)
             {

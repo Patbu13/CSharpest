@@ -32,23 +32,37 @@
         <tr>
             <td>@Model.Items[i].Item.Name</td>
             <td>@Model.Items[i].Quantity</td>
-            <td>@Model.Items[i].Item.Price</td>
-            <td>@Model.Items[i].TotalPrice</td>
+            <td>@Model.Items[i].Item.Price.ToString("$0.00")</td>
+            <td>@Model.Items[i].TotalPrice.ToString("$0.00")</td>
         </tr>
     }
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
 
     <tr>
         <td>Subtotal:</td>
         <td></td>
         <td></td>
-        <td>@Model.Cart.Subtotal</td>
+        <td>@Model.Cart.Subtotal.ToString("$0.00")</td>
+    </tr>
+
+    <tr>
+        <td>Discounts:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Discount.ToString("-$0.00")</td>
     </tr>
 
     <tr>
         <td>Taxes:</td>
         <td></td>
         <td></td>
-        <td>@Model.Cart.Taxes</td>
+        <td>@Model.Cart.Taxes.ToString("$0.00")</td>
     </tr>
 
     <tr>
@@ -62,7 +76,7 @@
         <td>Total:</td>
         <td></td>
         <td></td>
-        <td>@Model.Cart.Total</td>
+        <td>@Model.Cart.Total.ToString("$0.00")</td>
     </tr>
 </table>
 
@@ -164,10 +178,11 @@
     /*Table header*/
     th {
         color: #142d4c;
+        border-bottom: 1px double #d3d3d3;
     }
 
     /*Columns for Name and Price of items*/
-    td:first-child, td:nth-child(3) {
+    td:first-child, td:last-child {
         font-weight: bold
     }
 
