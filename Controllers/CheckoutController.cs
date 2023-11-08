@@ -59,25 +59,5 @@ namespace CSharpest.Controllers
             return _checkoutService.calculateTotal(cart);
         }
 
-        // to be looked at later
-
-        // POST: api/<CheckoutController>/giftCard
-        //[HttpPost("{giftCard}")]
-        //public bool RedeemGiftCard(User user)
-        //{
-        //    return true;
-        //}
-
-
-
-        //// GET: api/<CheckoutController>
-        //[HttpGet]
-        //public bool validatePayPalDetails()
-        //{
-        //    return true;
-        //}
-
-
-
     }
 }
