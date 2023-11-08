@@ -9,7 +9,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CSharpest
 build_property.RootNamespace = CSharpest
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Patbu\OneDrive\USC\Fall '23\CSCE 547 - Windows Prog\CSharpest\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
@@ -30,27 +29,5 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxPcmRlckNvbmZp
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Patbu/OneDrive/USC/Fall '23/CSCE 547 - Windows Prog/CSharpest/Views/Storefront/Welcome.cshtml]
-=======
-build_property.ProjectDir = C:\Users\vivia\source\repos\CSharpest\
-build_property.RazorLangVersion = 7.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\vivia\source\repos\CSharpest
-build_property._RazorSourceGeneratorDebug = 
-
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Cart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDYXJ0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Checkout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxDaGVja291dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/OrderConfirmation.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxPcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vivia/source/repos/CSharpest/Views/Storefront/Welcome.cshtml]
->>>>>>> 1e1e1b95495fa6ced4ca94b2e5601bcb8657fae2
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RvcmVmcm9udFxXZWxjb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
