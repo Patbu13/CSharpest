@@ -20,12 +20,12 @@ namespace CSharpest.Services
 
         public List<CartItem> GetCartItems(Guid UserID)
         {
-            List<User> users = userLoader.loadUsers();
-            User user = users.Find(x => x.AccountID == currUserID);
+            List<Shopper> users = userLoader.loadUsers();
+            Shopper user = users.Find(x => x.AccountID == currUserID);
 
             if (user == null)
             {
-                user = new User("Example", "User", "exampleuser@email.com", "ExamplePW", "phone", "address", new Cart());
+                user = new Shopper("Example", "User", "exampleuser@email.com", "ExamplePW", "phone", "address", new Cart());
             }
 
             List<CartItem> cartItems = user.Cart.Items;
@@ -37,9 +37,9 @@ namespace CSharpest.Services
             List<Item> items = inventoryLoader.loadInventory();
             //Has been modified to not concern itself with getting current user back from frontend
             //currUserID has been hard coded for phase 1
-            List<User> users = userLoader.loadUsers();
+            List<Shopper> users = userLoader.loadUsers();
 
-            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+            Shopper user = users.Find(x => x.AccountID == currUserID); // get user from database using id
             //ensure user was found
             if (user == null) { Environment.Exit(0); }
 
@@ -61,8 +61,6 @@ namespace CSharpest.Services
                     CartItem cartItem = new CartItem(item, quantity, totalPrice);
                     user.Cart.Items.Add(cartItem);
                     user.Cart.Subtotal += cartItem.TotalPrice;
-                    user.Cart.Taxes += (user.Cart.Subtotal * 0.08m);
-                    user.Cart.Total += ((user.Cart.Subtotal * 1.08m) + 5.99m);
                     userWriter.writeUser(user);
 
                 }
@@ -74,8 +72,6 @@ namespace CSharpest.Services
                         user.Cart.Items.Single(x => x.Item.ItemId == ItemID).Quantity += quantity;
                         user.Cart.Items.Single(x => x.Item.ItemId == ItemID).TotalPrice += totalPrice;
                         user.Cart.Subtotal += quantity * item.Price;
-                        user.Cart.Taxes += (user.Cart.Subtotal * 0.08m);
-                        user.Cart.Total += ((user.Cart.Subtotal * 1.08m) + 5.99m);
                         userWriter.writeUser(user);
                     }
                 }
@@ -100,8 +96,8 @@ namespace CSharpest.Services
 
             if (item == null) { Environment.Exit(0); } //ensure item was found
 
-            List<User> users = userLoader.loadUsers(); // curUserID has been hardcoded for phase 1
-            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+            List<Shopper> users = userLoader.loadUsers(); // curUserID has been hardcoded for phase 1
+            Shopper user = users.Find(x => x.AccountID == currUserID); // get user from database using id
 
             //ensure user was found
             if (user == null) { Environment.Exit(0); } // ensure user was found

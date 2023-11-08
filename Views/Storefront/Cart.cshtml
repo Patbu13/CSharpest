@@ -32,8 +32,8 @@
         <tr>
              <td>@Model.Items[i].Item.Name</td>
              <td>@Model.Items[i].Quantity</td>
-             <td>@Model.Items[i].Item.Price</td>
-             <td>@Model.Items[i].TotalPrice</td>
+             <td>@Model.Items[i].Item.Price.ToString("$0.00")</td>
+            <td>@Model.Items[i].TotalPrice.ToString("$0.00")</td>
          </tr>
     }
 
@@ -41,7 +41,7 @@
         <td>Subtotal:</td>
         <td></td>
         <td></td>
-        <td>@Model.Subtotal</td>
+        <td>@Model.Subtotal.ToString("$0.00")</td>
     </tr>
 </table>
 

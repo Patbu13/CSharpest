@@ -40,7 +40,7 @@
         <tr>
             <td>@item.Name</td>
             <td>@item.Description</td>
-            <td>@item.Price</td>
+            <td>@item.Price.ToString("$0.00")</td>
             <td>@item.Stock</td>
 
             @if (@item.Bogo)

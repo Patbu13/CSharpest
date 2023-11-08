@@ -18,9 +18,9 @@ namespace CSharpest.Classes
         }
 
 
-        public List<User> loadUsers()
+        public List<Shopper> loadUsers()
         {
-            List<User> users = new List<User>();
+            List<Shopper> users = new List<Shopper>();
 
             using StreamReader reader = new StreamReader(_filepath);
             var json = reader.ReadToEnd();
@@ -28,7 +28,7 @@ namespace CSharpest.Classes
 
             foreach (var i in jarray)
             {
-                User user = i.ToObject<User>();
+                Shopper user = i.ToObject<Shopper>();
                 users.Add(user);
             }
 

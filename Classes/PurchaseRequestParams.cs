@@ -2,7 +2,7 @@
 {
     public class PurchaseRequestParams
     {
-        public User User { get; set; }
+        public Shopper User { get; set; }
         public Cart Cart { get; set; }  
     }
 }

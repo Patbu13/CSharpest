@@ -1,5 +1,9 @@
 using CSharpest.Classes;
 
+//	Last modified by: Patrick Burroughs
+//	Windows Prog 547
+//	Last Updated : 11/8/23
+
 namespace CSharpest.Services
 {
     public class CheckoutService
@@ -69,7 +73,7 @@ namespace CSharpest.Services
             return true;
         }
 
-        public bool purchase(User user)
+        public bool purchase(Shopper user)
         {
             // ALREADY CHECKED IN CART
             // Logically, should be in checkout but trying to meet deadline
@@ -116,19 +120,25 @@ namespace CSharpest.Services
             }
         }
 
-        public decimal calculateTotal(Cart cart)
+        public Cart calculateTotal(Cart cart)
         {
             //decimal total = 0;
 
-            List<User> users = userLoader.loadUsers();
+            List<Shopper> users = userLoader.loadUsers();
 
-            User user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+            Shopper user = users.Find(x => x.AccountID == currUserID); // get user from database using id
             //ensure user was found
             if (user == null) { Environment.Exit(0); }
 
+            user.Cart.Total = 0;
+            user.Cart.Taxes = 0;
+            user.Cart.Subtotal = 0;
 
             foreach (CartItem cartItem in cart.Items)
             {
+                //Calculate subtotal without discounts
+                user.Cart.Subtotal += cartItem.Item.Price * cartItem.Quantity;
+
                 // multiplies the cost of each item times the quantity of that item
                 // then adds product to total
 
@@ -151,20 +161,19 @@ namespace CSharpest.Services
 
             }
 
+            user.Cart.Discount = user.Cart.Subtotal - user.Cart.Total;
+
             // adds tax to total; flat rate of 8% (for now)
-            user.Cart.Taxes = (user.Cart.Total * 1.08m);
-            user.Cart.Taxes = user.Cart.Taxes - (user.Cart.Taxes % 0.01m);
+            user.Cart.Taxes = (user.Cart.Total * 0.08m);
 
             user.Cart.Total += (user.Cart.Taxes);
-            user.Cart.Total = user.Cart.Total - (user.Cart.Total % 0.01m);
-
 
             // calculate shipping; for now flat rate of 5.99
             user.Cart.Total += 5.99m;
 
             userWriter.writeUser(user);
 
-            return user.Cart.Total;
+            return user.Cart;
         }
 
 
