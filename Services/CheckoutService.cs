@@ -93,12 +93,12 @@ namespace CSharpest.Services
             if (user.TransHistory != null)
             {
                 user.TransHistory.Add(newTransaction);
-            }
-            else
+            } else
             {
                 user.TransHistory = new List<Transaction> { newTransaction };
             }
 
+            userWriter.writeUser(user);
             List<Item> items = inventoryLoader.loadInventory();
 
             if (user.TransHistory.Contains(newTransaction))
@@ -109,7 +109,7 @@ namespace CSharpest.Services
                     item.Stock -= cartItem.Quantity;
                     inventoryWriter.writeInventory(item);
                 }
-
+                ClearCart(currUserID);
                 return true;
                 //return (true, "Successful transaction");
             }
@@ -176,7 +176,20 @@ namespace CSharpest.Services
             return user.Cart;
         }
 
+        public void ClearCart(Guid userID)
+        {
 
+            List<Shopper> users = userLoader.loadUsers(); // curUserID has been hardcoded for phase 1
+            Shopper user = users.Find(x => x.AccountID == currUserID); // get user from database using id
+
+            user.Cart.Subtotal = 0;
+            user.Cart.Discount = 0;
+            user.Cart.Taxes = 0;
+            user.Cart.Total = 0;
+            user.Cart.Items.Clear();
+
+            userWriter.writeUser(user);
+        }
 
     }
 }

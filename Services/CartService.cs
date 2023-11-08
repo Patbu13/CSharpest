@@ -89,7 +89,7 @@ namespace CSharpest.Services
 
         }
 
-        public void RemoveItem(Guid ItemID, int quantity)
+        public void RemoveItem(Guid UserID, Guid ItemID, int quantity)
         {
             List<Item> items = inventoryLoader.loadInventory();
             Item item = items.Find(x => x.ItemId == ItemID); // get item from database using id
@@ -134,5 +134,6 @@ namespace CSharpest.Services
                 }
             }
         }
+
     }
 }

@@ -4,7 +4,7 @@
     "Description": "Iconic dairy milk bar ",
     "ItemId": "5ede7c7d-a06b-4c86-b2f4-83ac1531ebcc",
     "Price": 1.07,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": true
   },
   {
@@ -12,7 +12,7 @@
     "Description": "Classic bite-sized milk chocolate bites",
     "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
     "Price": 0.31,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -20,7 +20,7 @@
     "Description": "Fun-sized chocolate bar with caramel and crispy rice",
     "ItemId": "a6839d0b-a5c0-4b0b-9d75-1cf9dabf26c7",
     "Price": 0.61,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -28,7 +28,7 @@
     "Description": "Extremely sour hard candy",
     "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
     "Price": 0.54,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": true
   },
   {
@@ -36,7 +36,7 @@
     "Description": "Soft peanut butter covered in chocolate",
     "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
     "Price": 0.5,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -44,7 +44,7 @@
     "Description": "Soft, chewable, fruit-flavored taffy",
     "ItemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
     "Price": 0.59,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -52,15 +52,15 @@
     "Description": "Chewy cinnamon-flavored candy with a kick",
     "ItemId": "069dfa8a-abf1-4803-b88c-6bcd27dbb553",
     "Price": 0.69,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
     "Name": "Air Heads",
     "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
     "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-    "Price": 0.7,
-    "Stock": 100,
+    "Price": 0.70,
+    "Stock": 500,
     "Bogo": true
   },
   {
@@ -68,7 +68,7 @@
     "Description": "Nougat topped with caramel, all covered in chocolate",
     "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
     "Price": 0.37,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -76,7 +76,7 @@
     "Description": "Sweet Powdered tablets that melt in your mouth",
     "ItemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
     "Price": 0.53,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -84,7 +84,7 @@
     "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
     "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
     "Price": 0.47,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -92,7 +92,7 @@
     "Description": "Milk chocolate with crispy rice",
     "ItemId": "d81e6f6a-93a3-499a-91e0-88dada033b32",
     "Price": 0.62,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -100,7 +100,7 @@
     "Description": "Almond and cocount flakes encased in milk chocolate",
     "ItemId": "ab1c40e1-9c79-43ea-b415-a116fe9c58c9",
     "Price": 0.65,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -108,7 +108,7 @@
     "Description": "Sweet, tangy, crunchy fruit-flavored pebbles",
     "ItemId": "19085e1d-dfce-4616-8aaf-503cd3e0e44d",
     "Price": 0.87,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": true
   },
   {
@@ -116,7 +116,7 @@
     "Description": "Chocolate covered wafers",
     "ItemId": "0692703f-794d-4181-bb50-b549468f019c",
     "Price": 0.47,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -124,7 +124,7 @@
     "Description": "Button shaped chocolates covered in a hard shell",
     "ItemId": "5396bc7c-0917-41c0-be43-b1734dc22a05",
     "Price": 0.63,
-    "Stock": 100,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -132,15 +132,15 @@
     "Description": "Classic bite-sized milk chocolate bites",
     "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
     "Price": 0.31,
-    "Stock": 63,
+    "Stock": 500,
     "Bogo": false
   },
   {
-    "Name": "Milky Way",
-    "Description": "Nougat topped with caramel, all covered in chocolate",
-    "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
-    "Price": 0.37,
-    "Stock": 94,
+    "Name": "Snickers",
+    "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
+    "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
+    "Price": 0.47,
+    "Stock": 500,
     "Bogo": false
   },
   {
@@ -148,39 +148,15 @@
     "Description": "Extremely sour hard candy",
     "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
     "Price": 0.54,
-    "Stock": 89,
+    "Stock": 500,
     "Bogo": true
   },
   {
-    "Name": "Snickers",
-    "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
-    "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
-    "Price": 0.47,
-    "Stock": 99,
-    "Bogo": false
-  },
-  {
-    "Name": "Reese\u0027s Peanut Butter Cups",
-    "Description": "Soft peanut butter covered in chocolate",
-    "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
-    "Price": 0.5,
-    "Stock": 98,
-    "Bogo": false
-  },
-  {
-    "Name": "Starburst",
-    "Description": "Soft, chewable, fruit-flavored taffy",
-    "ItemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
-    "Price": 0.59,
-    "Stock": 66,
-    "Bogo": false
-  },
-  {
-    "Name": "Smarties",
-    "Description": "Sweet Powdered tablets that melt in your mouth",
-    "ItemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
-    "Price": 0.53,
-    "Stock": 99,
-    "Bogo": false
+    "Name": "Air Heads",
+    "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
+    "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
+    "Price": 0.7,
+    "Stock": 500,
+    "Bogo": true
   }
 ]

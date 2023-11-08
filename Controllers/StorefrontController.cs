@@ -7,6 +7,8 @@ using NuGet.Packaging;
 using CSharpest.Controllers;
 using System.Drawing.Text;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using System.Linq;
+
 //	Last modified by: Vivian D'Souza
 //	Windows Prog 547
 //	Last Updated : 10/24/23
@@ -76,6 +78,7 @@ namespace CSharpest
                 Shopper user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
+                    user.Cart = checkoutController.calculateTotal(user.Cart);
                     CartPageModel model = new CartPageModel(user.Cart.Items, user.Cart.Subtotal, currUserID);
                     return View(model);
                 } else
@@ -94,6 +97,7 @@ namespace CSharpest
                 Shopper user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
+                    user.Cart = checkoutController.calculateTotal(user.Cart);
                     CartPageModel model = new CartPageModel(user.Cart.Items, user.Cart.Subtotal, currUserID);
                     return View(model);
                 }
@@ -134,61 +138,20 @@ namespace CSharpest
                 {
                     if (user.Cart != null)
                     {
-                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart, user.Cart.Subtotal, checkoutController.purchase(user));
-                        return View("orderConfirmation", model);
-                    }
-                    else
-                    {
-
-                        return View(null);
-                    }
-                }
-                else
-                {
-                    return View(null);
-                }
-            }
-
-            // POST: <StorefrontController>/orderConfirmation
-            [HttpPost("orderConfirmation")]
-            public ActionResult OrderConfirmation([FromForm] long cardNumber, [FromForm] int month, [FromForm] int year, [FromForm] int cvc, [FromForm] string name)
-            {
-                List<Shopper> users = userLoader.loadUsers();
-                Shopper user = users.Find(x => x.AccountID == currUserID);
-                Card card = new Card(cardNumber, month, year, name, cvc);
-                CardCheckParams cardCheck = new CardCheckParams(user, card);
-
-                if (checkoutController.takeCardInput(cardCheck))
-                {
-                    if (user.Cart != null)
-                    {
-                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart, user.Cart.Subtotal,checkoutController.purchase(user));
-                        return View(model);
+                        if (checkoutController.purchase(user))
+                        {
+                            OrderPageModel model = new OrderPageModel(user.TransHistory.Last().Items, user.Cart, true);
+                            return View("orderConfirmation", model);
+                        } else
+                        {
+                            return View("checkout");
+                        }
+                        
                     }
                     else
                     {
                         return View(null);
                     }
-                } else
-                {
-                    return View(null);
-                }
-
-                
-            }
-
-            // Don't think this gets used
-            // GET: <StorefrontController>/orderConfirmation
-            [HttpGet("orderConfirmation")]
-            public ActionResult OrderConfirmation()
-            {
-                List<Shopper> users = userLoader.loadUsers();
-                Shopper user = users.Find(x => x.AccountID == currUserID);
-
-                if (user.Cart != null)
-                {
-                    OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart, user.Cart.Subtotal, true);
-                    return View(model);
                 }
                 else
                 {

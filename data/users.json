@@ -10,96 +10,11 @@
     "TransHistory": null,
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
-      "Items": [
-        {
-          "Item": {
-            "Name": "Hershey\u0027s Kisses",
-            "Description": "Classic bite-sized milk chocolate bites",
-            "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
-            "Price": 0.31,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 37,
-          "TotalPrice": 11.47
-        },
-        {
-          "Item": {
-            "Name": "Milky Way",
-            "Description": "Nougat topped with caramel, all covered in chocolate",
-            "ItemId": "cf8a9ffe-6a37-43c3-b655-a0debe1e83f7",
-            "Price": 0.37,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 6,
-          "TotalPrice": 2.22
-        },
-        {
-          "Item": {
-            "Name": "War Heads",
-            "Description": "Extremely sour hard candy",
-            "ItemId": "fca0ac08-0497-432c-85b7-9efd5abadcae",
-            "Price": 0.54,
-            "Stock": 100,
-            "Bogo": true
-          },
-          "Quantity": 11,
-          "TotalPrice": 5.94
-        },
-        {
-          "Item": {
-            "Name": "Snickers",
-            "Description": "Nougat, caramel, and peanuts, all covered in milk chocolate",
-            "ItemId": "c0a2e71d-b76b-4f5d-9704-f2ea1c2ca0fb",
-            "Price": 0.47,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 1,
-          "TotalPrice": 0.47
-        },
-        {
-          "Item": {
-            "Name": "Reese\u0027s Peanut Butter Cups",
-            "Description": "Soft peanut butter covered in chocolate",
-            "ItemId": "a474ad6e-a34d-45c4-b5a8-a48e4b1e0410",
-            "Price": 0.5,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 2,
-          "TotalPrice": 1
-        },
-        {
-          "Item": {
-            "Name": "Starburst",
-            "Description": "Soft, chewable, fruit-flavored taffy",
-            "ItemId": "ca644f73-bee6-4dcd-802f-43fb37c4bf42",
-            "Price": 0.59,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 34,
-          "TotalPrice": 20.06
-        },
-        {
-          "Item": {
-            "Name": "Smarties",
-            "Description": "Sweet Powdered tablets that melt in your mouth",
-            "ItemId": "31520ad9-3531-4f38-a66c-6d879c07f020",
-            "Price": 0.53,
-            "Stock": 100,
-            "Bogo": false
-          },
-          "Quantity": 1,
-          "TotalPrice": 0.53
-        }
-      ],
-      "Subtotal": 41.69,
-      "Discount": 2.70,
-      "Taxes": 3.1192,
-      "Total": 48.0992
+      "Items": [],
+      "Subtotal": 0,
+      "Discount": 0,
+      "Taxes": 0.00,
+      "Total": 5.99
     },
     "UserCards": []
   },

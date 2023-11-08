@@ -35,9 +35,10 @@ namespace CSharpest.Controllers
 
         // Remove an item from the cart
         [HttpPost("RemoveItemFromCart")]
-        public void RemoveItem(Guid ItemID, int quantity)
+        public void RemoveItem(Guid UserID, Guid ItemID, int quantity)
         {
-            _cartService.RemoveItem(ItemID, quantity);
+            _cartService.RemoveItem(UserID, ItemID, quantity);
         }
+
     }
 }

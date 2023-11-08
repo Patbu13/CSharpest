@@ -59,5 +59,12 @@ namespace CSharpest.Controllers
             return _checkoutService.calculateTotal(cart);
         }
 
+        // GET: api/<CartController>
+        [HttpGet("ClearCartItems")]
+        public void ClearCart(Guid UserID)
+        {
+            _checkoutService.ClearCart(UserID);
+        }
+
     }
 }

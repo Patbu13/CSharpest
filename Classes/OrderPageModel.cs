@@ -6,19 +6,16 @@ namespace CSharpest.Classes
 {
     public class OrderPageModel
     {
-        public List<CartItem> Items { get; set; }
-        public decimal Subtotal { get; set; }
-        //not sure if we need this?
+        public IEnumerable<CartItem> Items { get; set; }
         //public Guid CartId { get; set; }
         public Cart Cart { get; set; }
         public bool Confirmed { get; set; }
 
 
-        public OrderPageModel(List<CartItem> _items, Cart _cart, decimal _subtotal, bool _confirmed)
+        public OrderPageModel(IEnumerable<CartItem> _items, Cart _cart, bool _confirmed)
         {
             Items = _items;
             Cart = _cart;
-            Subtotal = _subtotal;
             Confirmed = _confirmed;
         }
     }

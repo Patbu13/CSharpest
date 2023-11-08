@@ -21,13 +21,11 @@ namespace CSharpest.Classes
         {
             InventoryLoader inventoryLoader = new InventoryLoader(_filepath);
             List<Item> currInventory = inventoryLoader.loadInventory();
+            Item? foundItem = currInventory.Find(x => x.ItemId == item.ItemId);
 
-            bool exists = currInventory.Contains(item);
-
-            if (exists)
+            if (foundItem != null)
             {
-                int index = currInventory.IndexOf(item);
-                currInventory[index] = item;
+                currInventory[currInventory.IndexOf(foundItem)] = item;
             } else
             {
                 currInventory.Add(item);

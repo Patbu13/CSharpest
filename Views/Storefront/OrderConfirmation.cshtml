@@ -11,10 +11,26 @@
     ViewBag.Title = "Order Confirmation";
 }
 
+<nav>
+
+    <h1><span>C</span>Sharpest Store!</h1>
+
+    <ul>
+        <li class="Desc"><h3>Your one stop shop for sweets!</h3></li>
+
+        <li>
+            <a href="/Storefront/Welcome">
+                <h3 id="GoToStore">Return to Store</h3>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+<hr />
+<body>
 <!-- CSS File Link-->
 <link href="~/Content/OrderConfirmation.css" rel="stylesheet" type="text/css" />
-
-<h1>Order Confirmation</h1>
 
 <h2>Thank you for shopping at CSharpestStore! Your order details are below.</h2>
 
@@ -30,21 +46,35 @@
         <th>Total Price</th>
     </tr>
 
-    @for (int i = 0; i < @Model.Items.Count(); i++)
+    @foreach (CartItem item in Model.Items)
     {
     <tr>
-        <td>@Model.Items[i].Item.Name</td>
-        <td>@Model.Items[i].Quantity</td>
-            <td>@Model.Items[i].Item.Price.ToString("$0.00")</td>
-            <td>@Model.Items[i].TotalPrice.ToString("$0.00")</td>
+        <td>@item.Item.Name</td>
+        <td>@item.Quantity</td>
+            <td>@item.Item.Price.ToString("$0.00")</td>
+            <td>@item.TotalPrice.ToString("$0.00")</td>
     </tr>
     }
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
 
     <tr>
         <td>Subtotal:</td>
         <td></td>
         <td></td>
         <td>@Model.Cart.Subtotal.ToString("$0.00")</td>
+    </tr>
+
+    <tr>
+        <td>Discounts:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Discount.ToString("-$0.00")</td>
     </tr>
 
     <tr>
@@ -68,15 +98,20 @@
         <td>@Model.Cart.Total.ToString("$0.00")</td>
     </tr>
 </table>
+</body>
 
-<a href="/Storefront/welcome">
-    <h3 id="ReturnToStore">[Return to Store]</h3>
-</a>
+<hr />
 
-
+<footer>
+    <h1><span>C</span>Sharpest Store!</h1>
+</footer>
 
 <!--Styling for Page-->
 <style>
+
+    nav {
+        background-color: #142d4c;
+    }
 
     body {
         background-color: #ececec;
@@ -85,9 +120,60 @@
     /*"Title" main header*/
     h1 {
         text-align: center;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        font-family: Rockwell;
         font-variant: small-caps;
-        color: #142d4c;
+        color: #ececec;
+        line-height: 80%;
+        font-size: 250%;
+    }
+
+    /*For making C in CSharpest larger*/
+    span {
+        vertical-align: middle;
+        font-size: 250%;
+        line-height: 100%;
+    }
+
+    /*Header Links*/
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Rockwell;
+    }
+
+    /*All header bar objects*/
+    li {
+        font-family: Rockwell;
+        font-size: 120%;
+    }
+
+    /* Text on left side of header */
+    li.Desc {
+        float: left;
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        text-decoration: none;
+        font-family: Rockwell;
+        color: #ececec;
+    }
+
+    /*Interactables on right side of header*/
+    a {
+        float: right;
+        display: inline-block;
+        text-align: center;
+        padding: 8px 30px;
+        text-decoration: none;
+        font-family: Rockwell;
+        color: #ececec;
+    }
+
+    /*Show that buttons are interactable*/
+    a:hover {
+        background-color: #385170;
     }
 
     /*Page Description*/
@@ -95,31 +181,8 @@
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         font-style: italic;
         font-variant: small-caps;
-        margin-left: 100px;
+        text-align:center;
         color: #385170;
-    }
-
-    /*Link to Checkout*/
-    #GoToCheckout {
-        padding: 50px;
-        text-align: right;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
-    }
-
-    /*Link to Store*/
-    #GoBackToStore {
-        padding: 50px;
-        text-align: left;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
-    }
-
-    #ReturnToStore {
-        padding: 50px;
-        text-align: left;
-        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
-        color: #142d4c;
     }
 
     /*Table header*/
@@ -158,6 +221,10 @@
         margin-left: auto;
         margin-right: auto;
         color: #385170;
+    }
+
+    footer {
+        background-color: #142d4c;
     }
 
 </style>
