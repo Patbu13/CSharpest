@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CSharpest.Classes;
+using CSharpest.Services;
 using System.Web;
 using System.Net;
 using NuGet.Packaging;
 using CSharpest.Controllers;
 using System.Drawing.Text;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 //	Last modified by: Vivian D'Souza
 //	Windows Prog 547
 //	Last Updated : 10/24/23
@@ -17,9 +19,31 @@ namespace CSharpest
         // If using ActionResult and other methods from Web API, need to have controller inherit from Controller, not ControllerBase
         public class StorefrontController : Controller
         {
-            CartController cartController = new CartController();
-            ItemController itemController = new ItemController();
-            CheckoutController checkoutController = new CheckoutController();
+            // declaring services
+            private ItemService itemService;
+            private CardService cardService;
+            private CartService cartService;
+            private CheckoutService checkoutService;
+
+            // declaring controllers
+            private ItemController itemController;
+            private CardController cardController;
+            private CheckoutController checkoutController;
+            private CartController cartController;
+
+            public StorefrontController()
+            {
+                // initializes controllers that interact with StorefrontController
+                itemService = new ItemService();
+                cartService = new CartService();
+
+                itemController = new ItemController(itemService);
+                cartController = new CartController(cartService);
+                cardController = new CardController(cardService);
+                checkoutController = new CheckoutController(checkoutService);
+
+            }
+
             UserLoader userLoader = new UserLoader(@".\data\users.json");
             Guid currUserID = new Guid("c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1");
 
@@ -31,9 +55,10 @@ namespace CSharpest
                 return View(model);
             }
 
+            // took out currUserID from form for now.
             // POST: <StorefrontController>/addToCart
             [HttpPost("Welcome")]
-            public ActionResult Welcome([FromForm] int quantity, [FromForm] Guid currUserID, [FromForm] Guid itemId)
+            public ActionResult Welcome([FromForm] int quantity, [FromForm] Guid itemId)
             {
                 //Currently not implementing "current user" functionality so don't need currUserID here
                 cartController.AddItemToCart(itemId, quantity);
@@ -84,7 +109,7 @@ namespace CSharpest
                 User user = users.Find(x => x.AccountID == currUserID);
                 if (user.Cart != null)
                 {
-                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID);
+                    CheckoutPageModel model = new CheckoutPageModel(user.Cart.Items, currUserID, user.Cart);
                     return View(model);
                 } else
                 {
@@ -106,7 +131,7 @@ namespace CSharpest
                 {
                     if (user.Cart != null)
                     {
-                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal, checkoutController.purchase(user));
+                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart, user.Cart.Subtotal, checkoutController.purchase(user));
                         return View("orderConfirmation", model);
                     }
                     else
@@ -134,7 +159,7 @@ namespace CSharpest
                 {
                     if (user.Cart != null)
                     {
-                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal, checkoutController.purchase(user));
+                        OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart, user.Cart.Subtotal,checkoutController.purchase(user));
                         return View(model);
                     }
                     else
@@ -159,7 +184,7 @@ namespace CSharpest
 
                 if (user.Cart != null)
                 {
-                    OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart.Subtotal, true);
+                    OrderPageModel model = new OrderPageModel(user.Cart.Items, user.Cart, user.Cart.Subtotal, true);
                     return View(model);
                 }
                 else

@@ -1,25 +1,30 @@
 ﻿using CSharpest.Classes;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
+using CSharpest.Services;
 using Microsoft.AspNetCore.Mvc;
 
-//	Last modified by: Patrick Burroughs
+//	Last modified by: Vivian D'Souza
 //	Windows Prog 547
-//	Last Updated : 10/29/23
+//	Last Updated : 11/3/23
 
 namespace CSharpest.Controllers
 {
+
     [Route("[controller]")]
     [ApiController]
     public class ItemController : Controller
     {
-        InventoryLoader inventoryLoader = new InventoryLoader(@".\data\inventory.json");
+        private readonly ItemService _itemService;
+
+        public ItemController(ItemService itemService)
+        {
+            _itemService = itemService;
+        }
+
         // GET: <ItemController>/GetAllItems
         [HttpGet("GetAllItems")]
         public SortedSet<Item> GetAllItems()
         {
-            SortedSet<Item> items = inventoryLoader.loadInventorySorted();
-            return items;
+           return _itemService.GetAllItems();
         }
     }
 }

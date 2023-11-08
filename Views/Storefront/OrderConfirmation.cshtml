@@ -23,26 +23,49 @@
     <tr>
         <th>Name</th>
         <th>Quantity</th>
-        <th>Price <br/>
-            (/ oz)</th>
+        <th>
+            Price <br />
+            (/ oz)
+        </th>
         <th>Total Price</th>
     </tr>
 
     @for (int i = 0; i < @Model.Items.Count(); i++)
     {
-        <tr>
-            <td>@Model.Items[i].Item.Name</td>
-            <td>@Model.Items[i].Quantity</td>
-            <td>@Model.Items[i].Item.Price</td>
-            <td>@Model.Items[i].TotalPrice</td>
-        </tr>
+    <tr>
+        <td>@Model.Items[i].Item.Name</td>
+        <td>@Model.Items[i].Quantity</td>
+        <td>@Model.Items[i].Item.Price</td>
+        <td>@Model.Items[i].TotalPrice</td>
+    </tr>
     }
 
     <tr>
         <td>Subtotal:</td>
         <td></td>
         <td></td>
-        <td>@Model.Subtotal</td>
+        <td>@Model.Cart.Subtotal</td>
+    </tr>
+
+    <tr>
+        <td>Taxes:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Taxes</td>
+    </tr>
+
+    <tr>
+        <td>Shipping:</td>
+        <td></td>
+        <td></td>
+        <td>$5.99</td>
+    </tr>
+
+    <tr>
+        <td>Total:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Total</td>
     </tr>
 </table>
 

@@ -36,6 +36,34 @@
             <td>@Model.Items[i].TotalPrice</td>
         </tr>
     }
+
+    <tr>
+        <td>Subtotal:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Subtotal</td>
+    </tr>
+
+    <tr>
+        <td>Taxes:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Taxes</td>
+    </tr>
+
+    <tr>
+        <td>Shipping:</td>
+        <td></td>
+        <td></td>
+        <td>$5.99</td>
+    </tr>
+
+    <tr>
+        <td>Total:</td>
+        <td></td>
+        <td></td>
+        <td>@Model.Cart.Total</td>
+    </tr>
 </table>
 
 <hr/>
@@ -60,12 +88,6 @@
 }
 
 <hr />
-
-<!-- Display These-->
-<h3>Shipping Costs</h3>
-<h3>Taxes</h3>
-<hr />
-<h3>Total Cost</h3>
 
 <!-- Place Order Button -->
 <a href="/Storefront/orderConfirmation" id="PlaceOrder">
