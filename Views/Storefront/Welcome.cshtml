@@ -73,12 +73,12 @@
             @using (Html.BeginForm("Welcome", "StorefrontController", FormMethod.Post))
             {
                 <td>
-                    <input type="number" id=@Model.Quantity name="Quantity" placeholder="# (oz)" min="0" />
+                    <input class="quantity" type="number" id=@Model.Quantity name="Quantity" placeholder="# (oz)" min="0" />
                     <input type="hidden" id=@Model.CartId name="CartID" value=@Model.CartId />
                     <input type="hidden" id=@item.ItemId name="ItemID" value=@item.ItemId />
                 </td>
                 <td>
-                    <input id="SubmitWelcome" type="submit" value="Add to Cart" />
+                    <input class="addCart" id="SubmitWelcome" type="submit" value="Add to Cart" />
                 </td>
             }
         </tr>
@@ -194,21 +194,36 @@
     td {
         text-align: center;
         padding: 10px;
-        font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia,serif;
+        font-family: "Palatino Linotype";
         border-bottom: 1px solid #ddd;
     }
 
     /*Add to cart buttons*/
-    button {
-        font-family: Rockwell;
-        color: #385170;
-        font-weight: bold;
+    input.addCart {
+        background-color: #385170;
+        color: #ececec;
+        font-family: 'Palatino Linotype';
+        transition-duration: 0.4s;
+        cursor:pointer;
+    }
+
+    /*Button highlight on hover*/
+    input.addCart:hover {
+        background-color: #142d4c;
     }
 
     /*Placeholder text in quantity text boxes*/
-    input::placeholder {
+    input.quantity::placeholder {
         font-family: Rockwell;
         color: #385170;
+        opacity: 0.5;
+    }
+
+    /*Entered text in quantity text boxes*/
+    input.quantity {
+        font-family: Rockwell;
+        color: #385170;
+        font-weight:bold;
     }
 
     /*Highlight item row when hovering*/
