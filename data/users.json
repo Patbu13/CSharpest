@@ -7,16 +7,67 @@
     "Password": "password123",
     "Phone": "1234567890",
     "Address": "123 Main St",
-    "TransHistory": null,
+    "TransHistory": [
+      {
+        "TransID": "713caa73-6848-4e9d-8461-6da4184b098a",
+        "Items": [
+          {
+            "Item": {
+              "Name": "Hershey\u0027s Kisses",
+              "Description": "Classic bite-sized milk chocolate bites",
+              "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
+              "Price": 0.31,
+              "Stock": 500,
+              "Bogo": false
+            },
+            "Quantity": 12,
+            "TotalPrice": 3.72
+          }
+        ],
+        "DateTime": "2023-11-09T17:29:13.4995226-05:00"
+      },
+      {
+        "TransID": "7843b354-6c58-489f-8298-b0d8cb4d1855",
+        "Items": [],
+        "DateTime": "2023-11-09T17:30:28.6461152-05:00"
+      },
+      {
+        "TransID": "22dc4db7-2677-4d94-bcaf-2b6bfb0919ee",
+        "Items": [],
+        "DateTime": "2023-11-09T17:30:55.8759677-05:00"
+      }
+    ],
     "Cart": {
       "CartID": "c4f9f3c1-9aa1-4d72-8a4c-4e03549e5bc1",
       "Items": [],
       "Subtotal": 0,
       "Discount": 0,
-      "Taxes": 0.00,
-      "Total": 5.99
+      "Taxes": 0,
+      "Total": 0
     },
-    "UserCards": []
+    "UserCards": [
+      {
+        "Number": 1234567812345678,
+        "Month": 11,
+        "Year": 2025,
+        "Name": "Patrick",
+        "CVV": 123
+      },
+      {
+        "Number": 1234567812345678,
+        "Month": 11,
+        "Year": 2025,
+        "Name": "Patrick",
+        "CVV": 123
+      },
+      {
+        "Number": 1234567812345678,
+        "Month": 11,
+        "Year": 2025,
+        "Name": "Patrick",
+        "CVV": 123
+      }
+    ]
   },
   {
     "FirstName": "Bob",

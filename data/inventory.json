@@ -12,7 +12,7 @@
     "Description": "Classic bite-sized milk chocolate bites",
     "ItemId": "68df4339-7643-4365-9cf3-cd4e5f67419e",
     "Price": 0.31,
-    "Stock": 500,
+    "Stock": 488,
     "Bogo": false
   },
   {
@@ -59,7 +59,7 @@
     "Name": "Air Heads",
     "Description": "Thin chewy, fruit-flavored taffy with sweet and sour taste",
     "ItemId": "05baa837-7bec-407a-b2a1-17335675e9cd",
-    "Price": 0.70,
+    "Price": 0.7,
     "Stock": 500,
     "Bogo": true
   },
