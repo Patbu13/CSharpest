@@ -106,7 +106,7 @@
 
 @using (Html.BeginForm("orderConfirmation", "StorefrontController", FormMethod.Post))
 {
-    <label for="cardNumber">Card number:</label>
+    <label for="cardNumber">Card Number:</label>
     <input type="text" id="cardNumber" name="cardNumber"><br><br>
     <label for="eMonth">Expiration Month:</label>
     <input type="text" id="month" name="month"><br><br>
@@ -114,11 +114,11 @@
     <input type="text" id="year" name="year"><br><br>
     <label for="cvv">CVV:</label>
     <input type="text" id="cvv" name="cvv"><br><br>
-    <label for="cardName">Cardholder name:</label>
+    <label for="cardName">Cardholder Name:</label>
     <input type="text" id="name" name="name"><br><br>
 
 
-    <input type="submit" value="Submit" name="Submission">
+    <input class ="submission" type="submit" value="Complete Purchase" name="Submission">
 }
 
 </body>
@@ -193,6 +193,7 @@
         text-decoration: none;
         font-family: Rockwell;
         color: #ececec;
+        transition-duration: 0.4s;
     }
 
     /*Show that buttons are interactable*/
@@ -222,7 +223,30 @@
         margin-left: 50px;
         font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
         font-weight: bold;
+        font-size:120%;
         color: #385170;
+    }
+
+    /*Labels for card entering area*/
+    label {
+        font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+        color: #385170;
+    }
+
+    /*Purchase Submission button*/
+    input.submission {
+        background-color: #142d4c;
+        color: #ececec;
+        font-family: 'Palatino Linotype';
+        font-weight: bold;
+        padding: 8px 20px;
+        border: 2px solid black;
+        transition-duration: 0.4s;
+        font-size:100%;
+    }
+
+    input.submission:hover {
+            background-color: #385170;
     }
 
     /*Form*/
