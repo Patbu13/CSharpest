@@ -1,5 +1,6 @@
 
 using CSharpest.Classes;
+using CSharpest.Services;
 
 namespace CSharpest
 {
@@ -19,6 +20,14 @@ namespace CSharpest
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddRazorPages();
+
+            //services must be defined here
+            builder.Services.AddScoped<ItemService, ItemService>();
+            builder.Services.AddScoped<CartService, CartService>();
+            builder.Services.AddScoped<CardService, CardService>();
+            builder.Services.AddScoped<CheckoutService, CheckoutService>();
+
+
 
             var app = builder.Build();
 
