@@ -23,4 +23,6 @@ public class CartItem
         TotalPrice = _totalPrice;
     }
 
+    public CartItem() { }
+
 }

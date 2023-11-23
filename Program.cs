@@ -1,6 +1,7 @@
 
 using CSharpest.Classes;
 using CSharpest.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace CSharpest
 {
@@ -26,7 +27,10 @@ namespace CSharpest
             builder.Services.AddScoped<CartService, CartService>();
             builder.Services.AddScoped<CardService, CardService>();
             builder.Services.AddScoped<CheckoutService, CheckoutService>();
+            
 
+            //builder.Services.AddDbContext<StoreContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("StoreContext")));
+            builder.Services.AddDbContext<StoreContext>(options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=candyDb;Integrated Security=True"));
 
 
             var app = builder.Build();
